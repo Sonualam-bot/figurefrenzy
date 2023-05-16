@@ -20,6 +20,8 @@
   justify-content: center; */
   color: grey;
   box-shadow: 0 0 10px 4px rgba(0 , 0,0,0.2);
+  /* position: fixed;
+  width: 100%; */
 }
 
 /******************* Navbar start **************************/
@@ -86,12 +88,15 @@ align-items: center;
   /* width: 800px; */
   background: #EDF4FE;
   background: linear-gradient(to top right, #EDF4FE 2%, #EFF8FF 31%, #66C1EE 100%);
+  border: 1px solid var(--tertiary);
+
+  /* box-shadow: 0 0 8px 1px rgba(0,0,0,0.1); */
   
-  /* background-image: url(./images/newHero.png); */
+  /* background-image: url(./images/hero-background.png); */
 
   /* adding blur effect to img */
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  /* filter: blur(4px);
+  -webkit-filter: blur(4px); */
 
 
   /* Center and scale the image nicely */
@@ -176,3 +181,87 @@ text-align: left;
 
 
 /**************** Hero Section end *************/
+
+
+/**************** Hero categories start *************/
+.hero_category_title{
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 2rem 0 2rem 0;
+  font-weight: 700;
+  }
+
+
+
+.hero_categories{
+  /* width: 600px; */
+  /* height: 400px; */
+  /* background-color: var(--primary); */
+  display: flex;
+  /* flex-direction: row; */
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  align-items: flex-start;
+  justify-content: center;
+  margin: 1rem 5rem;
+  
+  }
+
+  .hero_categories li{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    height: 300px;
+    width: 400px;
+    list-style:none;
+    border: 1px solid var(--tertiary);
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--secondary);
+    background-color: var(--white);
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.2);
+    /* justify-content: space-evenly; */
+    /* overflow: scroll; */
+
+    
+  }
+
+  .hero_categories li h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+/**************** Hero categories end *************/
+
+/********** Footer Section *************/
+.footer_section{
+  background-color: var(--primary);
+  color: var(--white);
+  /* padding: 2rem 5rem; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* margin: 2rem 0rem; */
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.2);
+
+}
+.footer_section_content{
+
+  display: flex;
+  flex-direction: row;
+  /* align-items: space-between; */
+  justify-content: center;
+  align-items: center;
+   /* margin: 1px; */
+
+}
+
+/* .footer_section_content h1{
+justify-content: space-around;
+} */
