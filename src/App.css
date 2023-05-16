@@ -1,51 +1,69 @@
+
+:root{
+  --primary : #F2522E;
+  --secondary :#333136;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+  background-color: #fff;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
+  color: grey;
+  box-shadow: 0 0 10px 4px rgba(0 , 0,0,0.2);
+}
+
+.container{
+display: flex;
+justify-content: space-between;
+margin: 0 5rem;
+align-items: center;
+}
+
+.figure{
+  color: var(--secondary);
+}
+.frenzy{
+  color: var(--primary);
+}
+
+.row_aside a {
+  margin-right: 10px;
+}
+
+.nav_links{
+  color:darkslategrey ;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav_button{
+  background-color: #F2522E;
+  border: none;
   color: white;
+  border-radius: 3px;
+  /* outline: none; */
 }
 
-.App-link {
-  color: #61dafb;
-}
+/**************** Hero Section *************/
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
+.hero_section{
   display: flex;
-}
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #6CC3F0;
+  background: linear-gradient(to top left, #6CC3F0 0%, #9FD5EF 50%, #EFF8FF 100%);
+  background-image: url(./images//hero-background.png);
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
 }
