@@ -11,34 +11,41 @@ export const HomePage = () => {
     return (
         <>
             {/* hero section container */}
-            <div className="hero_section"></div>
+            <div className="hero_section">
 
 
-            <div className="hero_aside_content" >
-                {/* hero section img */}
-                <div className="hero_img" >
-                    <img src={heroSection} alt="hero" />
-                </div>
-                {/* hero section title content */}
-                <div className="hero_section_content" >
-                    <h1>Buy your favourite character action figures here</h1>
-                    <div className="search&button" >
-                        <input className="hero_section_content_input" type="text" placeholder="Search for an action figure" />
-                        <button className="hero_section_content_button" >Search</button>
+                <div className="hero_aside_content" >
+                    {/* hero section img */}
+                    <div className="hero_img" >
+                        <img src={heroSection} alt="hero" />
                     </div>
-                    <p>The most complete action figures More than 1000 <br /> collectible action figure ready to collect</p>
+                    {/* hero section title content */}
+                    <div className="hero_section_content" >
+                        <h1>Buy your favourite character action figures here</h1>
+                        <div className="search_button" >
+                            <input className="hero_section_content_input" type="text" placeholder="Search for an action figure" />
+                            <button className="hero_section_content_button" >Search</button>
+                        </div>
+                        <p>The most complete action figures More than 1000 <br /> collectible action figure ready to collect</p>
+                    </div>
                 </div>
             </div>
+
 
             {/* categories section */}
             <div className="hero_category_title" >Categories to Choose From</div>
 
             <div className="hero_categories" >
-                {categories.map(({ _id, type, description }) => {
+                {categories.map(({ _id, type, description, image_url }) => {
                     return (
+
                         <li key={_id} >
-                            <h3> {type} </h3>
-                            <p> {description} </p>
+                            <img src={image_url} />
+                            <div className="hero_text" >
+                                <h3> {type} </h3>
+                                <p> {description} </p>
+                            </div>
+
                         </li>
                     )
                 })}

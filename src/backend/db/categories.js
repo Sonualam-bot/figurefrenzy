@@ -8,15 +8,17 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    type: 'hero action figure',
+    type: 'hero',
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "A hero is a person who demonstrates an utmost commitment to their morals, no matter the obstacle or consequence.",
+    image_url: "https://shorturl.at/fghGO",
   },
   {
     _id: uuid(),
-    type: "villain action figure",
+    type: "villain",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "A villain is defined as an evil or wicked character that enacts evil action and/or harms others.",
+    image_url: "https://shorturl.at/zHMW6",
   },
   // {
   //   _id: uuid(),
