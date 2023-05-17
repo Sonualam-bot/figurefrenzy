@@ -9,7 +9,8 @@ export const ProductProvider = ({ children }) => {
 
 
     const value = {
-        categories: state.categoriesDb
+        categories: state.categoriesDb,
+        productsArr: state.productsDb
     }
     return (
         <>
