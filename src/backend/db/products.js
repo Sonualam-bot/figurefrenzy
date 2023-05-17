@@ -18,7 +18,7 @@ export const products = [
     "discount": 0.2,
     "type": "hero",
     "rating": 4.5,
-    image_url: "https://shorturl.at/ltLMO"
+    "image_url": "https://shorturl.at/ltLMO"
   },
   {
     _id: uuid(),
@@ -30,7 +30,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/hBKX7",
   },
   {
     _id: uuid(),
