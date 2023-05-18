@@ -10,10 +10,12 @@ export const ProductPage = () => {
     const { productsArr, addToCart, addToWishlist } = useContext(ProductContext)
     return (
         <>
+            {/* <h2>Showing All Products</h2> */}
             <div className="product_container" >
                 <div className="product_main_content">
                     <FilterCard />
                 </div>
+
 
                 <div className="product_aside_content" >
                     {productsArr.map((data) => {

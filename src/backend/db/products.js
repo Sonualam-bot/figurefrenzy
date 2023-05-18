@@ -29,7 +29,7 @@ export const products = [
     "category": "One Piece",
     "instock": false,
     "discount": 0.1,
-    "type": "hero",
+    "type": "villain",
     "rating": 4.2,
     "image_url": "https://shorturl.at/hBKX7",
   },
@@ -43,7 +43,8 @@ export const products = [
     "instock": true,
     "discount": 0.15,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/fCPU3",
   },
   {
     _id: uuid(),
@@ -55,7 +56,8 @@ export const products = [
     "instock": false,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.1
+    "rating": 4.1,
+    "image_url": "https://shorturl.at/pAEN6",
   },
   {
     _id: uuid(),
@@ -67,7 +69,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -79,7 +82,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/hqKQZ"
   },
   {
     _id: uuid(),
@@ -91,7 +95,8 @@ export const products = [
     "instock": true,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/fnMUX"
   },
   {
     _id: uuid(),
@@ -103,7 +108,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/bcnOQ"
   },
   {
     _id: uuid(),
@@ -115,7 +121,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/dhuX6"
   },
   {
     _id: uuid(),
@@ -127,7 +134,8 @@ export const products = [
     "instock": true,
     "discount": 0.2,
     "type": "hero",
-    "rating": 4.5
+    "rating": 4.5,
+    "image_url": "https://shorturl.at/knNPR"
   },
   {
     _id: uuid(),
@@ -139,7 +147,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/nopr3"
   },
   {
     _id: uuid(),
@@ -151,7 +160,8 @@ export const products = [
     "instock": true,
     "discount": 0.15,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/deryI"
   },
   {
     _id: uuid(),
@@ -163,7 +173,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/jkq29"
   },
   {
     _id: uuid(),
@@ -175,7 +186,8 @@ export const products = [
     "instock": false,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -187,7 +199,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -199,7 +212,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -211,7 +225,8 @@ export const products = [
     "instock": true,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -223,7 +238,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "villain",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -235,7 +251,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -247,7 +264,8 @@ export const products = [
     "instock": false,
     "discount": 0.15,
     "type": "villain",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -259,7 +277,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -271,7 +290,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -283,7 +303,8 @@ export const products = [
     "instock": true,
     "discount": 0.2,
     "type": "hero",
-    "rating": 4.5
+    "rating": 4.5,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -295,7 +316,8 @@ export const products = [
     "instock": false,
     "discount": 0.7,
     "type": "hero",
-    "rating": 4.1
+    "rating": 4.1,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -307,7 +329,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -319,7 +342,8 @@ export const products = [
     "instock": true,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -331,7 +355,8 @@ export const products = [
     "instock": false,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.4
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -343,7 +368,8 @@ export const products = [
     "instock": true,
     "discount": 0.1,
     "type": "hero",
-    "rating": 4.3
+    "rating": 4.3,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -355,7 +381,8 @@ export const products = [
     "instock": false,
     "discount": 0.05,
     "type": "hero",
-    "rating": 4.2
+    "rating": 4.2,
+    "image_url": "https://shorturl.at/mWY45"
   },
   {
     _id: uuid(),
@@ -366,6 +393,62 @@ export const products = [
     "category": "Bleach",
     "instock": true,
     "discount": 0.1,
+    "type": "villain",
+    "rating": 4.4,
+    "image_url": "https://shorturl.at/mWY45"
+  },
+  {
+    "name": "Frieza",
+    "details": "Height: 5'9\", Material: Unknown",
+    "price": 39.99,
+    "originalPrice": 3000,
+    "category": "Dragon Ball Z",
+    "instock": true,
+    "discount": 0.2,
+    "type": "villain",
+    "rating": 4.8
+  },
+  {
+    "name": "Madara Uchiha",
+    "details": "Height: 6'0\", Material: Unknown",
+    "price": 49.99,
+    "originalPrice": 4000,
+    "category": "Naruto",
+    "instock": true,
+    "discount": 0.15,
+    "type": "villain",
+    "rating": 4.7
+  },
+  {
+    "name": "Hisoka Morow",
+    "details": "Height: 6'2\", Material: Unknown",
+    "price": 24.99,
+    "originalPrice": 1500,
+    "category": "Hunter x Hunter",
+    "instock": false,
+    "discount": 0.1,
+    "type": "villain",
+    "rating": 4.5
+  },
+  {
+    "name": "Aizen Sosuke",
+    "details": "Height: 6'1\", Material: Unknown",
+    "price": 44.99,
+    "originalPrice": 3500,
+    "category": "Bleach",
+    "instock": true,
+    "discount": 0.25,
+    "type": "villain",
+    "rating": 4.6
+  },
+  {
+    "name": "Meruem",
+    "details": "Height: 6'6\", Material: Unknown",
+    "price": 29.99,
+    "originalPrice": 2000,
+    "category": "Hunter x Hunter",
+    "instock": true,
+    "discount": 0.2,
     "type": "villain",
     "rating": 4.4
   }

@@ -1,6 +1,7 @@
 
 import { AiOutlineStar } from "react-icons/ai";
 import { IoIosHeartEmpty } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -11,7 +12,10 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     return (
         <>
             <div className='product_aside_content_figures' key={_id} >
-                <img src={image_url} alt='figure' />
+                <NavLink to={`/individual/${_id}`} >
+                    <img src={image_url} alt='figure' />
+                </NavLink>
+
                 <div className='product_category_name' >
                     <p>{category}</p>
                     <h4> {name} </h4>

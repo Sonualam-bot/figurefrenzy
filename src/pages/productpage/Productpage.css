@@ -15,8 +15,14 @@
 .product_container{
   display: grid;
   grid-template-columns: 220px 1fr;
-  
+  position: relative;
+}
 
+.product_filter_main_container{
+   height: 87vh;
+   width: 100%;
+   overflow: scroll;
+   overflow-x: hidden;
 }
 
 .product_filter_container{
@@ -34,10 +40,15 @@
 .product_main_content{
   border: 1px solid red;
   width: 220px;
-  padding: 2rem;
+  padding-left: 2rem;
+  /* position: absolute; */
   /* box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1); */
   margin-top: 1px;
+  /* margin-right: 2rem; */
   
+}
+.product_price_title{
+  margin-bottom: 0;
 }
 
 .product_slider{
@@ -62,6 +73,10 @@
   justify-content: space-evenly;
   padding: 10px;
   gap: 2rem;
+
+  overflow: scroll;
+  height: 87vh;
+  overflow-x: hidden;
   
 }
 

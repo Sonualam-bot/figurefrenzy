@@ -35,14 +35,39 @@ export const ProductProvider = ({ children }) => {
         }
     }
 
+    const filterHeroFigure = (e) => {
+        const filterHero = state.productsDb?.filter((figure) => figure.type === "hero")
+
+        const showAllChar = state.productsDb?.map((figure) => figure)
+
+        if (e.target.checked) {
+            dispatch({
+                type: "FILTER_HERO",
+                payload: {
+                    heroType: filterHero
+                }
+            })
+        } else {
+            dispatch({
+                type: "SHOW_ALL_PRODUCTS",
+                // here payload not needed as we are displaying the original array in the reducer
+                // payload: {
+                //     showAllData: showAllChar
+                // }
+            })
+        }
+    }
+
 
     const value = {
         categories: state.categoriesDb,
         productsArr: state.productsDb,
         cart: state.cart,
         wishlist: state.wishlist,
+        individualData: state.individualData,
         addToCart,
-        addToWishlist
+        addToWishlist,
+        filterHeroFigure
     }
     return (
         <>
