@@ -14,7 +14,7 @@
 
 .product_container{
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 250px 1fr;
   position: relative;
 }
 
@@ -38,13 +38,11 @@
 }
 
 .product_main_content{
-  border: 1px solid red;
-  width: 220px;
+  /* border: 1px solid red; */
+  width: 100%;
   padding-left: 2rem;
-  /* position: absolute; */
-  /* box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1); */
   margin-top: 1px;
-  /* margin-right: 2rem; */
+
   
 }
 .product_price_title{
@@ -54,18 +52,20 @@
 .product_slider{
   accent-color: grey;
   outline: none;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 
 .product_slider_value{
    display: flex;
    justify-content: space-between;
    margin-left: 4px;
+   width: 80%;
 }
 
-.product_aside_content{
+/* .product_aside_content{
   border: 1px solid green;
-}
+} */
 
 .product_aside_content{
   display: flex;
@@ -73,18 +73,15 @@
   justify-content: space-evenly;
   padding: 10px;
   gap: 2rem;
+  width: 100%;
 
   overflow: scroll;
-  height: 87vh;
+  height: 88vh;
   overflow-x: hidden;
   
 }
 
 .product_aside_content_figures{
-  /* width: 240px;
-  height: 300px;
-  border: 1px solid var(--secondary); */
-  /* padding: 10px; */
 
  display: flex;
  flex-direction: column;
@@ -100,15 +97,12 @@
   font-family: "Maven Pro", sans-serif;
   overflow: hidden;
   border-radius: 0 0 5px 5px;
-  /* border: 1px solid grey; */
   text-align: left;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/* .product_aside_content_figures:hover{
-  transition: ;
-} */
+
 
 
 

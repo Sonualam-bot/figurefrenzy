@@ -20,10 +20,10 @@ export const categories = [
       "A villain is defined as an evil or wicked character that enacts evil action and/or harms others.",
     image_url: "https://shorturl.at/zHMW6",
   },
-  // {
-  //   _id: uuid(),
-  //   categoryName: "horror",
-  //   description:
-  //     "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
-  // },
+  {
+    _id: uuid(),
+    categoryName: "horror",
+    description:
+      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+  },
 ];

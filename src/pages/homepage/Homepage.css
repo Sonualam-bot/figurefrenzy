@@ -9,12 +9,16 @@
   *{
     box-sizing: border-box;
   }
+ /* .body-div{
+  background-color: whitesmoke;
+ } */
   
   .App {
     text-align: left;
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: whitesmoke;
   }
   
   
