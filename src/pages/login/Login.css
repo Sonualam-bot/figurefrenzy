@@ -1,0 +1,29 @@
+
+.login-container{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    margin: 5rem auto;
+    /* width: 600px; */
+    /* border: 1px solid grey; */
+    text-align: center;
+}
+
+/* .login-form-container-fields{
+    display: flex;
+    width: 500px;
+    align-items: center;
+    flex-direction: column;
+    height: 60px;
+    text-align: left;
+} */
+
+.form-data{
+    display: flex;
+    flex-direction: column;
+    /* width: 500px; */
+    margin: 0 auto;
+    text-align: left;
+    /* gap: .5rem; */
+}
