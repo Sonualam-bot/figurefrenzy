@@ -22,7 +22,7 @@ export const products = [
     "discount": 0.1,
     "type": "hero",
     "rating": 4.9,
-    "image_url": "https://shorturl.at/lO369"
+    "image_url": "https://www.theyouthspace.in/cdn/shop/files/IMG-20230516-WA0074.jpg?v=1684231586&width=2048"
   },
   {
     _id: uuid(),
@@ -35,7 +35,7 @@ export const products = [
     "discount": 0.1,
     "type": "anti-hero",
     "rating": 4.8,
-    "image_url": "https://shorturl.at/rDWY5"
+    "image_url": "https://i.etsystatic.com/39017591/r/il/746c1f/4721122614/il_fullxfull.4721122614_tonj.jpg"
   },
   {
     _id: uuid(),
