@@ -1,10 +1,11 @@
-
 :root{
-    --primary : #F2522E;
-    --secondary :#333136;
-    --tertiary : #ACDAF2;
-    --white : #EFF8FF;
-  }
+  --primary :#05668d ;
+  --secondary :#333136;
+  --tertiary : #ACDAF2;
+  --white : #EFF8FF;
+  --red : red;
+}
+
   
   *{
     box-sizing: border-box;
@@ -26,9 +27,10 @@
     background-color: #fff;
     min-height: 10vh;
     display: flex;
-    flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
     color: grey;
     box-shadow: 0 0 10px 4px rgba(0 , 0,0,0.2);
     /* position: fixed;
@@ -43,6 +45,7 @@
   justify-content: space-between;
   padding: 0 5rem;
   align-items: center;
+  background-color: whitesmoke;
   }
   
   .figure{
@@ -53,7 +56,7 @@
   }
   
   .row_aside a {
-    margin-right: 10px;
+    margin-right: 15px;
   
   }
   

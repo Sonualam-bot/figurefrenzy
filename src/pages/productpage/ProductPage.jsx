@@ -21,7 +21,7 @@ export const ProductPage = () => {
                     {productsArr.map((data) => {
 
                         return (
-                            <ProductCard items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
+                            <ProductCard key={data._id} items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
                         )
                     })}
                 </div>
