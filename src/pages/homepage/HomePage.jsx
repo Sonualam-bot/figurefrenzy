@@ -1,13 +1,15 @@
 import heroSection from "../../pages/../images/heroSection3.png";
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductContext";
 
 import { AiFillGithub } from "react-icons/ai"
 import { AiFillTwitterCircle } from "react-icons/ai"
 import { AiFillInstagram } from "react-icons/ai"
 
+import { HomePageSlider } from "../HomePageSlider";
+import { categoryContext } from "./CategoryContext";
+
 export const HomePage = () => {
-    const { categories } = useContext(ProductContext);
+    const { category } = useContext(categoryContext);
     return (
         <>
             <div className="body-div" >
@@ -18,16 +20,19 @@ export const HomePage = () => {
 
                     <div className="hero_aside_content" >
                         {/* hero section img */}
-                        <div className="hero_img" >
+                        {/* <div className="hero_img" >
                             <img src={heroSection} alt="hero" />
-                        </div>
+                        </div> */}
+
+                        {/* <HomePageSlider /> */}
+
                         {/* hero section title content */}
                         <div className="hero_section_content" >
                             <h1>Buy your favourite character action figures here</h1>
-                            <div className="search_button" >
+                            {/* <div className="search_button" >
                                 <input className="hero_section_content_input" type="text" placeholder="Search for an action figure" />
                                 <button className="hero_section_content_button" >Search</button>
-                            </div>
+                            </div> */}
                             <p>The most complete action figures More than 1000 <br /> collectible action figure ready to collect</p>
                         </div>
                     </div>
@@ -38,7 +43,7 @@ export const HomePage = () => {
                 <div className="hero_category_title" >Categories to Choose From</div>
 
                 <div className="hero_categories" >
-                    {categories.map(({ _id, type, description, image_url }) => {
+                    {category.map(({ _id, type, description, image_url }) => {
                         return (
 
                             <li key={_id} >

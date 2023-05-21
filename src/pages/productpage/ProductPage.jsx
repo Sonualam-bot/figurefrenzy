@@ -7,7 +7,7 @@ import { FilterCard } from './FilterCard';
 
 
 export const ProductPage = () => {
-    const { productsArr, addToCart, addToWishlist } = useContext(ProductContext)
+    const { filterPriceByRangeInput, addToCart, addToWishlist } = useContext(ProductContext)
     // console.log("productArr", typeof productsArr)
     return (
         <>
@@ -19,7 +19,7 @@ export const ProductPage = () => {
 
 
                 <div className="product_aside_content" >
-                    {productsArr.map((data) => {
+                    {filterPriceByRangeInput?.map((data) => {
 
                         return (
                             <ProductCard key={data._id} items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
