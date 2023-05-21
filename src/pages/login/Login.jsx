@@ -22,8 +22,8 @@ export const Login = () => {
                             <input type="email" name="email" value={loginInput.email} onChange={handleLoginInput} placeholder="abc@figureFrenzy.com" />
                             <label htmlFor="password" >Password</label>
                             <input type="password" name="password" value={loginInput.password} onChange={handleLoginInput} placeholder="Enter password" />
-                            <button>Log In</button>
-                            <button>Login As A Guest</button>
+                            <button to="/products" >Log In</button>
+                            <button to="/products" > Login As A Guest</button>
                             <p>Don't have an account? <NavLink to="/signup" >sign up</NavLink>  </p>
                         </div>
 

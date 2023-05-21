@@ -1,5 +1,6 @@
 import { createContext, useState } from "react"
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 
 export const AuthContext = createContext();
@@ -8,25 +9,44 @@ export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
 
-    const userToken = localStorage.getItem("token")
+    // const userToken = localStorage.getItem("token")
     // console.log(userToken)
+
+    const navigate = useNavigate()
 
 
     const [loginInput, setLoginInput] = useState({ email: "", password: "" });
     const [signupInput, setSignupInput] = useState({
-        fullName: "",
+        firstName: "",
+        lastName: "",
         email: "",
-        password: "",
-        confirmPassword: ""
+        password: ""
 
     })
+
+    const guestLogin = {
+        email: "adarshbalika@gmail.com",
+        password: "adarshbalika"
+    }
 
     const loginHandler = async (e) => {
         e.preventDefault()
         try {
-            const { data } = await axios.post(`/api/auth/login`, loginInput)
-            localStorage.setItem("token", JSON.stringify(data.encodedToken))
-            console.log(data.encodedToken)
+            const response = await axios.post(`/api/auth/login`, loginInput)
+            console.log("here i am looking for status", response)
+            if (response.status === 200) {
+
+                localStorage.setItem("token", response.data.encodedToken)
+                alert("Login Successfull")
+                navigate("/product")
+            } else {
+                setLoginInput({
+
+                    email: "adarshbalika@gmail.com",
+                    password: "adarshbalika"
+
+                })
+            }
             setLoginInput({
 
                 email: "",
@@ -42,24 +62,20 @@ export const AuthContextProvider = ({ children }) => {
     const signUpHandler = async (e) => {
         e.preventDefault()
 
-        // console.log("signup handler called")
-        // axios.post(`/api/auth/signup`, signupInput)
-        //     .then((res) => {
-        //         console.log(res)
-        //         console.log(res.data.encodedToken)
-        //     })
-
         try {
             console.log("signup handler called")
-            const { data } = await axios.post(`/api/auth/signup`, signupInput)
-            localStorage.setItem("token", JSON.stringify(data.encodedToken))
-            // console.log(res)
-            console.log(data.encodedToken)
+            const response = await axios.post(`/api/auth/signup`, signupInput)
+            if (response.status === 201) {
+
+                localStorage.setItem("token", response.data.encodedToken)
+            }
+            console.log(response)
+            console.log(response.data.encodedToken)
             setSignupInput({
-                fullName: "",
+                firstName: "",
+                lastName: "",
                 email: "",
-                password: "",
-                confirmPassword: ""
+                password: ""
             })
 
         } catch (e) {

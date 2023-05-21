@@ -21,8 +21,11 @@ export const Signup = () => {
                     <h2>Sign up</h2>
                     <form onSubmit={signUpHandler}>
                         <div className="form-data" >
-                            <label htmlFor="name">Name</label>
-                            <input type="text" placeholder="Son Goku" name="fullName" value={signupInput.fullName} onChange={handleSignupInput} />
+                            <label htmlFor="firstName">Name</label>
+                            <input type="text" placeholder="Son Goku" name="firstName" value={signupInput.firstName} onChange={handleSignupInput} />
+
+                            <label htmlFor="lastName"  >lastName</label>
+                            <input type="text" placeholder="lastName" name="lastName" value={signupInput.lastName} onChange={handleSignupInput} />
 
 
                             <label htmlFor="email" > Email</label>
@@ -32,8 +35,7 @@ export const Signup = () => {
                             <label htmlFor="password" >Password</label>
                             <input type="password" placeholder="Enter Password" name="password" value={signupInput.password} onChange={handleSignupInput} />
 
-                            <label htmlFor="Confirm-password"  >Confirm Password</label>
-                            <input type="password" placeholder="Confirm Password" name="confirmPassword" value={signupInput.confirmPassword} onChange={handleSignupInput} />
+
 
 
                             <button type="submit">Create Account</button>
