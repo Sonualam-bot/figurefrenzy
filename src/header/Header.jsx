@@ -10,19 +10,27 @@ export const Header = () => {
     const { cart, wishlist } = useContext(ProductContext)
     return (
         <>
-            {/* <div className="container"> */}
-            <div className="row_header">
-                <h1> <span className="figure" >Figure</span><span className="frenzy" >Frenzy</span> </h1>
-            </div>
-            <div className="row_aside">
-                <NavLink to="/" className="nav_links" >Home</NavLink>
-                <NavLink to="/product" className="nav_links" >Shop</NavLink>
-                <NavLink to="/cart" className="nav_links" >Cart ({cart.length})   </NavLink>
-                <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlist.length}) </NavLink>
-                <NavLink className="nav_links nav_button" to="/login" >Login</NavLink>
-            </div>
+            <div className="container">
+                <div className="row_header">
+                    <h1> <span className="figure" >Figure</span><span className="frenzy" >Frenzy</span> </h1>
+                </div>
+                {/* <div className="hero_section_content" > */}
 
-            {/* </div> */}
+                {/* <div className="search_button" > */}
+                <input className="hero_section_content_input" type="text" placeholder="Search for an action figure" />
+                {/* <button className="hero_section_content_button" >Search</button> */}
+                {/* </div> */}
+
+                {/* </div> */}
+                <div className="row_aside">
+                    <NavLink to="/" className="nav_links" >Home</NavLink>
+                    <NavLink to="/product" className="nav_links" >Shop</NavLink>
+                    <NavLink to="/cart" className="nav_links" >Cart ({cart.length})   </NavLink>
+                    <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlist.length}) </NavLink>
+                    <NavLink className="nav_links nav_button" to="/login" >Login</NavLink>
+                </div>
+
+            </div>
         </>
     )
 }
