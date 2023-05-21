@@ -7,6 +7,9 @@ import App from "./App";
 import { makeServer } from "./server";
 
 import { ProductProvider } from "./context/ProductContext";
+import { AuthContextProvider } from "./context/AuthContext";
+import { CategoryProvider } from "./pages/homepage/CategoryContext";
+import { IndividualProvider } from "./pages/individualPage/IndividualContext";
 
 // Call make Server
 makeServer();
@@ -14,9 +17,16 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProductProvider>
-        <App />
-      </ProductProvider>
+      <AuthContextProvider>
+        <ProductProvider>
+          <IndividualProvider>
+            <CategoryProvider>
+              <App />
+            </CategoryProvider>
+          </IndividualProvider>
+        </ProductProvider>
+      </AuthContextProvider>
+
     </BrowserRouter>
 
   </React.StrictMode>,

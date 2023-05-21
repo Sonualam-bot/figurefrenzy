@@ -8,6 +8,7 @@ import { FilterCard } from './FilterCard';
 
 export const ProductPage = () => {
     const { productsArr, addToCart, addToWishlist } = useContext(ProductContext)
+    // console.log("productArr", typeof productsArr)
     return (
         <>
             {/* <h2>Showing All Products</h2> */}

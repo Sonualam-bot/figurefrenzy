@@ -1,10 +1,49 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import { initialState, reducer } from "../reducer/reducer";
+
+import axios from "axios";
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [homepageData, setHomepageData] = useState([]);
+    // const [selectedItemId, setSelectedItemId] = useState('')
+
+
+    const showHomepageData = async () => {
+        try {
+            const response = await axios.get(`/api/products`)
+            // const data = await response.json()
+            console.log("data and status", response)
+            if (response.status === 200) {
+                // console.log(data.products.products)
+                setHomepageData(response.data.products)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    // const selectedProductId = async () => {
+    //     try {
+    //         const response = await fetch(`/api/products/:productId`)
+    //         const data = await response.json()
+    //         console.log("productId", data)
+    //         setSelectedItemId(data.productId)
+
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
+
+    // async function getCharacters() {
+    //     const response = await axios.get("/api/products/:productId")
+    //     console.log("trying", response.data)
+    // }
+
+    // getCharacters()
+
 
 
     const addToCart = (figure) => {
@@ -38,7 +77,7 @@ export const ProductProvider = ({ children }) => {
     const filterHeroFigure = (e) => {
         const filterHero = state.productsDb?.filter((figure) => figure.type === "hero")
 
-        const showAllChar = state.productsDb?.map((figure) => figure)
+        // const showAllChar = state.productsDb?.map((figure) => figure)
 
         if (e.target.checked) {
             dispatch({
@@ -60,15 +99,24 @@ export const ProductProvider = ({ children }) => {
 
 
     const value = {
-        categories: state.categoriesDb,
-        productsArr: state.productsDb,
+        productsArr: homepageData,
         cart: state.cart,
         wishlist: state.wishlist,
         individualData: state.individualData,
         addToCart,
         addToWishlist,
-        filterHeroFigure
+        filterHeroFigure,
+        // selectedItemId,
+
+
     }
+
+
+    useEffect(() => {
+        showHomepageData();
+
+    }, [])
+
     return (
         <>
             <ProductContext.Provider value={value} >
