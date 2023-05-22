@@ -5,14 +5,16 @@ import { AiFillGithub } from "react-icons/ai"
 import { AiFillTwitterCircle } from "react-icons/ai"
 import { AiFillInstagram } from "react-icons/ai"
 
-import { HomePageSlider } from "../HomePageSlider";
+
 import { categoryContext } from "./CategoryContext";
+import { HomePageSlider } from "./HomePageSlider";
 
 export const HomePage = () => {
     const { category } = useContext(categoryContext);
     return (
         <>
             <div className="body-div" >
+                {/* <HomePageSlider /> */}
 
                 {/* hero section container */}
                 <div className="hero_section">
@@ -20,11 +22,10 @@ export const HomePage = () => {
 
                     <div className="hero_aside_content" >
                         {/* hero section img */}
-                        {/* <div className="hero_img" >
+                        <div className="hero_img" >
                             <img src={heroSection} alt="hero" />
-                        </div> */}
+                        </div>
 
-                        {/* <HomePageSlider /> */}
 
                         {/* hero section title content */}
                         <div className="hero_section_content" >
@@ -46,7 +47,7 @@ export const HomePage = () => {
                     {category.map(({ _id, type, description, image_url }) => {
                         return (
 
-                            <li key={_id} >
+                            <li className="hero_categories_card" key={_id} >
                                 <img src={image_url} alt="chitrrr" />
                                 <div className="hero_text" >
                                     <h3> {type} </h3>
@@ -67,7 +68,7 @@ export const HomePage = () => {
 
                     </div>
                 </div>
-            </div>
+            </div >
 
         </>
     )

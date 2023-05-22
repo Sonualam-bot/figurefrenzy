@@ -231,6 +231,14 @@
   margin: 1rem 5rem;
 }
 
+/* .hero_categories_card {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 1);
+  color: #000;
+  border-radius: 10px;
+} */
+
 .hero_categories li {
   display: flex;
   /* flex-direction: column; */
@@ -238,7 +246,7 @@
   padding: 10px;
   border-radius: 5px;
   height: 300px;
-  width: 500px;
+  width: 400px;
   list-style: none;
   border: 1px solid var(--tertiary);
   border-radius: 5px;
@@ -246,10 +254,19 @@
   color: var(--secondary);
   background-color: var(--white);
   cursor: pointer;
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.24);
   /* justify-content: space-evenly; */
   /* overflow: scroll; */
 }
+
+.hero_categories li:hover {
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.19),
+    0px 6px 6px 0px rgba(0, 0, 0, 0.23);
+
+  /* width: 510px; */
+}
+
 .hero_categories .hero_text {
   display: flex;
   flex-direction: column;
