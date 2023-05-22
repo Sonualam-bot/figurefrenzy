@@ -18,13 +18,13 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <CategoryProvider>
-          <ProductProvider>
+        <ProductProvider>
+          <CategoryProvider>
             <IndividualProvider>
               <App />
             </IndividualProvider>
-          </ProductProvider>
-        </CategoryProvider>
+          </CategoryProvider>
+        </ProductProvider>
       </AuthContextProvider>
 
     </BrowserRouter>

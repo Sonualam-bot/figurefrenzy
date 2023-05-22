@@ -22,9 +22,9 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    type: "anti-hero",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "An antihero (sometimes spelled as anti-hero) or antiheroine is a main character in a story who may lack conventional heroic qualities and attributes, such as idealism, courage, and morality.",
     image_url: "https://shorturl.at/zHMW6",
   },
 ];

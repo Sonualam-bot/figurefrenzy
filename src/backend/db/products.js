@@ -36,7 +36,7 @@ export const products = [
     discount: 10,
     antiHero: true,
     rating: 4.8,
-    image_url: "https://i.etsystatic.com/39017591/r/il/746c1f/4721122614/il_fullxfull.4721122614_tonj.jpg"
+    image_url: "https://cdn.shopify.com/s/files/1/0598/7578/6884/products/Sade5cb7b0d9b4d41988f23b463efab9en.jpg?v=1667262711"
   },
   {
     _id: 3,
@@ -49,7 +49,7 @@ export const products = [
     discount: 12,
     antiHero: true,
     rating: 4.7,
-    image_url: "https://m.media-amazon.com/images/I/51y2U70hZKL._SY450_.jpg"
+    image_url: "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/NarutoSetof12_6_5059b7c0-98b2-4c9e-874f-14d9edf8b631_1400x.png?v=1646648108"
   },
   {
     _id: 4,
@@ -62,7 +62,7 @@ export const products = [
     discount: 18,
     villain: true,
     rating: 2.1,
-    image_url: "https://m.media-amazon.com/images/I/711WeAPa1eL._SY355_.jpg"
+    image_url: "https://japanworld.it/66180-large_default/megahouse-precious-gem-series-naruto-shippuden-itachi-uchiha-susanoo.jpg"
   },
   {
     _id: 5,
@@ -75,7 +75,7 @@ export const products = [
     discount: 15,
     hero: true,
     rating: 4.6,
-    image_url: "https://m.media-amazon.com/images/I/51hv2KcHDGL._SY355_.jpg"
+    image_url: "https://i0.wp.com/informationislnd.com/wp-content/uploads/2020/08/Tsume-HQS-Kurosaki-Ichigo-final-getsuga-tensh%C5%8D.jpg?fit=1440%2C1035&ssl=1"
   },
   {
     _id: 6,
@@ -88,7 +88,7 @@ export const products = [
     discount: 20,
     hero: true,
     rating: 5,
-    image_url: "https://static.myfigurecollection.net/upload/items/1/8234-3dcf2.jpg"
+    image_url: "https://preview.redd.it/wd8rf4k9gx571.jpg?auto=webp&s=9446fb7776664b1969bd61fe746cb307641a1be4"
   },
   {
     _id: 7,
@@ -101,7 +101,7 @@ export const products = [
     discount: 12,
     antiHero: true,
     rating: 3.2,
-    image_url: "https://m.media-amazon.com/images/I/81twk3hRTQL._AC_SX679_.jpg"
+    image_url: "https://www.pvcfigures.com/wp-content/uploads/2021/05/Code-Geass-Lelouch-of-the-Rebellion-Deformed-Vignette-Doll-Lelouch-12-cm-20484.jpg"
   },
   {
     _id: 8,
@@ -153,7 +153,7 @@ export const products = [
     discount: 15,
     antiHero: true,
     rating: 4.8,
-    image_url: "https://media.karousell.com/media/photos/products/2020/7/12/preorder_one_piece_trafalgar"
+    image_url: "https://cdn3.mydukaan.io/app/image/700x700/?url=https://dukaan-core-file-service.s3.ap-southeast-1.amazonaws.com/upload_file_service/5e1c7948-6dd9-4bc4-846d-fcdc4ef20e1a/1679634278266.jpeg"
   },
 
 
@@ -283,7 +283,7 @@ export const products = [
     hero: true,
 
     rating: 4.6,
-    image_url: ""
+    image_url: "https://www.favorgk.com/cdn/shop/products/501_fb4ca793-5cf4-4497-821d-d40e7f9aa3f2_530x@2x.jpg?v=1637425748"
   },
   {
     _id: 21,
@@ -296,7 +296,7 @@ export const products = [
     discount: 18,
     villain: true,
     rating: 4.9,
-    image_url: ""
+    image_url: "https://cdn11.bigcommerce.com/s-ttxokgrlfn/images/stencil/1280x1280/products/168/546/1_351b650c-7bb9-4d11-8f19-7a8237671e79__31877.1682765399.jpg?c=1"
   },
   {
     _id: 22,
@@ -309,7 +309,7 @@ export const products = [
     discount: 8,
     hero: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://i.pinimg.com/originals/33/3c/6e/333c6e7c7fe56f3b2344d31afa6fe316.jpg"
   },
 
 
@@ -324,7 +324,7 @@ export const products = [
     discount: 15,
     villain: true,
     rating: 4.8,
-    image_url: ""
+    image_url: "https://i.ebayimg.com/images/g/ogUAAOSwnCRiG3DV/s-l1600.jpg"
   },
   {
     _id: 24,
@@ -337,7 +337,7 @@ export const products = [
     discount: 12,
     hero: true,
     rating: 4.6,
-    image_url: ""
+    image_url: "https://shonenroad.com/wp-content/uploads/2022/09/roronoa-zoro-img.png"
   },
   {
     _id: 25,
@@ -350,7 +350,7 @@ export const products = [
     discount: 2,
     villain: true,
     rating: 4.9,
-    image_url: ""
+    image_url: "https://www.favorgk.com/cdn/shop/products/502_c5fd20fb-1120-4ccb-81ce-2208a10015f5_1024x1024@2x.jpg?v=1656063808"
   },
   {
     _id: 26,
@@ -363,11 +363,11 @@ export const products = [
     discount: 15,
     hero: true,
     rating: 4.8,
-    image_url: ""
+    image_url: "https://cdn.shopify.com/s/files/1/0260/4095/9047/products/65384-2823566.jpg?v=1670312508"
   },
   {
     _id: 27,
-    name: "Sensui Shinobu",
+    name: "Hatake Kakashi",
     details: "Height: 6'0\", Occupation: Former Spirit Detective",
     price: 2199,
     originalPrice: 3299,
@@ -376,7 +376,7 @@ export const products = [
     discount: 18,
     villain: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://cdna.artstation.com/p/assets/images/images/062/858/794/large/horizon-_lite-2.jpg?1684145692"
   },
   {
     _id: 28,
@@ -389,7 +389,7 @@ export const products = [
     discount: 12,
     hero: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://cdn.shopify.com/s/files/1/0380/6380/0459/products/pre-order-one-punch-man-saitama-17-scale-figureopm-01-10ax-385325.jpg?v=1657281174"
   },
   {
     _id: 29,
@@ -402,7 +402,7 @@ export const products = [
     discount: 10,
     villain: true,
     rating: 4.6,
-    image_url: ""
+    image_url: "https://media.karousell.com/media/photos/products/2022/5/9/kitsune_statue__one_punch_man__1652100115_59f4c0b3_progressive"
   },
   {
     _id: 30,
@@ -415,7 +415,7 @@ export const products = [
     discount: 15,
     hero: true,
     rating: 4.8,
-    image_url: ""
+    image_url: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F08%2Fgood-smile-company-attack-on-titan-eren-yeager-figure-001.jpg?q=75&w=800&cbr=1&fit=max"
   },
 
 
@@ -431,40 +431,40 @@ export const products = [
     discount: 12,
     villain: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://imgs2.goodsmileus.com/image/cache/data/productimages/Nendoroids/AnnieLeonhart/03_2301171122502167-1200x1200.jpg"
   },
 
 
 
   {
     _id: 32,
-    name: "Gon Freecss",
+    name: "Gohan",
     details: "Height: 5'1\", Nen Type: Enhancement",
     price: 1999,
     originalPrice: 2999,
-    category: "Hunter x Hunter",
+    category: "Dragon Ballz",
     instock: true,
     discount: 10,
     hero: true,
     rating: 4.6,
-    image_url: ""
+    image_url: "https://sc04.alicdn.com/kf/H3c6fa808cc5d442d8e625b2d17bd4eddz.jpg"
   },
   {
     _id: 33,
-    name: "Hisoka Morow",
+    name: "Picolo",
     details: "Height: 6'0\", Nen Type: Transmutation",
     price: 1899,
     originalPrice: 3399,
-    category: "Hunter x Hunter",
+    category: "Dragon Ballz",
     instock: false,
     discount: 18,
     villain: true,
     rating: 4.9,
-    image_url: ""
+    image_url: "https://cdn.shopify.com/s/files/1/2566/3552/products/WechatIMG2897_1200x1200.jpg?v=1605115733"
   },
   {
     _id: 34,
-    name: "Izuku Midoriya",
+    name: "All Might",
     details: "Height: 5'5\", Quirk: One For All",
     price: 1249,
     originalPrice: 3599,
@@ -473,7 +473,7 @@ export const products = [
     discount: 15,
     hero: true,
     rating: 4.8,
-    image_url: ""
+    image_url: "https://cf.shopee.com.br/file/1373b826dc7fa9c03bd73bafda220fc9"
   },
   {
     _id: 35,
@@ -486,46 +486,72 @@ export const products = [
     discount: 10,
     villain: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://i0.wp.com/japandco.net/wp-content/uploads/2022/12/ICHIBAN-KUJI-MY-HERO-ACADEMIA-DEATH-STRUGGLE-FIGURINE-TOMURA-SHIGARAKI-LOT-E-JAPANDCO-2.jpg?fit=1080%2C1080&ssl=1"
   },
   {
     _id: 36,
-    name: "Natsu Dragneel",
+    name: "Kamado Tanjiro",
     details: "Height: 5'9\", Magic: Fire Dragon Slayer",
     price: 899,
     originalPrice: 2899,
-    category: "Fairy Tail",
+    category: "Demon Slayer",
     instock: true,
     discount: 8,
     hero: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://p-bandai.com/img/sg/p/m/N2590593001001_002.jpg"
   },
   {
     _id: 37,
-    name: "Zeref Dragneel",
+    name: "kamado Nejuko",
     details: "Height: 6'0\", Magic: Black Arts",
     price: 1699,
     originalPrice: 3299,
-    category: "Fairy Tail",
+    category: "Demon Slayer",
     instock: true,
     discount: 15,
     villain: true,
     rating: 4.8,
-    image_url: ""
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/61vbIydY9uL.jpg"
   },
   {
     _id: 38,
-    name: "Monkey D. Luffy",
+    name: "Madara Uchiha",
     details: "Height: 5'8\", Occupation: Pirate",
     price: 2599,
     originalPrice: 3599,
-    category: "One Piece",
+    category: "Demon Slayer",
     instock: false,
     discount: 20,
     hero: true,
     rating: 4.7,
-    image_url: ""
+    image_url: "https://images-cdn.ubuy.co.in/633aa0de7df7c81c19758145-anime-gk-susanoo-uchiha-madara-anime-pvc.jpg"
+  },
+  {
+    _id: 39,
+    name: "Inosuke Hasibira",
+    details: "Height: 5'8\", Occupation: Pirate",
+    price: 2599,
+    originalPrice: 3599,
+    category: "Demon Slayer",
+    instock: false,
+    discount: 20,
+    hero: true,
+    rating: 4.7,
+    image_url: "https://sc04.alicdn.com/kf/H9d0dfba6a6e944798d89760756892cbfU.png"
+  },
+  {
+    _id: 40,
+    name: "Agatsuma Zenitsu",
+    details: "Height: 5'8\", Occupation: Pirate",
+    price: 2599,
+    originalPrice: 3599,
+    category: "Demon Slayer",
+    instock: false,
+    discount: 20,
+    hero: true,
+    rating: 4.7,
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/A1CmioDXzNL.jpg"
   }
 
 
