@@ -33,6 +33,9 @@ export const reducer = (state, action) => {
             return { ...state, filterProductsByRating: payload }
         case "CLEAR":
             return { ...state, filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, cart: [], wishlist: [] }
+        case "SEARCH_ITEM":
+            // console.log("SEARCH_ITEM", payload)
+            return { ...state, searchItem: payload }
 
         default:
             throw new Error(`Unknown action type: ${action.type} `)

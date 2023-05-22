@@ -5,7 +5,7 @@ import { ProductContext } from '../../context/ProductContext';
 
 
 export const FilterCard = () => {
-    const { state, dispatch, filterProductsBySelectedRating, homepageData, filterBySelectedCategory } = useContext(ProductContext);
+    const { state, dispatch, filterProductsBySelectedRating, homepageData, searchedProducts } = useContext(ProductContext);
 
 
     const sortingHandler = (e) => {
@@ -27,7 +27,7 @@ export const FilterCard = () => {
                     <NavLink className="product_navlink" onClick={() => dispatch({ type: "CLEAR" })}  >Clear</NavLink>
                 </div>
                 <hr />
-                <p>Showing {filterProductsBySelectedRating?.length} of {homepageData?.length} products</p>
+                <p>Showing {searchedProducts?.length} of {homepageData?.length} products</p>
                 <hr />
 
                 <h2 className='product_price_title  filters_heading' >Price</h2>

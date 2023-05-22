@@ -7,7 +7,7 @@ import { ProductContext } from "../context/ProductContext";
 
 
 export const Header = () => {
-    const { cart, wishlist } = useContext(ProductContext)
+    const { state, dispatch, cart, wishlist } = useContext(ProductContext)
     return (
         <>
             <div className="container">
@@ -17,7 +17,7 @@ export const Header = () => {
                 {/* <div className="hero_section_content" > */}
 
                 {/* <div className="search_button" > */}
-                <input className="hero_section_content_input" type="text" placeholder="Search for an action figure" />
+                <input className="hero_section_content_input" type="text" value={state.searchItem} placeholder="Search for an action figure" onChange={(e) => dispatch({ type: "SEARCH_ITEM", payload: e.target.value })} />
                 {/* <button className="hero_section_content_button" >Search</button> */}
                 {/* </div> */}
 

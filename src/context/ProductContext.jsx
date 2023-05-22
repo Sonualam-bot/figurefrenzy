@@ -1,14 +1,14 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import { reducer } from "../reducer/reducer";
 
-import { categoryContext } from "../pages/homepage/CategoryContext";
+
 
 import axios from "axios";
 
 
 export const ProductContext = createContext();
 
-const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, cart: [], wishlist: [] }
+const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, searchItem: "", cart: [], wishlist: [] }
 
 export const ProductProvider = ({ children }) => {
 
@@ -68,7 +68,14 @@ export const ProductProvider = ({ children }) => {
     })
 
 
+    const searchedProducts = filterProductsBySelectedRating?.filter((figure) => {
+        if (state.searchItem === "") {
+            return true
+        }
 
+        console.log("searched name", state.searchItem.toLowerCase())
+        return figure.name.toLowerCase().includes(state.searchItem.toLowerCase())
+    })
 
 
 
@@ -136,6 +143,7 @@ export const ProductProvider = ({ children }) => {
         homepageData,
         filterBySelectedCategory,
         filterProductsBySelectedRating,
+        searchedProducts,
 
 
 
