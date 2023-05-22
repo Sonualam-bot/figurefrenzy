@@ -1,15 +1,25 @@
 import { createContext, useEffect, useReducer, useState } from "react";
-import { initialState, reducer } from "../reducer/reducer";
+import { reducer } from "../reducer/reducer";
+
+import { categoryContext } from "../pages/homepage/CategoryContext";
 
 import axios from "axios";
 
+
 export const ProductContext = createContext();
 
+const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, cart: [], wishlist: [] }
+
 export const ProductProvider = ({ children }) => {
+
+
+
+
     const [state, dispatch] = useReducer(reducer, initialState);
+
+
     const [homepageData, setHomepageData] = useState([]);
     // const [selectedItemId, setSelectedItemId] = useState('')
-
 
     const showHomepageData = async () => {
         try {
@@ -25,24 +35,42 @@ export const ProductProvider = ({ children }) => {
         }
     }
 
-    // const selectedProductId = async () => {
-    //     try {
-    //         const response = await fetch(`/api/products/:productId`)
-    //         const data = await response.json()
-    //         console.log("productId", data)
-    //         setSelectedItemId(data.productId)
+    const filterPriceByRangeInput = homepageData?.filter((figure) => {
+        console.log("state.filterPriceByRange", state.filterPriceByRange)
+        return Math.floor(figure.price) <= state.filterPriceByRange
+    })
 
-    //     } catch (e) {
-    //         console.log(e)
-    //     }
-    // }
+    const sortByPrice = filterPriceByRangeInput?.sort((a, b) => {
+        if (state.sortBy === "lowToHigh") {
+            console.log(a.price - b.price);
+            return a.price - b.price;
+        } else if (state.sortBy === "highToLow") {
+            console.log(b.price - a.price);
+            return b.price - a.price;
+        }
 
-    // async function getCharacters() {
-    //     const response = await axios.get("/api/products/:productId")
-    //     console.log("trying", response.data)
-    // }
+    });
 
-    // getCharacters()
+    const filterBySelectedCategory = sortByPrice?.filter((figure) => {
+        if (!state.category.hero && !state.category.villain) {
+            return true
+
+        }
+        return (
+            (state.category.hero && figure.hero) || (state.category.villain && figure.villain)
+            // figure
+        )
+
+    })
+
+    const filterProductsBySelectedRating = filterBySelectedCategory?.filter((figure) => {
+        return figure.rating >= parseFloat(state.filterProductsByRating)
+    })
+
+
+
+
+
 
 
 
@@ -75,7 +103,9 @@ export const ProductProvider = ({ children }) => {
     }
 
     const filterHeroFigure = (e) => {
-        const filterHero = state.productsDb?.filter((figure) => figure.type === "hero")
+        const filterHero = homepageData?.filter((figure) => figure.type === "hero")
+
+        console.log(homepageData?.filter((figure) => figure.type === "hero"))
 
         // const showAllChar = state.productsDb?.map((figure) => figure)
 
@@ -99,7 +129,16 @@ export const ProductProvider = ({ children }) => {
 
 
     const value = {
-        productsArr: homepageData,
+        state,
+        dispatch,
+        filterPriceByRangeInput,
+        // sortByPrice,
+        homepageData,
+        filterBySelectedCategory,
+        filterProductsBySelectedRating,
+
+
+
         cart: state.cart,
         wishlist: state.wishlist,
         individualData: state.individualData,

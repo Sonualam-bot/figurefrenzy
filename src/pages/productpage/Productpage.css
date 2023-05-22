@@ -51,8 +51,10 @@
 }
 
 .product_navlink {
-  font-size: 1.4rem;
+  font-size: 1rem;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .product_main_content {
