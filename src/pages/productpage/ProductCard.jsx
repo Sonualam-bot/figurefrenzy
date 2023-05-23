@@ -5,9 +5,14 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
+import { CartContext } from "../../context/CartContext";
 
 export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     const { getProductId } = useContext(IndividualContext)
+    const { fetchUserCart } = useContext(CartContext)
+
+
+    const userToken = localStorage.getItem("token");
 
     // console.log(data)
     const {
@@ -71,7 +76,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                     </button>
                 )}
                 {page !== "cart" && (
-                    <button className="add_button" onClick={() => handleCart(items)}>
+                    <button className="add_button" onClick={() => fetchUserCart(items, userToken)}>
                         {" "}
                         <span>Add to Cart</span>{" "}
                     </button>
