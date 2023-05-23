@@ -3,12 +3,14 @@ import { reducer } from "../reducer/reducer";
 
 
 
+
 import axios from "axios";
+
 
 
 export const ProductContext = createContext();
 
-const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, searchItem: "", cart: [], wishlist: [] }
+const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false, antiHero: false }, searchItem: "", filteredProducts: null, cart: [], wishlist: [] }
 
 export const ProductProvider = ({ children }) => {
 
@@ -52,12 +54,12 @@ export const ProductProvider = ({ children }) => {
     });
 
     const filterBySelectedCategory = sortByPrice?.filter((figure) => {
-        if (!state.category.hero && !state.category.villain) {
+        if (!state.category.hero && !state.category.villain && !state.category.antiHero) {
             return true
 
         }
         return (
-            (state.category.hero && figure.hero) || (state.category.villain && figure.villain)
+            (state.category.hero && figure.hero) || (state.category.villain && figure.villain) || (state.category.antiHero && figure.antiHero)
             // figure
         )
 
@@ -73,28 +75,21 @@ export const ProductProvider = ({ children }) => {
             return true
         }
 
-        console.log("searched name", state.searchItem.toLowerCase())
-        return figure.name.toLowerCase().includes(state.searchItem.toLowerCase())
+        // console.log("searched name", state.searchItem.toLowerCase())
+        return figure.name.toLowerCase().startsWith(state.searchItem.toLowerCase())
     })
 
+    // const filterBySelectedCategory =   (selectedCategory) => {
+    //     if(selectedCategory.type ===  )
+    // }
 
 
 
 
-    const addToCart = (figure) => {
-        const addedItems = state.cart.find(({ _id }) => _id === figure._id)
 
-        console.log("addedItems", addedItems)
 
-        if (!addedItems) {
-            dispatch({
-                type: "ADD_TO_CART",
-                payload: {
-                    addedItems: figure
-                }
-            })
-        }
-    }
+
+
 
     const addToWishlist = (figure) => {
         const addedToWishlist = state.wishlist.find(({ _id }) => _id === figure._id)
@@ -150,7 +145,7 @@ export const ProductProvider = ({ children }) => {
         cart: state.cart,
         wishlist: state.wishlist,
         individualData: state.individualData,
-        addToCart,
+
         addToWishlist,
         filterHeroFigure,
         // selectedItemId,
