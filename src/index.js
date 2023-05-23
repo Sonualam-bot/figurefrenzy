@@ -10,6 +10,7 @@ import { ProductProvider } from "./context/ProductContext";
 import { AuthContextProvider } from "./context/AuthContext";
 import { CategoryProvider } from "./pages/homepage/CategoryContext";
 import { IndividualProvider } from "./pages/individualPage/IndividualContext";
+import { CartContextProvider } from "./context/CartContext";
 
 // Call make Server
 makeServer();
@@ -19,11 +20,13 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthContextProvider>
         <ProductProvider>
-          <CategoryProvider>
-            <IndividualProvider>
-              <App />
-            </IndividualProvider>
-          </CategoryProvider>
+          <CartContextProvider>
+            <CategoryProvider>
+              <IndividualProvider>
+                <App />
+              </IndividualProvider>
+            </CategoryProvider>
+          </CartContextProvider>
         </ProductProvider>
       </AuthContextProvider>
 

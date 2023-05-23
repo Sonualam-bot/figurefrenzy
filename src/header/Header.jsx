@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom"
 
 import { useContext } from "react"
 import { ProductContext } from "../context/ProductContext";
+import { CartContext } from "../context/CartContext";
 // import { Login } from "../pages/login/Login";
 
 
 
 export const Header = () => {
-    const { state, dispatch, cart, wishlist } = useContext(ProductContext)
+    const { state, dispatch, wishlist } = useContext(ProductContext)
+    const { cartItems } = useContext(CartContext)
     return (
         <>
             <div className="container">
@@ -25,9 +27,10 @@ export const Header = () => {
                 <div className="row_aside">
                     <NavLink to="/" className="nav_links" >Home</NavLink>
                     <NavLink to="/product" className="nav_links" >Shop</NavLink>
-                    <NavLink to="/cart" className="nav_links" >Cart ({cart.length})   </NavLink>
+                    <NavLink to="/cart" className="nav_links" >Cart ({cartItems.length})   </NavLink>
                     <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlist.length}) </NavLink>
                     <NavLink className="nav_links nav_button" to="/login" >Login</NavLink>
+                    <NavLink className="nav_links nav_button" to="/mock-api"   >Mock-Mock</NavLink>
                 </div>
 
             </div>
