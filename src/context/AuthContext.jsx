@@ -24,10 +24,7 @@ export const AuthContextProvider = ({ children }) => {
 
     })
 
-    const guestLogin = {
-        email: "adarshbalika@gmail.com",
-        password: "adarshbalika"
-    }
+
 
     const loginHandler = async (e) => {
         e.preventDefault()
@@ -36,16 +33,9 @@ export const AuthContextProvider = ({ children }) => {
             console.log("here i am looking for status", response)
             if (response.status === 200) {
 
-                localStorage.setItem("token", response.data.encodedToken)
+                localStorage.setItem("token", JSON.stringify(response.data.encodedToken))
                 alert("Login Successfull")
                 navigate("/product")
-            } else {
-                setLoginInput({
-
-                    email: "adarshbalika@gmail.com",
-                    password: "adarshbalika"
-
-                })
             }
             setLoginInput({
 
