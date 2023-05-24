@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { useContext } from "react"
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 // import { Login } from "../pages/login/Login";
 
 
@@ -10,6 +11,7 @@ import { CartContext } from "../context/CartContext";
 export const Header = () => {
     const { state, dispatch, wishlist } = useContext(ProductContext)
     const { cartItems } = useContext(CartContext)
+    const { wishlistItems } = useContext(WishlistContext)
     return (
         <>
             <div className="container">
@@ -28,7 +30,7 @@ export const Header = () => {
                     <NavLink to="/" className="nav_links" >Home</NavLink>
                     <NavLink to="/product" className="nav_links" >Shop</NavLink>
                     <NavLink to="/cart" className="nav_links" >Cart ({cartItems.length})   </NavLink>
-                    <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlist.length}) </NavLink>
+                    <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlistItems.length}) </NavLink>
                     <NavLink className="nav_links nav_button" to="/login" >Login</NavLink>
                     <NavLink className="nav_links nav_button" to="/mock-api"   >Mock-Mock</NavLink>
                 </div>

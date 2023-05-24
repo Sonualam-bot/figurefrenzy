@@ -7,10 +7,19 @@ import { AiFillInstagram } from "react-icons/ai"
 
 
 import { categoryContext } from "./CategoryContext";
-import { HomePageSlider } from "./HomePageSlider";
+
+import { NavLink } from "react-router-dom";
 
 export const HomePage = () => {
-    const { category } = useContext(categoryContext);
+    const { category, selectedCategory, selectedCategoryId } = useContext(categoryContext);
+
+    console.log("this is the selected category", selectedCategory)
+
+    // const filteredProducts = homepageData.filter((product) => {
+    // Replace "categoryKey" with the actual key representing the category in your product object
+    //     return product.categoryKey === selectedCategory;
+    //   });
+
     return (
         <>
             <div className="body-div" >
@@ -44,17 +53,19 @@ export const HomePage = () => {
                 <div className="hero_category_title" >Categories to Choose From</div>
 
                 <div className="hero_categories" >
-                    {category.map(({ _id, type, description, image_url }) => {
+                    {category.length === 0 ? <h2>Categories are loading</h2> : category?.map(({ _id, type, description, image_url }) => {
                         return (
 
-                            <li className="hero_categories_card" key={_id} >
-                                <img src={image_url} alt="chitrrr" />
-                                <div className="hero_text" >
-                                    <h3> {type} </h3>
-                                    <p> {description} </p>
-                                </div>
-
-                            </li>
+                            <NavLink to="/product" className="hero_nav_link" onClick={() => selectedCategoryId(_id)}>
+                                <li className="hero_categories_card" key={_id} value={type}  >
+                                    {/* {console.log(type)} */}
+                                    <img src={image_url} alt="chitrrr" />
+                                    <div className="hero_text" >
+                                        <h3> {type} </h3>
+                                        <p> {description} </p>
+                                    </div>
+                                </li>
+                            </NavLink>
                         )
                     })}
                 </div>

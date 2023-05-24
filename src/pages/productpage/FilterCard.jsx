@@ -1,11 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
+import { categoryContext } from "../homepage/CategoryContext";
 
 
 
 export const FilterCard = () => {
-    const { state, dispatch, filterProductsBySelectedRating, homepageData, searchedProducts } = useContext(ProductContext);
+    const { state, dispatch, homepageData, searchedProducts } = useContext(ProductContext);
+
+    const { filteredProducts } = useContext(categoryContext)
 
 
     const sortingHandler = (e) => {
@@ -27,7 +30,7 @@ export const FilterCard = () => {
                     <NavLink className="product_navlink" onClick={() => dispatch({ type: "CLEAR" })}  >Clear</NavLink>
                 </div>
                 <hr />
-                <p>Showing {searchedProducts?.length} of {homepageData?.length} products</p>
+                <p>Showing {filteredProducts?.length} of {homepageData?.length} products</p>
                 <hr />
 
                 <h2 className='product_price_title  filters_heading' >Price</h2>
@@ -41,8 +44,21 @@ export const FilterCard = () => {
 
                 <h2 className="filters_heading" >Category</h2>
                 <div className='product_category' >
-                    <div> <input className="padding_bottom" type='checkbox' value="hero" checked={state.category.hero} onClick={() => dispatch({ type: "HERO_TYPE" })} />Hero Figure</div>
-                    <div> <input className="padding_bottom" type='checkbox' value="villain" checked={state.category.villain} onClick={() => dispatch({ type: "VILLAIN_TYPE" })} />Villain Figure</div>
+
+                    {/* <div>
+                        <input className="padding_bottom" type='checkbox' checked={state.filteredProducts === null} onClick={() => dispatch({ type: "SHOW_ALL_PRODUCTS" })} />Show All Products
+                    </div> */}
+
+
+                    <div>
+                        <input className="padding_bottom" type='checkbox' value="hero" checked={state.category.hero} onClick={() => dispatch({ type: "HERO_TYPE" })} />Hero Figure
+                    </div>
+                    <div>
+                        <input className="padding_bottom" type='checkbox' value="villain" checked={state.category.villain} onClick={() => dispatch({ type: "VILLAIN_TYPE" })} />Villain Figure
+                    </div>
+                    <div>
+                        <input className="padding_bottom" type='checkbox' value="antiHero" checked={state.category.antiHero} onClick={() => dispatch({ type: "ANTI_HERO_TYPE" })} />Anti-Hero Figure
+                    </div>
                 </div>
 
                 <hr />
