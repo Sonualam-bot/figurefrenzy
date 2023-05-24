@@ -252,3 +252,73 @@
   opacity: 1;
   right: 0;
 }
+
+.remove_button {
+  width: 100%;
+  margin: 8px 0px;
+  font-size: 14px;
+  padding: 8px 0;
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 5px;
+  border-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.remove_button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.remove_button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.remove_button:hover span {
+  padding-right: 25px;
+}
+
+.remove_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.increment_decrement_cart_quantity {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 105px;
+}
+
+.remove_button_incDec {
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; */
+}
+
+.remove_button_incDec:focus {
+  outline: none;
+}
+
+.increment_decrement_cart_quantity span {
+  margin: 0 7px;
+  font-size: 1rem;
+  color: var(--secondary);
+}

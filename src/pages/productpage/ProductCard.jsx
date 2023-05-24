@@ -5,18 +5,19 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext, useState, useEffect } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
-import { CartContext } from "../../context/CartContext";
+import { CartContext, incrementUserCartQuantity } from "../../context/CartContext";
 import { WishlistContext } from "../../context/WishlistContext";
 
 export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     const [addedToCart, setAddedToCart] = useState(false);
     const [isInWishlist, setIsInWishlist] = useState(false)
+    const [quantity, setQuantity] = useState(1);
 
 
 
     const { getProductId } = useContext(IndividualContext);
-    const { fetchUserCart, cartItems } = useContext(CartContext);
-    const { fetchUserWishlist, wishlistItems } = useContext(WishlistContext);
+    const { fetchUserCart, cartItems, deleteUserCartItems, incrementUserCartQuantity } = useContext(CartContext);
+    const { fetchUserWishlist, wishlistItems, deleteUserWishlisItems } = useContext(WishlistContext);
 
 
     const userToken = localStorage.getItem("token");
@@ -32,9 +33,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     }, [cartItems, items, wishlistItems]);
 
 
-    const wishlistStyleButton = {
-        color: isInWishlist ? "yellow" : "black"
-    }
+
 
 
 
@@ -55,7 +54,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
 
 
-
+    console.log("this is cartItems qty", items.name)
 
     return (
         <>
@@ -107,13 +106,14 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                                 }
                                 }
                                 className="wishlist_button"
-                                style={wishlistStyleButton}
+
                             >
                                 <AiFillHeart className="wish_icon" />
                             </button>}
                     </div>
                 )}
                 {page !== "cart" && (
+
                     <button className="add_button" onClick={() => {
                         if (addedToCart) {
                             navigate("/cart")
@@ -130,6 +130,47 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                         <span>{addedToCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
                     </button>
                 )}
+
+                {page === "cart" && (
+
+                    <div>
+                        <div className="increment_decrement_cart_quantity" >
+                            <button className="remove_button_incDec" onClick={() => {
+                                if (items.qty <= 1) {
+                                    deleteUserCartItems(items._id, userToken)
+
+                                } else {
+                                    incrementUserCartQuantity(items._id, "decrement", userToken)
+                                }
+                            }}
+
+                            > - </button>
+                            <span>{items.qty}</span>
+                            <button className="remove_button_incDec" onClick={() => incrementUserCartQuantity(items._id, "increment", userToken)} > + </button>
+
+                        </div>
+                        <button className="remove_button" onClick={() => deleteUserCartItems(items._id, userToken)} >
+                            {" "}
+                            <span> Remove From Cart</span>{" "}
+                        </button>
+                    </div>
+
+
+
+                )}
+
+
+
+                {page === "wishlist" && (
+
+                    <button className="wishlist_button" onClick={() => deleteUserWishlisItems(items._id, userToken)} >
+                        <AiFillHeart className="wishlist_button wish_icon2" />
+                    </button>
+                )}
+
+
+
+
             </div>
         </>
     );

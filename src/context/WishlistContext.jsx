@@ -27,9 +27,24 @@ export const WishlistProvider = ({ children }) => {
     }
 
 
+    const deleteUserWishlisItems = async (productId, userToken) => {
+        try {
+            const response = await axios.delete(`/api/user/wishlist/${productId}`, {
+                headers: {
+                    authorization: userToken
+                }
+            })
+            setWishlistItems(response.data.wishlist)
+
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+
     return (
         <>
-            <WishlistContext.Provider value={{ wishlistItems, fetchUserWishlist }} >
+            <WishlistContext.Provider value={{ wishlistItems, fetchUserWishlist, deleteUserWishlisItems }} >
                 {children}
             </WishlistContext.Provider>
         </>
