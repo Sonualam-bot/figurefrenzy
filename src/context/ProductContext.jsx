@@ -91,43 +91,8 @@ export const ProductProvider = ({ children }) => {
 
 
 
-    const addToWishlist = (figure) => {
-        const addedToWishlist = state.wishlist.find(({ _id }) => _id === figure._id)
 
-        if (!addedToWishlist) {
-            dispatch({
-                type: "ADD_TO_WISHLIST",
-                payload: {
-                    addedToWishlist: figure
-                }
-            })
-        }
-    }
 
-    const filterHeroFigure = (e) => {
-        const filterHero = homepageData?.filter((figure) => figure.type === "hero")
-
-        console.log(homepageData?.filter((figure) => figure.type === "hero"))
-
-        // const showAllChar = state.productsDb?.map((figure) => figure)
-
-        if (e.target.checked) {
-            dispatch({
-                type: "FILTER_HERO",
-                payload: {
-                    heroType: filterHero
-                }
-            })
-        } else {
-            dispatch({
-                type: "SHOW_ALL_PRODUCTS",
-                // here payload not needed as we are displaying the original array in the reducer
-                // payload: {
-                //     showAllData: showAllChar
-                // }
-            })
-        }
-    }
 
 
     const value = {
@@ -145,10 +110,6 @@ export const ProductProvider = ({ children }) => {
         cart: state.cart,
         wishlist: state.wishlist,
         individualData: state.individualData,
-
-        addToWishlist,
-        filterHeroFigure,
-        // selectedItemId,
 
 
     }

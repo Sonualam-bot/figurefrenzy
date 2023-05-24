@@ -127,7 +127,7 @@
   padding: 20px;
   text-align: center;
   /* margin: 15px; */
-
+  height: 450px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -140,6 +140,9 @@
     #eff8ff 31%,
     #66c1ee 100%
   );
+}
+.hero_aside_content .hero_img img {
+  height: 400px;
 }
 
 .hero_aside_content .hero_img,
@@ -238,6 +241,10 @@
   color: #000;
   border-radius: 10px;
 } */
+
+.hero_categories .hero_nav_link {
+  text-decoration: none;
+}
 
 .hero_categories li {
   display: flex;

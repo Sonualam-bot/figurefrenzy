@@ -5,19 +5,19 @@ export const reducer = (state, action) => {
 
 
     switch (type) {
-        case "SHOW_ALL_PRODUCTS":
-            console.log("all products", payload)
-        // return { ...state, productsDb: }
-        case "ADD_TO_CART":
-            console.log("ADD_TO_CART", payload)
-            console.log("cart", { ...state, cart: [...state.cart, payload.addedItems] })
-            return { ...state, cart: [...state.cart, payload.addedItems] }
-        case "ADD_TO_WISHLIST":
-            console.log("ADD_TO_CART", payload)
-            return { ...state, wishlist: [...state.wishlist, payload.addedToWishlist] }
+        // case "SHOW_ALL_PRODUCTS":
+        //     console.log("all products", payload)
+        //     return { ...state, filteredProducts: null }
+
+
+
+
         case "FILTER_HERO":
             console.log("FILTER_HERO", payload)
             return { ...state, filteredHero: payload.heroType }
+
+
+
 
         case "FILTER_PRICE_BY_RANGE":
             console.log("from paylaod", payload)
@@ -29,6 +29,8 @@ export const reducer = (state, action) => {
             return { ...state, category: { ...state.category, hero: !state.category.hero } }
         case "VILLAIN_TYPE":
             return { ...state, category: { ...state.category, villain: !state.category.villain } }
+        case "ANTI_HERO_TYPE":
+            return { ...state, category: { ...state.category, antiHero: !state.category.antiHero } }
         case "FILTER_BY_RATING":
             return { ...state, filterProductsByRating: payload }
         case "CLEAR":

@@ -1,20 +1,44 @@
 import { AiOutlineStar } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { AiFillHeart } from "react-icons/ai";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
 import { CartContext } from "../../context/CartContext";
+import { WishlistContext } from "../../context/WishlistContext";
 
 export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
-    const { getProductId } = useContext(IndividualContext)
-    const { fetchUserCart } = useContext(CartContext)
+    const [addedToCart, setAddedToCart] = useState(false);
+    const [isInWishlist, setIsInWishlist] = useState(false)
+
+
+
+    const { getProductId } = useContext(IndividualContext);
+    const { fetchUserCart, cartItems } = useContext(CartContext);
+    const { fetchUserWishlist, wishlistItems } = useContext(WishlistContext);
 
 
     const userToken = localStorage.getItem("token");
 
-    // console.log(data)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const isItemInCart = cartItems.some((cartItem) => cartItem._id === items._id);
+        setAddedToCart(isItemInCart);
+
+        const isItemInWishlist = wishlistItems.some((wishlistItem) => wishlistItem._id === items._id)
+        setIsInWishlist(isItemInWishlist)
+    }, [cartItems, items, wishlistItems]);
+
+
+    const wishlistStyleButton = {
+        color: isInWishlist ? "yellow" : "black"
+    }
+
+
+
+    // console.log("this is the btn text", btnText)
     const {
         _id,
         name,
@@ -29,9 +53,9 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
         image_url,
     } = items;
 
-    // useEffect(() => {
-    //     console.log("selecteditem", selecteditem)
-    // }, [getProductId])
+
+
+
 
     return (
         <>
@@ -68,17 +92,42 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                 </div>
 
                 {page !== "wishlist" && (
-                    <button
-                        onClick={() => handleWishlist(items)}
-                        className="wishlist_button"
-                    >
-                        <AiOutlineHeart className="wish_icon" />
-                    </button>
+
+                    <div>
+                        {isInWishlist ?
+                            <button className="wishlist_button" >
+                                <AiFillHeart className="wish_icon2" />
+                            </button> :
+
+
+                            <button
+                                onClick={() => {
+                                    fetchUserWishlist(items, userToken);
+                                    setIsInWishlist(true)
+                                }
+                                }
+                                className="wishlist_button"
+                                style={wishlistStyleButton}
+                            >
+                                <AiFillHeart className="wish_icon" />
+                            </button>}
+                    </div>
                 )}
                 {page !== "cart" && (
-                    <button className="add_button" onClick={() => fetchUserCart(items, userToken)}>
+                    <button className="add_button" onClick={() => {
+                        if (addedToCart) {
+                            navigate("/cart")
+                        } else {
+                            fetchUserCart(items, userToken);
+                            setAddedToCart(true)
+
+                        }
+
+
+                    }
+                    }>
                         {" "}
-                        <span>Add to Cart</span>{" "}
+                        <span>{addedToCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
                     </button>
                 )}
             </div>

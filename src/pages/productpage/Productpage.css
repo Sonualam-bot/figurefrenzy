@@ -201,6 +201,16 @@
 
 .wishlist_button .wish_icon {
   font-size: 1.7rem;
+  color: var(--white);
+  stroke-width: 0px;
+}
+
+.wishlist_button svg:hover {
+  color: var(--red);
+}
+
+.wishlist_button .wish_icon2 {
+  font-size: 1.7rem;
   color: var(--red);
   stroke-width: 0px;
 }

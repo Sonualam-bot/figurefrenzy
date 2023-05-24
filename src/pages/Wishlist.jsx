@@ -4,15 +4,17 @@ import { ProductContext } from "../context/ProductContext"
 
 
 import { ProductCard } from "./productpage/ProductCard";
+import { WishlistContext } from "../context/WishlistContext";
 
 export const Wishlist = () => {
-    const { wishlist, addToCart } = useContext(ProductContext)
+    // const { wishlist, addToCart } = useContext(ProductContext)
+    const { wishlistItems } = useContext(WishlistContext)
     return (
         <>
             <div className="product_aside_content" >
-                {wishlist.map((data) => {
+                {wishlistItems.length === 0 ? <h2>Your wishlist is empty.</h2> : wishlistItems?.map((data) => {
                     return (
-                        <ProductCard items={data} handleCart={addToCart} page="wishlist" />
+                        <ProductCard items={data} page="wishlist" />
                     )
                 })}
             </div>
