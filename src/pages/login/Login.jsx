@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
-import { CartContext } from "../../context/CartContext";
+// import { CartContext } from "../../context/CartContext";
 
 export const Login = () => {
     const { loginInput, setLoginInput, loginHandler } = useContext(AuthContext);
-    const { fetchUserDetails } = useContext(CartContext)
+
 
     const handleLoginInput = (e) => {
         const { name, value } = e.target;
