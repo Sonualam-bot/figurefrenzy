@@ -11,7 +11,7 @@ import { WishlistContext } from "../../context/WishlistContext";
 export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     const [addedToCart, setAddedToCart] = useState(false);
     const [isInWishlist, setIsInWishlist] = useState(false)
-    const [quantity, setQuantity] = useState(1);
+
 
 
 
@@ -54,7 +54,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
 
 
-    console.log("this is cartItems qty", items.name)
+    // console.log("this is cartItems qty", items.name)
 
     return (
         <>
@@ -109,7 +109,8 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
                             >
                                 <AiFillHeart className="wish_icon" />
-                            </button>}
+                            </button>
+                        }
                     </div>
                 )}
                 {page !== "cart" && (
