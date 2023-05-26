@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
+
 export const Signup = () => {
     const { signupInput, setSignupInput, signUpHandler } = useContext(AuthContext);
 
@@ -17,10 +18,10 @@ export const Signup = () => {
     return (
         <>
             <div className="login-container" >
-                <div className="login-card">
+                <div className="login_card">
                     <h2>Sign up</h2>
                     <form onSubmit={signUpHandler}>
-                        <div className="form-data" >
+                        <div className="form_data" >
                             <label htmlFor="firstName">Name</label>
                             <input type="text" placeholder="Son Goku" name="firstName" value={signupInput.firstName} onChange={handleSignupInput} />
 
@@ -38,7 +39,7 @@ export const Signup = () => {
 
 
 
-                            <button type="submit">Create Account</button>
+                            <button type="submit" >Create Account</button>
 
                             <p>Already have an account? <NavLink to="/login" >sign in</NavLink>  </p>
                         </div>

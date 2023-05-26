@@ -5,6 +5,8 @@ import { ProductCard } from './ProductCard';
 import { FilterCard } from './FilterCard';
 import { categoryContext } from "../homepage/CategoryContext";
 
+import { Spinner } from "../../loaders/Spinner";
+
 
 
 export const ProductPage = () => {
@@ -47,7 +49,7 @@ export const ProductPage = () => {
                             ))
                         )
                     ) : (
-                        <p style={{ margin: '0 auto', fontWeight: '700', fontSize: '5rem' }}>Loading.....</p>
+                        <Spinner />
                     )}
                 </div>
 

@@ -1,10 +1,14 @@
-import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { useContext, useState } from "react"
+import { NavLink, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 // import { CartContext } from "../../context/CartContext";
+import { useLocation } from "react-router-dom"
 
 export const Login = () => {
-    const { loginInput, setLoginInput, loginHandler } = useContext(AuthContext);
+    const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler } = useContext(AuthContext);
+
+
+
 
 
     const handleLoginInput = (e) => {
@@ -15,22 +19,26 @@ export const Login = () => {
 
 
     const guestLogin = () => {
+        setIsLoggedIn(false)
         setLoginInput(
             {
                 email: "adarshbalika@gmail.com",
                 password: "adarshbalika",
             }
         )
-
+        setIsLoggedIn(true)
     }
 
     return (
         <>
             <div className="login-container" >
+
+
                 <div className="login-card">
                     <h2>Sign in</h2>
+
                     <form onSubmit={loginHandler} >
-                        <div className="form-data" >
+                        <div className="form_data" >
                             <label htmlFor="email" > Email</label>
                             <input type="email" name="email" value={loginInput.email} onChange={handleLoginInput} placeholder="abc@figureFrenzy.com" />
                             <label htmlFor="password" >Password</label>
@@ -42,7 +50,11 @@ export const Login = () => {
 
 
                     </form>
+
+
+
                 </div>
+
 
             </div>
         </>

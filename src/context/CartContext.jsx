@@ -1,7 +1,9 @@
 import { createContext, useState } from "react"
 import axios from "axios";
+import { toast } from "react-toastify"
 
 export const CartContext = createContext();
+
 
 
 export const CartContextProvider = ({ children }) => {
@@ -22,6 +24,7 @@ export const CartContextProvider = ({ children }) => {
             console.log('fetching useer cred', response.data.cart)
             setCartItems(response.data.cart)
 
+
         } catch (e) {
             console.log(e)
         }
@@ -39,6 +42,8 @@ export const CartContextProvider = ({ children }) => {
 
             console.log("deleting from cart", response)
             setCartItems(response.data.cart)
+
+
         } catch (e) {
             console.log(e)
         }
@@ -59,6 +64,7 @@ export const CartContextProvider = ({ children }) => {
             })
             console.log("this is the increment btn", response.data.cart)
             setCartItems(response.data.cart)
+
         } catch (e) {
             console.log(e)
         }

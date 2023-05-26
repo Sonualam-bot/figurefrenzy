@@ -2,7 +2,10 @@ import { AiOutlineStar } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import axios from "axios";
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css'
+
+
 import { useContext, useState, useEffect } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
 import { CartContext, incrementUserCartQuantity } from "../../context/CartContext";
@@ -94,7 +97,10 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
                     <div>
                         {isInWishlist ?
-                            <button className="wishlist_button" >
+                            <button className="wishlist_button" onClick={() => {
+                                deleteUserWishlisItems(items._id, userToken)
+                                toast.error("Removed From Wishlist")
+                            }} >
                                 <AiFillHeart className="wish_icon2" />
                             </button> :
 
@@ -103,6 +109,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                                 onClick={() => {
                                     fetchUserWishlist(items, userToken);
                                     setIsInWishlist(true)
+                                    toast.success("Added To Wishlist ")
                                 }
                                 }
                                 className="wishlist_button"
@@ -121,6 +128,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                         } else {
                             fetchUserCart(items, userToken);
                             setAddedToCart(true)
+                            toast.success(" Added To Cart ")
 
                         }
 
@@ -138,19 +146,28 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                         <div className="increment_decrement_cart_quantity" >
                             <button className="remove_button_incDec" onClick={() => {
                                 if (items.qty <= 1) {
-                                    deleteUserCartItems(items._id, userToken)
+                                    deleteUserCartItems(items._id, userToken) &&
+                                        toast.error("Removed From Cart")
+
 
                                 } else {
-                                    incrementUserCartQuantity(items._id, "decrement", userToken)
+                                    incrementUserCartQuantity(items._id, "decrement", userToken) &&
+                                        toast.error("Item qty decreased")
                                 }
                             }}
 
                             > - </button>
                             <span>{items.qty}</span>
-                            <button className="remove_button_incDec" onClick={() => incrementUserCartQuantity(items._id, "increment", userToken)} > + </button>
+                            <button className="remove_button_incDec" onClick={() => {
+                                incrementUserCartQuantity(items._id, "increment", userToken)
+                                toast.success("Item qty increased")
+                            }} > + </button>
 
                         </div>
-                        <button className="remove_button" onClick={() => deleteUserCartItems(items._id, userToken)} >
+                        <button className="remove_button" onClick={() => {
+                            deleteUserCartItems(items._id, userToken)
+                            toast.error("Removed From Cart")
+                        }} >
                             {" "}
                             <span> Remove From Cart</span>{" "}
                         </button>
@@ -164,7 +181,10 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
                 {page === "wishlist" && (
 
-                    <button className="wishlist_button" onClick={() => deleteUserWishlisItems(items._id, userToken)} >
+                    <button className="wishlist_button" onClick={() => {
+                        deleteUserWishlisItems(items._id, userToken)
+                        toast.error("Removed From Wishlist")
+                    }} >
                         <AiFillHeart className="wishlist_button wish_icon2" />
                     </button>
                 )}
