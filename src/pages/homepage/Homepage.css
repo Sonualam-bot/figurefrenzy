@@ -17,8 +17,8 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: whitesmoke;
+  /* width: 100%; */
+  /* background-color: whitesmoke; */
 }
 
 .App-header {
@@ -88,7 +88,7 @@
 .hero_section {
   display: flex;
   /* flex-wrap: wrap; */
-  flex-direction: row-reverse;
+  /* flex-direction: row; */
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
@@ -113,6 +113,57 @@
     background-position: center;
     background-repeat: no-repeat; */
 }
+
+/* experimental */
+
+/* .main_img_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+}
+
+.imgone_inner {
+  background-image: url("https://www.stylevore.com/wp-content/uploads/2020/01/5a3cc6a963a50cd65b9f399452d66efb.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.imgone_secondInner {
+  background-image: url("https://www.stylevore.com/wp-content/uploads/2020/01/5a3cc6a963a50cd65b9f399452d66efb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.imgone {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  width: 400px;
+  height: 500px;
+  border: 1px solid red;
+}
+.img_2 {
+  width: 400px;
+  height: 500px;
+  border: 1px solid red;
+  background-image: url("https://www.stylevore.com/wp-content/uploads/2020/01/5a3cc6a963a50cd65b9f399452d66efb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.img_3 {
+  width: 400px;
+  height: 500px;
+  border: 1px solid red;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnoOMgdg-4jEeAHna-SeJS9IaJwZonGtS9POjja6FjBJk8wql6ZoMsiwExCUjpIPTcvs&usqp=CAU");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.img_4 {
+  width: 400px;
+  height: 500px;
+  border: 1px solid red;
+  background-image: url("https://www.stylevore.com/wp-content/uploads/2020/01/5a3cc6a963a50cd65b9f399452d66efb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
 
 .hero_aside_content {
   /* background-color: rgba(0, 0, 0, 0);
