@@ -6,9 +6,13 @@ import "./App.css";
 import "./pages/homepage/Homepage.css"
 import "./pages/productpage/Productpage.css"
 import "./pages/individualPage/IndividualPage.css"
-import "./pages/login/Login.css"
+import "./pages/login/Form.css"
+import "./pages/profile/Profile.css"
 
 import 'react-slideshow-image/dist/styles.css'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 //All Pages imports
@@ -22,6 +26,11 @@ import { Login } from "./pages/login/Login";
 import { Signup } from "./pages/login/Signup";
 
 import MockAPI from "./backend/mockman/MockAPI";
+import { RequiresAuth } from "./context/RequiresAuth";
+import { Logout } from "./pages/login/Logout";
+import { Profile } from "./pages/profile/Profile";
+import { Details } from "./pages/profile/Details";
+import { Address } from "./pages/profile/Address";
 
 function App() {
   return (
@@ -31,14 +40,33 @@ function App() {
         <Header />
       </header>
 
+
+      <ToastContainer position="bottom-right" autoClose="500"
+        closeOnClick="true"
+        pauseOnHover="true"
+        draggable="true" />
+
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product" element={<ProductPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={
+          <RequiresAuth>
+            <Cart />
+          </RequiresAuth>
+        } />
+        <Route path="/wishlist" element={
+          <RequiresAuth>
+            <Wishlist />
+          </RequiresAuth>
+        } />
         <Route path="/individual" element={<Individual />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/details" element={< Details />} />
+        <Route path="address" element={<Address />} />
         <Route path="/mock-api" element={<MockAPI colorScheme="dark" />} />
       </Routes>
     </div>

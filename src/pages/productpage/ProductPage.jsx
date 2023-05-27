@@ -36,21 +36,18 @@ export const ProductPage = () => {
 
 
                 <div className="product_aside_content" >
-                    {!isLoading ? (
-                        filteredProducts === null ? (
-                            searchedProducts.map((data) => (
-                                <ProductCard key={data._id} items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
-                            ))
-                        ) : filteredProducts.length === 0 ? (
-                            <p>No products to display</p>
-                        ) : (
-                            filteredProducts.map((data) => (
-                                <ProductCard key={data._id} items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
-                            ))
-                        )
-                    ) : (
-                        <Spinner />
-                    )}
+                    {!isLoading ?
+
+                        searchedProducts.map((data) => (
+                            <ProductCard key={data._id} items={data} handleCart={addToCart} handleWishlist={addToWishlist} />
+                        ))
+
+                        : (
+                            <Spinner />
+                        )}
+
+
+
                 </div>
 
             </div>

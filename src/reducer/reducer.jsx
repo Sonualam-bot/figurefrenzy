@@ -5,9 +5,14 @@ export const reducer = (state, action) => {
 
 
     switch (type) {
-        // case "SHOW_ALL_PRODUCTS":
-        //     console.log("all products", payload)
-        //     return { ...state, filteredProducts: null }
+        case "SHOW_ALL_PRODUCTS":
+            // console.log("all products", payload)
+            // if (action.payload !== "SHOW_ALL_PRODUCTS") {
+            //     state.category.SHOW_ALL_PRODUCTS = Object.values(state.category).every(
+            //         (value) => value === false
+            //     );
+            // }
+            return { ...state, all: state.category.all }
 
 
 
@@ -34,7 +39,7 @@ export const reducer = (state, action) => {
         case "FILTER_BY_RATING":
             return { ...state, filterProductsByRating: payload }
         case "CLEAR":
-            return { ...state, filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false }, cart: [], wishlist: [] }
+            return { ...state, filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { all: true, hero: false, villain: false }, cart: [], wishlist: [] }
         case "SEARCH_ITEM":
             // console.log("SEARCH_ITEM", payload)
             return { ...state, searchItem: payload }

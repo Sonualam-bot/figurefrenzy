@@ -8,7 +8,8 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: 1,
-    type: 'hero',
+    title: "hero",
+    type: 'HERO_TYPE',
     hero: true,
     description:
       "A hero is a person who demonstrates an utmost commitment to their morals, no matter the obstacle or consequence.",
@@ -16,7 +17,8 @@ export const categories = [
   },
   {
     _id: 2,
-    type: "villain",
+    title: "villain",
+    type: "VILLAIN_TYPE",
     villain: true,
     description:
       "A villain is defined as an evil or wicked character that enacts evil action and/or harms others.",
@@ -24,7 +26,8 @@ export const categories = [
   },
   {
     _id: 3,
-    type: "antiHero",
+    title: "anti-hero",
+    type: "ANTI_HERO_TYPE",
     antiHero: true,
     description:
       "An antihero (sometimes spelled as anti-hero) or antiheroine is a main character in a story who may lack conventional heroic qualities and attributes, such as idealism, courage, and morality.",

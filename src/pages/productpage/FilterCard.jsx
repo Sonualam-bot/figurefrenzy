@@ -45,9 +45,9 @@ export const FilterCard = () => {
                 <h2 className="filters_heading" >Category</h2>
                 <div className='product_category' >
 
-                    {/* <div>
-                        <input className="padding_bottom" type='checkbox' checked={state.filteredProducts === null} onClick={() => dispatch({ type: "SHOW_ALL_PRODUCTS" })} />Show All Products
-                    </div> */}
+                    <div>
+                        <input className="padding_bottom" type='checkbox' checked={state.category.all} onClick={() => dispatch({ type: "SHOW_ALL_PRODUCTS" })} />All
+                    </div>
 
 
                     <div>

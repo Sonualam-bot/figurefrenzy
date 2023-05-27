@@ -10,7 +10,7 @@ import axios from "axios";
 
 export const ProductContext = createContext();
 
-const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { hero: false, villain: false, antiHero: false }, searchItem: "", filteredProducts: null, cart: [], wishlist: [] }
+const initialState = { filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { all: true, hero: false, villain: false, antiHero: false }, searchItem: "", filteredProducts: null, cart: [], wishlist: [] }
 
 export const ProductProvider = ({ children }) => {
 
