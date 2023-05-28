@@ -12,14 +12,21 @@ export const reducer = (state, action) => {
             //         (value) => value === false
             //     );
             // }
-            return { ...state, all: state.category.all }
+            return {
+                ...state, category: {
+                    all: !state.category.all,
+                    hero: false,
+                    villain: false,
+                    antiHero: false
+                }
+            }
 
 
 
 
-        case "FILTER_HERO":
-            console.log("FILTER_HERO", payload)
-            return { ...state, filteredHero: payload.heroType }
+        // case "FILTER_HERO":
+        //     console.log("FILTER_HERO", payload)
+        //     return { ...state, filteredHero: payload.heroType }
 
 
 
@@ -31,15 +38,15 @@ export const reducer = (state, action) => {
             return { ...state, sortBy: payload }
         case "HERO_TYPE":
             console.log("HERO_TYPE", { ...state.category, hero: !state.category.hero })
-            return { ...state, category: { ...state.category, hero: !state.category.hero } }
+            return { ...state, category: { ...state.category, hero: !state.category.hero, all: false } }
         case "VILLAIN_TYPE":
-            return { ...state, category: { ...state.category, villain: !state.category.villain } }
+            return { ...state, category: { ...state.category, villain: !state.category.villain, all: false } }
         case "ANTI_HERO_TYPE":
-            return { ...state, category: { ...state.category, antiHero: !state.category.antiHero } }
+            return { ...state, category: { ...state.category, antiHero: !state.category.antiHero, all: false } }
         case "FILTER_BY_RATING":
             return { ...state, filterProductsByRating: payload }
         case "CLEAR":
-            return { ...state, filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { all: true, hero: false, villain: false }, cart: [], wishlist: [] }
+            return { ...state, filterPriceByRange: 4500, filterProductsByRating: 0, sortBy: "", heroVillainCategory: "", category: { all: true, hero: false, villain: false, antiHero: false }, cart: [], wishlist: [] }
         case "SEARCH_ITEM":
             // console.log("SEARCH_ITEM", payload)
             return { ...state, searchItem: payload }
