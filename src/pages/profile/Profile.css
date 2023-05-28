@@ -1,0 +1,137 @@
+.profile_main_container {
+  display: flex;
+  width: 500px;
+  /* border: 1px solid red; */
+  justify-content: space-evenly;
+  margin: 10px auto;
+}
+
+.details_container,
+.address_container {
+  width: 50%;
+  height: 50px;
+}
+
+.details_container:hover,
+.address_container:hover {
+  box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 0px 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.details_container button,
+.address_container button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.user_details_address_container {
+  margin: 0 auto;
+  padding: 10px;
+  width: 500px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+.user_details_address_container:hover {
+  box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+}
+
+.user_details_section {
+  text-align: center;
+}
+
+.user_details_section img {
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* address page css */
+
+.address_form {
+  width: 400px;
+  text-align: center;
+}
+
+.address_some_input {
+  display: flex;
+  gap: 4rem;
+  line-height: 30px;
+}
+.address_some_input input {
+  line-height: 30px;
+  margin: 0.5rem;
+}
+
+.textarea textarea {
+  resize: none;
+  margin: 0 auto;
+  margin-left: 10px;
+}
+
+.address_alternate_state input {
+  line-height: 1.8rem;
+}
+
+.address_alternate_state {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  height: 30px;
+}
+
+.address_buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.address_buttons button {
+  font-size: 20px;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: blue;
+}
+
+.address_buttons button:hover {
+  box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 0px 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.address_buttons button:nth-child(1) {
+  background-color: var(--primary);
+  color: white;
+}
+
+.address_buttons button:nth-last-child(1) {
+  background-color: red;
+  color: white;
+}
+
+.show_address {
+  border: 2px solid var(--primary);
+  padding: 10px;
+  margin: 5px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.showform_button {
+  width: 100%;
+  /* margin-left: 7rem; */
+  outline: none;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--white);
+  background-color: var(--primary);
+  font-weight: 600;
+  font-size: 20px;
+}
