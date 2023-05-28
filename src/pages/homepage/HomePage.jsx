@@ -11,9 +11,11 @@ import { Spinner } from "../../loaders/Spinner";
 import { categoryContext } from "./CategoryContext";
 
 import { NavLink } from "react-router-dom";
+import { ProductContext } from "../../context/ProductContext";
 
 export const HomePage = () => {
-    const { category, selectedCategory, selectedCategoryId } = useContext(categoryContext);
+    const { category, selectedCategory } = useContext(categoryContext);
+    const { dispatch } = useContext(ProductContext)
 
     console.log("this is the selected category", selectedCategory)
 
@@ -64,15 +66,15 @@ export const HomePage = () => {
                 <div className="hero_category_title" >Categories to Choose From</div>
 
                 <div className="hero_categories" >
-                    {category.length === 0 ? <h2>Categories are loading</h2> : category?.map(({ _id, type, description, image_url }) => {
+                    {category.length === 0 ? <h2>Categories are loading</h2> : category?.map(({ _id, type, title, description, image_url }) => {
                         return (
 
-                            <NavLink to="/product" className="hero_nav_link" onClick={() => selectedCategoryId(_id)}>
-                                <li className="hero_categories_card" key={_id} value={type}  >
+                            <NavLink to="/product" className="hero_nav_link" onClick={() => dispatch({ type: type })}>
+                                <li className="hero_categories_card" key={_id} value={title}  >
                                     {/* {console.log(type)} */}
                                     <img src={image_url} alt="chitrrr" />
                                     <div className="hero_text" >
-                                        <h3> {type} </h3>
+                                        <h3> {title} </h3>
                                         <p> {description} </p>
                                     </div>
                                 </li>

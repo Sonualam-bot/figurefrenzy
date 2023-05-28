@@ -63,7 +63,10 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
         <>
             <div className="product_aside_content_figures" key={_id}>
                 <NavLink to="/individual" onClick={() => getProductId(_id)}>
-                    <img src={image_url} alt="products" />
+                    <div className="image_scale_div" >
+                        <img src={image_url} alt="products" />
+                    </div>
+
                 </NavLink>
 
                 <div className="product_category_name">
