@@ -40,18 +40,12 @@ export const AuthContextProvider = ({ children }) => {
 
                 localStorage.setItem("token", JSON.stringify(response.data.encodedToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true));
-                alert("Login Successfull")
+                // alert("Login Successfull")
                 navigate("/product")
             }
             setIsLoggedIn(true)
             toast.success("Log in Successfull ")
 
-            setLoginInput({
-
-                email: "",
-                password: ""
-
-            })
 
         } catch (e) {
             console.log(e)
@@ -77,27 +71,48 @@ export const AuthContextProvider = ({ children }) => {
 
             toast.success("You have successfully Signed up")
 
-            setSignupInput({
-                firstName: "",
-                lastName: "",
-                email: "",
-                password: ""
-            })
+            navigate("/login")
+
+            // setSignupInput({
+            //     firstName: "",
+            //     lastName: "",
+            //     email: "",
+            //     password: ""
+            // })
 
         } catch (e) {
             console.log(e)
         }
     }
 
+    const guestLogin = () => {
+        setIsLoggedIn(false)
+        setLoginInput(
+            {
+                email: "adarshbalika@gmail.com",
+                password: "adarshbalika",
+            }
+        )
+        setIsLoggedIn(true)
+    }
+
 
     const logoutHandler = () => {
         localStorage.removeItem("token")
         setIsLoggedIn(false)
+        localStorage.removeItem("isLoggedIn");
+        navigate("/login")
+        setLoginInput(
+            {
+                email: "",
+                password: "",
+            }
+        )
     }
 
     return (
         <>
-            <AuthContext.Provider value={{ signupInput, setSignupInput, signUpHandler, loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler }} >
+            <AuthContext.Provider value={{ signupInput, setSignupInput, signUpHandler, loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin }} >
                 {children}
             </AuthContext.Provider>
         </>

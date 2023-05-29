@@ -8,6 +8,7 @@ import "./pages/productpage/Productpage.css"
 import "./pages/individualPage/IndividualPage.css"
 import "./pages/login/Form.css"
 import "./pages/profile/Profile.css"
+import "./pages/checkout/checkout.css"
 
 import 'react-slideshow-image/dist/styles.css'
 
@@ -31,6 +32,7 @@ import { Logout } from "./pages/login/Logout";
 import { Profile } from "./pages/profile/Profile";
 import { Details } from "./pages/profile/Details";
 import { Address } from "./pages/profile/Address";
+import { Checkout } from "./pages/checkout/Checkout";
 
 function App() {
   return (
@@ -66,7 +68,8 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/details" element={< Details />} />
-        <Route path="address" element={<Address />} />
+        <Route path="/address" element={<Address />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/mock-api" element={<MockAPI colorScheme="dark" />} />
       </Routes>
     </div>

@@ -84,7 +84,6 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                     <h4> {name} </h4>
                 </div>
 
-                {/* <p>{details} </p> */}
                 <div className="productPrice">
                     <p>
                         &#x20b9; {price}

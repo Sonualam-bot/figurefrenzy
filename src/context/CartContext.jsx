@@ -71,6 +71,14 @@ export const CartContextProvider = ({ children }) => {
     }
 
 
+    const totalPrice = cartItems?.reduce((acc, curr) => (acc + curr.price) * curr.qty, 0)
+
+    const totalDiscount = cartItems?.reduce((acc, curr) => (acc + curr.discount) * curr.qty, 0)
+
+    const deliveryCharge = 99
+
+    const finalPrice = totalPrice - totalDiscount + deliveryCharge
+
 
     // useEffect(() => {
     //     fetchUserCart()
@@ -78,7 +86,7 @@ export const CartContextProvider = ({ children }) => {
 
     return (
         <>
-            <CartContext.Provider value={{ fetchUserCart, cartItems, deleteUserCartItems, incrementUserCartQuantity }}  >
+            <CartContext.Provider value={{ fetchUserCart, cartItems, deleteUserCartItems, incrementUserCartQuantity, totalPrice, totalDiscount, deliveryCharge, finalPrice }}  >
                 {children}
             </CartContext.Provider>
 

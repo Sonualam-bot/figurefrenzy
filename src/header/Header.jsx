@@ -4,14 +4,19 @@ import { useContext } from "react"
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
+import { AuthContext } from "../context/AuthContext";
 // import { Login } from "../pages/login/Login";
 
-
+import { HiOutlineUserCircle } from "react-icons/hi"
 
 export const Header = () => {
-    const { state, dispatch, wishlist } = useContext(ProductContext)
+    const { state, dispatch } = useContext(ProductContext)
     const { cartItems } = useContext(CartContext)
     const { wishlistItems } = useContext(WishlistContext)
+    const { isLoggedIn, loginHandler, logoutHandler } = useContext(AuthContext)
+
+    const userToken = localStorage.getItem("token");
+
     return (
         <>
             <div className="container">
@@ -29,10 +34,12 @@ export const Header = () => {
                 <div className="row_aside">
                     <NavLink to="/" className="nav_links" >Home</NavLink>
                     <NavLink to="/product" className="nav_links" >Shop</NavLink>
-                    <NavLink to="/cart" className="nav_links" >Cart ({cartItems.length})   </NavLink>
-                    <NavLink to="/wishlist" className="nav_links" >Wishlist ({wishlistItems.length}) </NavLink>
-                    <NavLink className="nav_links nav_button" to="/login" >Login</NavLink>
-                    <NavLink className="nav_links nav_button" to="/mock-api"   >Mock-Mock</NavLink>
+                    <NavLink to="/cart" className="nav_links" >Cart ({userToken ? cartItems.length : 0})   </NavLink>
+                    <NavLink to="/wishlist" className="nav_links" >Wishlist ({userToken ? wishlistItems.length : 0}) </NavLink>
+                    {/* <NavLink className="nav_links nav_button" to="/login"> Log In </NavLink> */}
+                    {isLoggedIn ? <NavLink className="nav_links nav_button" to="/profile" > <HiOutlineUserCircle /> </NavLink> : <NavLink className="nav_links nav_button" to="/login" >Log In</NavLink>}
+
+                    <NavLink className="nav_links nav_button" to="/mock-api">Mock-Mock</NavLink>
                 </div>
 
             </div>

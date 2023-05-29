@@ -5,6 +5,8 @@ import { ProductContext } from "../context/ProductContext"
 import { AiOutlineStar } from "react-icons/ai";
 import { IoIosHeartEmpty } from "react-icons/io";
 
+import { useNavigate } from "react-router";
+
 import { ProductCard } from "./productpage/ProductCard";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
@@ -12,29 +14,39 @@ import { AuthContext } from "../context/AuthContext";
 
 export const Cart = () => {
     // const { cart, addToWishlist } = useContext(ProductContext)
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, totalPrice } = useContext(CartContext)
 
     const { isLoggedIn } = useContext(AuthContext)
 
-    const totalPrice = cartItems?.reduce((acc, curr) => (acc + curr.price) * curr.qty, 0)
+    const navigate = useNavigate()
+
+
 
     const itemOriginalPrice = cartItems?.reduce((acc, curr) => (acc + curr.originalPrice) * curr.qty, 0);
 
-    const deliveryCharge = 99
 
-    const totalAmount = totalPrice + deliveryCharge
 
-    const savedAmount = itemOriginalPrice - totalPrice
 
-    // const itemPrice = cartItems[0].price
-    // console.log("items price", itemPrice)
 
-    // console.log(' Price', cartItems)
+    // const savedAmount = itemOriginalPrice - totalPrice
+
+
+
+    const itemName = cartItems?.map(({ name, qty, price }) => {
+        return (
+            < div style={{ display: "flex", justifyContent: "space-between", gap: "15rem" }} >
+                <p> {name} ({qty}) </p>
+                <p> &#x20B9; {price * qty} </p>
+            </div >
+
+
+        )
+    })
 
 
     return (
         <>
-            <h1 style={{ margin: "0 auto" }} >My Cart</h1>
+            <h1 style={{ margin: "0 auto" }} >My Cart ({cartItems.length}) </h1>
 
 
             {cartItems?.length === 0 ? "Cart is Empty" :
@@ -53,27 +65,27 @@ export const Cart = () => {
                     </div>
                     <div className="price_container" >
                         {/* <div className="price_container_inner"> */}
-                        <h1 style={{ marginTop: "0px", textAlign: "center" }} >Product Details</h1>
+                        <h1 style={{ marginTop: "0px", textAlign: "center" }} >Cart Price Details</h1>
                         <hr />
 
                         <div className="price_details">
-                            <h3>Price</h3>
-                            <h3> {totalPrice} </h3>
+                            <p> {itemName}  </p>
+                            {/* <h3>&#x20B9; {Math.round(totalPrice)} </h3> */}
                         </div>
                         <hr />
-                        <div className="price_details">
-                            <h3>Delivery Charge</h3>
-                            <h3> {deliveryCharge}  </h3>
+                        {/* <div className="price_details">
+                            <p>Delivery Charge</p>
+                            <h3>&#x20B9; {deliveryCharge}  </h3>
                         </div>
-                        <hr />
+                        <hr /> */}
                         <div className="price_details">
-                            <h3>Total Amount</h3>
-                            <h3> {totalAmount} </h3>
+                            <p>Total Amount</p>
+                            <h3>&#x20B9; {Math.round(totalPrice)} </h3>
                         </div>
                         <hr />
 
-                        <p>You saved {savedAmount} on this order</p>
-                        <button className="remove_button" >Place order</button>
+                        {/* <p>You saved &#x20B9; {Math.round(savedAmount)} on this order</p> */}
+                        <button className="remove_button" onClick={() => navigate("/checkout")}> Checkout Page </button>
                         {/* </div> */}
 
 

@@ -5,7 +5,7 @@ import { AuthContext } from "../../context/AuthContext"
 import { useLocation } from "react-router-dom"
 
 export const Login = () => {
-    const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler } = useContext(AuthContext);
+    const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin } = useContext(AuthContext);
 
 
 
@@ -18,16 +18,7 @@ export const Login = () => {
     }
 
 
-    const guestLogin = () => {
-        setIsLoggedIn(false)
-        setLoginInput(
-            {
-                email: "adarshbalika@gmail.com",
-                password: "adarshbalika",
-            }
-        )
-        setIsLoggedIn(true)
-    }
+
 
     return (
         <>

@@ -23,7 +23,8 @@ export const products = [
     hero: true,
     type: 'hero',
     rating: 4.9,
-    image_url: "https://www.theyouthspace.in/cdn/shop/files/IMG-20230516-WA0074.jpg?v=1684231586&width=2048"
+    image_url: "https://www.theyouthspace.in/cdn/shop/files/IMG-20230516-WA0074.jpg?v=1684231586&width=2048",
+    imageTop_url: "https://www.theyouthspace.in/cdn/shop/files/IMG-20230516-WA0066.jpg?v=1684235847&width=600"
   },
   {
     _id: "2",
