@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Address } from "../profile/Address"
 import { CartContext } from "../../context/CartContext"
 
@@ -6,6 +6,8 @@ import logo from "./logo.jpg"
 
 export const Checkout = () => {
     const { cartItems, totalPrice, totalDiscount, deliveryCharge, finalPrice } = useContext(CartContext)
+
+    const [selectedAddress, setSelectedAddress] = useState(null)
 
 
     const loadScript = (src) => {
@@ -60,13 +62,17 @@ export const Checkout = () => {
 
     }
 
+    const handleSelectedAddress = (e) => {
+        setSelectedAddress(e.target.value)
+    }
+
 
     return (
         <>
             <div className="checkout_container" >
                 <div className="checkout_address" >
                     <h3>Address Details</h3>
-                    <Address checkout />
+                    <Address checkout setSelectedAddress={setSelectedAddress} />
                 </div>
                 <div className="checkout_price" >
                     <h3>Price Details</h3>
@@ -89,7 +95,7 @@ export const Checkout = () => {
                         <h3>&#x20B9; {Math.round(finalPrice)} </h3>
                     </div>
                     <hr />
-                    <button className="remove_button" onClick={() => displayRazorpay(finalPrice)} >Order Now</button>
+                    <button className="remove_button" onClick={() => displayRazorpay(finalPrice)} disabled={!selectedAddress} >Order Now</button>
                 </div>
             </div>
         </>

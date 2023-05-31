@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { stateArr } from "./stateArr";
 
-export const Address = ({ checkout }) => {
+export const Address = ({ checkout, setAddressChecked }) => {
     const [address, setAddress] = useState({
         name: "",
         mobile: "",
@@ -13,7 +13,7 @@ export const Address = ({ checkout }) => {
     });
     const [addresses, setAddresses] = useState([]);
     const [showForm, setShowForm] = useState(false)
-    const [selectedAddress, setSelectedAddress] = useState(null);
+    const [selectedAddress, setSelectedAddress] = useState(0);
 
     const handleAddressInput = (e) => {
         setAddress({ ...address, [e.target.name]: e.target.value });
@@ -80,7 +80,7 @@ export const Address = ({ checkout }) => {
     const handleEditAddress = (index) => {
         const selectedAddr = addresses[index];
         setAddresses(addresses.filter((_, i) => i !== index));
-        setSelectedAddress(null);
+        setSelectedAddress(0);
         setAddress(selectedAddr);
         setShowForm(true);
     };
@@ -88,7 +88,7 @@ export const Address = ({ checkout }) => {
 
     const handleDeleteAddress = (index) => {
         setAddresses(addresses.filter((_, i) => i !== index));
-        setSelectedAddress(null);
+        setSelectedAddress(0);
     };
 
     //this useeffect hook will retrieve the savdd addresses from localstorage on the first run when the component mounts. if addresses are found they are parsed from json and set in the addresses state
