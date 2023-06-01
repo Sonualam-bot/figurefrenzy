@@ -1,7 +1,30 @@
-:root {
-  --primary: #05668d;
+/* :root {
+  --primary: hsl(258, 100%, 75%);
   --secondary: #333136;
   --tertiary: #acdaf2;
   --white: #eff8ff;
   --red: red;
+} */
+:root {
+  --primary: #005f59;
+  --secondary: #d9d7d7;
+  --tertiary: grey;
+  --white: #eff8ff;
+  --red: red;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+  /* border: none; */
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  /* /* width: 0.2rem; * */
+  border-radius: 2rem;
 }

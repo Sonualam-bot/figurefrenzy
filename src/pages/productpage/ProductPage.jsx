@@ -6,6 +6,7 @@ import { FilterCard } from './FilterCard';
 import { categoryContext } from "../homepage/CategoryContext";
 
 import { Spinner } from "../../loaders/Spinner";
+import { Header } from "../../header/Header";
 
 
 
@@ -28,6 +29,9 @@ export const ProductPage = () => {
 
     return (
         <>
+            <header className="App-header">
+                <Header page="product" />
+            </header>
             {/* <h2>Showing All Products</h2> */}
             <div className="product_container" >
                 <div className="product_main_content">
