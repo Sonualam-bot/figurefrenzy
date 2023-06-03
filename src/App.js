@@ -32,15 +32,16 @@ import { Logout } from "./pages/login/Logout";
 import { Profile } from "./pages/profile/Profile";
 import { Details } from "./pages/profile/Details";
 import { Address } from "./pages/profile/Address";
+import { History } from "./pages/profile/History";
 import { Checkout } from "./pages/checkout/Checkout";
 
 function App() {
   return (
     <div className="App">
       {/* <MockMan /> */}
-      <header className="App-header">
-        <Header />
-      </header>
+      {/* <header className="App-header">
+        <Header page="product" />
+      </header> */}
 
 
       <ToastContainer position="bottom-right" autoClose="500"
@@ -67,8 +68,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/details" element={< Details />} />
-        <Route path="/address" element={<Address />} />
+        <Route path="/profile/details" element={< Details />} />
+        <Route path="/profile/address" element={<Address />} />
+        <Route path="/profile/history" element={<History />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/mock-api" element={<MockAPI colorScheme="dark" />} />
       </Routes>
