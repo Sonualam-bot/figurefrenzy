@@ -1,205 +1,176 @@
-/* :root{
-    --primary : #F2522E;
-    --secondary :#333136;
-    --tertiary : #ACDAF2;
-    --white : #EFF8FF;
-    --theFourth : #F56A31;
-  } */
-
-* {
-  box-sizing: border-box;
-}
-
 .individual_data {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-
-  transform: translate(-50%, -50%);
   display: flex;
-  gap: 1.2rem;
-  margin: 10px auto;
-  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 10px;
+  justify-content: space-between;
+  width: 800px;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .individual_img {
   position: relative;
+  width: 400px;
+  height: 450px;
 }
 
 .individual_img img {
-  width: 300px;
-  height: 350px;
-}
-
-.individual_rating {
-  position: absolute;
-  z-index: 2;
-  background-color: var(--primary);
-  /* top: 0; */
-  bottom: -11px;
-  color: var(--white);
-  padding: 5px;
-  border-radius: 0 5px 0 0;
-}
-
-.individual_wishlist_btn {
-  position: absolute;
-  background-color: var(--primary);
-  right: 0px;
-  color: var(--white);
-  border: none;
-  font-size: 2rem;
-  border-radius: 0 0 0 5px;
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
 }
 
 .individual_details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 400px;
 }
 
 .individual_details h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 700;
   font-size: 2rem;
+  text-transform: uppercase;
+  margin: -55px auto;
+  text-align: center;
 }
 
-.individualPage_hr {
-  width: 100%;
+.individual_data .individual_category {
+  background: linear-gradient(
+    104deg,
+    rgba(0, 95, 89, 1) 0%,
+    rgba(255, 255, 255, 1) 42%
+  );
+  padding-left: 3px;
+}
+
+.individual_data .individual_type {
+  text-transform: uppercase;
+  padding-left: 176px;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 95, 89, 1) 0%,
+    rgba(255, 255, 255, 1) 42%
+  );
+  margin-top: 5px;
+}
+
+/* .individual_cat_type {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 450;
+  margin-top: -30px;
+  text-transform: uppercase;
+} */
+
+.individual_wishlist_btn {
+  position: absolute;
+  top: 5px;
+  left: 345px;
+  font-size: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--white);
+  stroke-width: none;
+}
+
+.wish_null_hover:hover {
+  color: red;
+}
+
+.wish_icon2 svg {
+  color: red;
+}
+
+.add_button_individual {
+  margin: 8px 5px;
+  font-size: 14px;
+  padding: 8px 0;
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 5px;
+  border-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.add_button_individual span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.add_button_individual span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.add_button_individual:hover span {
+  padding-right: 25px;
+}
+
+.add_button_individual:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .individual_productPrice {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5rem;
-}
-.individual_price span {
-  margin-left: 9px;
-  color: grey;
-}
-
-.individual_details_stockdesc {
   font-size: 1.2rem;
 }
 
-.individual_details_stockdesc:last-of-type {
-  margin-bottom: 2rem;
-  margin-top: 0;
+.individual_productPrice span {
+  color: var(--tertiary);
+  text-decoration: line-through;
+  margin-left: 5px;
 }
 
-.individual_details button {
-  font-size: 1.5rem;
-  margin-bottom: 0.2rem;
+/* .individual_img_and_price {
+  width: 500px;
+  height: 500px;
+  margin-left: 0px;
+}
+
+.individual_img_and_price img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid yellowgreen;
+}
+
+.individual_details {
+  display: flex;
+  flex-direction: column;
+  gap: 3.9rem;
+  left: 495px;
+  flex-grow: 1;
+}
+
+.individual_details h2 {
+  font-size: 2.5rem;
+}
+
+.individual_productPrice {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.individual_price span {
+  color: var(--tertiary);
+  text-decoration: line-through;
+}
+
+.add_button {
   color: var(--white);
   background-color: var(--primary);
+  font-size: 29px;
   border: none;
   border-radius: 5px;
-}
-
-/* 
-.individual_data{
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-    height: 435px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    margin-top: 5%;
-    box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
-
-}
-
-.individual_img_and_price {
-    width: 400px;
-    height: 435px;
-    padding: 1.5rem;
-    box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    position: relative;
-}
-
-.individual_details{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    padding: 2rem;
-    position: relative;
-}
-
-.individual_name_price h2 {
- text-align: center;
- font-size: 2rem;
- position: absolute;
- top: -6rem;
-
-}
-
-.individual_availability_details .individual_wishlist_btn{
-    position: absolute;
-    top: -3.7rem;
-    right: 24.8rem;
-    z-index: 2;
-    background-color: var(--primary);
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0 0 0 5px ;
-}
-
-
-
-.individual_wishlist_btn .wish_icon{
-    font-size: 2.4rem;
-    color: var(--white);
-}
-
-.individual_rating{
-    position: absolute;
-    left: -23.5rem;
-    bottom: -4.9rem;
-    z-index: 2;
-    background-color: var(--primary);  
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0 5px 5px 0 ;
-    font-size: 1.5rem;
-    margin: 0 auto;
-}
-
-.individual_rating{
-    
-    color: var(--white);
-}
-
-.individual_productPrice{
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5rem;
-    
-}
-
-.individual_productPrice span{
-    margin-left: 0.5rem;
-    font-size: 1rem;
-    color: grey;
-}
-
-.individual_availability_details{
-    font-size: 1rem;
-}
-
-.individual_price{
-   padding-right: 2rem;
-}
-.individualPage_hr{
-    color: black;
-    border: 1px solid black;
-    width: 100%;
 } */
