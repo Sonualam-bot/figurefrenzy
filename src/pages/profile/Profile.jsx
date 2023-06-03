@@ -2,35 +2,25 @@ import { Details } from "./Details"
 import { Address } from "./Address"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
+import { Header } from "../../header/Header"
 
 export const Profile = () => {
 
-    const [userDetails, setUserDetails] = useState("one")
-
-
-    const tabs = {
-        one: <Details />,
-        two: <Address />
+    const toggleActive = ({ isActive }) => {
+        return isActive ? "nav_active" : "nav_inactive"
     }
-
-    const handleUserProfileDetails = (e) => {
-        setUserDetails(e.target.value)
-    }
-
 
     return (
         <>
-            <div className="profile_main_container" >
-                <div className="details_container"  >
-                    <button onClick={handleUserProfileDetails} value="one" > user Details </button>
-                </div>
-                <div className="address_container"  >
-                    <button onClick={handleUserProfileDetails} value="two" >Address</button>
-                </div>
+            <header >
+                <Header page="product" />
+            </header>
+            <div className="profile_navigator" >
+                <NavLink className={toggleActive} to="/profile/details" > Profile </NavLink>
+                <NavLink className={toggleActive} to="/profile/address" > Address </NavLink>
+                <NavLink className={toggleActive} to="/profile/history" > Order History </NavLink>
             </div>
-            <div className="user_details_address_container" >
-                <p>{tabs[userDetails]}</p>
-            </div>
+
 
         </>
     )

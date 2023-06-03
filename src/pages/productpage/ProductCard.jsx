@@ -10,10 +10,9 @@ import { useContext, useState, useEffect } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
 import { CartContext, incrementUserCartQuantity } from "../../context/CartContext";
 import { WishlistContext } from "../../context/WishlistContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
-    const [addedToCart, setAddedToCart] = useState(false);
-    const [isInWishlist, setIsInWishlist] = useState(false)
 
 
 
@@ -21,26 +20,12 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
     const { getProductId } = useContext(IndividualContext);
     const { fetchUserCart, cartItems, deleteUserCartItems, incrementUserCartQuantity } = useContext(CartContext);
     const { fetchUserWishlist, wishlistItems, deleteUserWishlisItems } = useContext(WishlistContext);
+    const { userToken } = useContext(AuthContext)
 
 
-    const userToken = localStorage.getItem("token");
 
     const navigate = useNavigate()
 
-    useEffect(() => {
-        const isItemInCart = cartItems.some((cartItem) => cartItem._id === items._id);
-        setAddedToCart(isItemInCart);
-
-        const isItemInWishlist = wishlistItems.some((wishlistItem) => wishlistItem._id === items._id)
-        setIsInWishlist(isItemInWishlist)
-    }, [cartItems, items, wishlistItems]);
-
-
-
-
-
-
-    // console.log("this is the btn text", btnText)
     const {
         _id,
         name,
@@ -55,7 +40,8 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
         image_url,
     } = items;
 
-
+    const isItemInWishlist = wishlistItems.some((wishlistItem) => wishlistItem._id === _id)
+    const isItemInCart = cartItems.some((cartItem) => cartItem._id === items._id);
 
     // console.log("this is cartItems qty", items.name)
 
@@ -86,11 +72,8 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
 
                 <div className="productPrice">
                     <p>
-                        &#x20b9; {price}
-                        <sub>
-                            {" "}
-                            <del className="del">M.R.P {originalPrice} </del>{" "}
-                        </sub>{" "}
+                        &#x20b9;{price}
+                        <del className="del">&#x20b9;{originalPrice} </del>{" "}
                     </p>
                     <p>({discount}% off)</p>
                 </div>
@@ -98,7 +81,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                 {page !== "wishlist" && (
 
                     <div>
-                        {isInWishlist ?
+                        {isItemInWishlist ?
                             <button className="wishlist_button" onClick={() => {
                                 deleteUserWishlisItems(items._id, userToken)
                                 toast.error("Removed From Wishlist")
@@ -110,7 +93,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                             <button
                                 onClick={() => {
                                     fetchUserWishlist(items, userToken);
-                                    setIsInWishlist(true)
+                                    // setIsInWishlist(true)
                                     toast.success("Added To Wishlist ")
                                 }
                                 }
@@ -125,11 +108,11 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                 {page !== "cart" && (
 
                     <button className="add_button" onClick={() => {
-                        if (addedToCart) {
+                        if (isItemInCart) {
                             navigate("/cart")
                         } else {
                             fetchUserCart(items, userToken);
-                            setAddedToCart(true)
+                            // setAddedToCart(true)
                             toast.success(" Added To Cart ")
 
                         }
@@ -138,7 +121,7 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                     }
                     }>
                         {" "}
-                        <span>{addedToCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
+                        <span>{isItemInCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
                     </button>
                 )}
 
