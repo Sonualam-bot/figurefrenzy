@@ -38,12 +38,6 @@ import { Checkout } from "./pages/checkout/Checkout";
 function App() {
   return (
     <div className="App">
-      {/* <MockMan /> */}
-      {/* <header className="App-header">
-        <Header page="product" />
-      </header> */}
-
-
       <ToastContainer position="bottom-right" autoClose="500"
         closeOnClick="true"
         pauseOnHover="true"

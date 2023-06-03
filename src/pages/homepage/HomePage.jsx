@@ -18,12 +18,6 @@ export const HomePage = () => {
     const { category, selectedCategory } = useContext(categoryContext);
     const { dispatch } = useContext(ProductContext)
 
-    console.log("this is the selected category", selectedCategory)
-
-    // const filteredProducts = homepageData.filter((product) => {
-    // Replace "categoryKey" with the actual key representing the category in your product object
-    //     return product.categoryKey === selectedCategory;
-    //   });
 
     return (
         <>
@@ -52,7 +46,9 @@ export const HomePage = () => {
                 <div className="hero_category_title" >Categories to Choose From</div>
 
                 <div className="hero_categories" >
-                    {category.length === 0 ? <h2>Categories are loading</h2> : category?.map(({ _id, type, title, description, image_url }) => {
+                    {category.length === 0 ? <div className="spinner" >
+                        <Spinner />
+                    </div> : category?.map(({ _id, type, title, description, image_url }) => {
                         return (
 
                             <NavLink to="/product" className="hero_nav_link" onClick={() => dispatch({ type: type })}>
