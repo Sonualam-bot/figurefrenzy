@@ -13,7 +13,7 @@ export const categories = [
     hero: true,
     description:
       "A hero is a person who demonstrates an utmost commitment to their morals, no matter the obstacle or consequence.",
-    image_url: "https://shorturl.at/fghGO",
+    image_url: "https://cdna.artstation.com/p/assets/images/images/045/592/094/large/johnny-azx-demon-slayer-kimetsu-no-yaiba-tanjiro-kamado-nezuko-10-small.jpg?1643097918",
   },
   {
     _id: 2,
@@ -22,7 +22,7 @@ export const categories = [
     villain: true,
     description:
       "A villain is defined as an evil or wicked character that enacts evil action and/or harms others.",
-    image_url: "https://shorturl.at/zHMW6",
+    image_url: "https://www.favorgk.com/cdn/shop/products/001_30a105ce-d7e2-4d86-897e-2dab11d7dee8_3120x.jpg?v=1619204798",
   },
   {
     _id: 3,
@@ -31,6 +31,6 @@ export const categories = [
     antiHero: true,
     description:
       "An antihero (sometimes spelled as anti-hero) or antiheroine is a main character in a story who may lack conventional heroic qualities and attributes, such as idealism, courage, and morality.",
-    image_url: "https://shorturl.at/zHMW6",
+    image_url: "https://www.senseitoy.com/image/catalog/Fantasy/Akaza/Fantasy-Akaza-Upper-Moon-3-resin-statue-4.gif",
   },
 ];

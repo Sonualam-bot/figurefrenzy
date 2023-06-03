@@ -535,7 +535,7 @@ export const products = [
     hero: true,
     type: 'hero',
     rating: 4.7,
-    image_url: "https://p-bandai.com/img/sg/p/m/N2590593001001_002.jpg"
+    image_url: "https://www.theyouthspace.in/cdn/shop/files/IMG-20230508-WA0022.jpg?v=1683536064&width=2048"
   },
   {
     _id: "37",
