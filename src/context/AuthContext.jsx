@@ -16,6 +16,7 @@ export const AuthContextProvider = ({ children }) => {
     const location = useLocation()
 
     const navigate = useNavigate()
+    const userToken = localStorage.getItem("token");
 
 
     const [loginInput, setLoginInput] = useState({ email: "", password: "" });
@@ -101,6 +102,7 @@ export const AuthContextProvider = ({ children }) => {
         localStorage.removeItem("token")
         setIsLoggedIn(false)
         localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("paymentId")
         navigate("/login")
         setLoginInput(
             {
@@ -112,7 +114,7 @@ export const AuthContextProvider = ({ children }) => {
 
     return (
         <>
-            <AuthContext.Provider value={{ signupInput, setSignupInput, signUpHandler, loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin }} >
+            <AuthContext.Provider value={{ signupInput, setSignupInput, signUpHandler, loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin, userToken }} >
                 {children}
             </AuthContext.Provider>
         </>
