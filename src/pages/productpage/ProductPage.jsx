@@ -45,7 +45,10 @@ export const ProductPage = () => {
                         ))
 
                         : (
-                            <Spinner />
+                            <div className="spinner" >
+                                <Spinner />
+                            </div>
+
                         )}
 
 
