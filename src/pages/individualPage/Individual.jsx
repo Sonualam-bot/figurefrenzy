@@ -9,6 +9,7 @@ import { WishlistContext } from "../../context/WishlistContext";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
 import { toast } from "react-toastify";
+import { Spinner } from "../../loaders/Spinner";
 
 
 export const Individual = () => {
@@ -20,25 +21,11 @@ export const Individual = () => {
     const { userToken } = useContext(AuthContext)
 
 
-
-    const [addedToCart, setAddedToCart] = useState(false);
-    const [isInWishlistItem, setIsInWishlistItem] = useState(false)
-
     const { _id, name, details, price, originalPrice, category, instock, discount, type, rating, image_url } = selecteditem;
 
     const isItemInWishlist = wishlistItems.some((wishlistItem) => wishlistItem._id === _id)
 
     const isItemInCart = cartItems.some((cartItem) => cartItem._id === _id);
-
-
-    // useEffect(() => {
-    //     const isItemInCart = cartItems.some((cartItem) => cartItem._id === items._id);
-    //     setAddedToCart(isItemInCart);
-
-    //     const isItemInWishlist = wishlistItems.some((wishlistItem) => wishlistItem._id === _id)
-    //     setIsInWishlistItem(isItemInWishlist)
-    // }, [wishlistItems]);
-
 
     return (
         <>
@@ -125,7 +112,9 @@ export const Individual = () => {
                     </div>
 
                 </div >
-                : <h3>Item is Loading...</h3>
+                : <div className="spinner" >
+                    <Spinner />
+                </div>
 
             }
 
