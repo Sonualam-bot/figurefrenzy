@@ -37,11 +37,7 @@ export const FilterCard = () => {
 
                 <h2 className='product_price_title  filters_heading' >Price</h2>
                 <div className='product_slider_value' >
-                    <p>800</p>
-                    <p>1300</p>
-                    <p>1800</p>
-                    <p>2100</p>
-                    <p>4500</p>
+                    <p> ₹4500 & Below </p>
                 </div>
                 <input className='product_slider' max="4500" min="200" step="100" type='range' value={state.filterPriceByRange} onChange={(e) => dispatch({ type: "FILTER_PRICE_BY_RANGE", payload: e.target.value })} />
                 <hr />
