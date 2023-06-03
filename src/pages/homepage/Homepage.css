@@ -24,14 +24,41 @@
   margin: 0 2rem;
   height: 10vh;
 }
+.nav_header {
+  display: flex;
+  align-items: center;
+}
 
-.nav_header .figure {
+.nav_header .figure_F {
+  color: var(--primary);
+  font-size: 3rem;
+  margin-left: 1px;
+  font-family: "Dancing Script", cursive;
+}
+
+.nav_header .figure_igure {
   color: var(--primary);
   font-size: 1.5rem;
+  font-family: "Dancing Script", cursive;
 }
-.nav_header .frenzy {
+
+.nav_header .figure_renzy {
   color: var(--primary);
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-family: "Dancing Script", cursive;
+}
+
+.half_figure_name h1:nth-child(1) {
+  margin-bottom: -10px;
+}
+.half_figure_name h1:nth-child(2) {
+  margin-top: -24px;
+  margin-left: -4px;
+}
+
+.nav_header img {
+  width: 70px;
+  object-fit: cover;
 }
 
 .nav_aside {

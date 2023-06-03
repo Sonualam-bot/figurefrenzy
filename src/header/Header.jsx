@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom"
 
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
 import { AuthContext } from "../context/AuthContext";
-// import { Login } from "../pages/login/Login";
+import logo from "../assets/logo.png"
 
 import { useNavigate } from "react-router-dom";
 
-import { HiOutlineUserCircle } from "react-icons/hi"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 import { BiUserCircle } from "react-icons/bi";
 
@@ -21,6 +21,11 @@ export const Header = ({ page }) => {
     const { wishlistItems } = useContext(WishlistContext)
     const { isLoggedIn, loginHandler, logoutHandler } = useContext(AuthContext)
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    };
+
     const userToken = localStorage.getItem("token");
 
     const navigate = useNavigate()
@@ -30,17 +35,31 @@ export const Header = ({ page }) => {
             <div className="nav_section" >
                 <div className="nav_container">
                     <div className="nav_header">
-                        <h1> <span className="figure" to="/" >Figure</span><span className="frenzy" >Frenzy</span> </h1>
+                        <img src={logo} alt="logo" />
+                        <h1> <span className="figure_F" to="/" >F</span>
+                            {/* <span className="frenzy" >Frenzy</span>  */}
+                        </h1>
+                        <div className="half_figure_name" >
+                            <h1><span className="figure_igure" to="/" >igure</span>
+                                {/* <span className="frenzy" >Frenzy</span>  */}
+
+                            </h1>
+                            <h1> <span className="figure_renzy" to="/" >renzy</span>
+                                {/* <span className="frenzy" >Frenzy</span>  */}
+                            </h1>
+                        </div>
+
                     </div>
                     {/* <div className="hero_section_content" > */}
 
                     {/* <div className="search_button" > */}
                     {page === "product" && (<input className="hero_section_content_input" type="text" value={state.searchItem} placeholder="Search for an action figure" onChange={(e) => dispatch({ type: "SEARCH_ITEM", payload: e.target.value })} />)}
-                    {/* <button className="hero_section_content_button" >Search</button> */}
-                    {/* </div> */}
 
-                    {/* </div> */}
-                    <div className="nav_aside">
+
+                    <div className="hamburger"  > <GiHamburgerMenu onClick={toggleMenu} /> </div>
+
+
+                    <div className={`nav_aside ${isMenuOpen ? "show" : ""}`}    >
                         <NavLink to="/" className="nav_links" ><AiOutlineHome /></NavLink>
                         <NavLink to="/product" className="nav_links" >  <AiOutlineShopping />  </NavLink>
                         <NavLink to="/cart" className="nav_links nav_quantity " >
