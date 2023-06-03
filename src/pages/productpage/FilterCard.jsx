@@ -5,6 +5,7 @@ import { categoryContext } from "../homepage/CategoryContext";
 
 
 
+
 export const FilterCard = () => {
     const { state, dispatch, homepageData, searchedProducts } = useContext(ProductContext);
 
@@ -24,6 +25,7 @@ export const FilterCard = () => {
 
     return (
         <>
+
             <div className='product_filter_main_container' >
                 <div className='product_filter_container' >
                     <h2>Filters</h2>
@@ -94,7 +96,11 @@ export const FilterCard = () => {
                     </div>
 
                 </div>
+
+
             </div>
+
+
         </>
     )
 }

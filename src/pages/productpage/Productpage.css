@@ -1,10 +1,3 @@
-:root {
-  --primary: #05668d;
-  --secondary: #333136;
-  --tertiary: #acdaf2;
-  --white: #eff8ff;
-  --red: red;
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +6,7 @@
 
 .product_container {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 1fr;
   position: relative;
 }
 
@@ -26,7 +19,6 @@
 }
 
 .product_filter_main_container .padding_bottom {
-  /* padding-bottom: 1rem; */
   margin-bottom: 0.5rem;
 }
 
@@ -35,7 +27,8 @@
   width: 100%;
   overflow: scroll;
   overflow-x: hidden;
-
+  accent-color: var(--primary);
+  scroll-behavior: smooth;
   margin: auto;
   padding: 1rem 0.5rem;
 }
@@ -58,10 +51,32 @@
 }
 
 .product_main_content {
-  /* border: 1px solid red; */
-  width: 100%;
+  width: 250px;
   padding-left: 2rem;
   margin-top: 1px;
+  position: absolute;
+  left: -20rem;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.show_Filters {
+  left: 0;
+}
+
+.filter_icon svg {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--white);
+  z-index: 999;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .product_price_title {
@@ -78,6 +93,8 @@
 .product_slider_value {
   display: flex;
   justify-content: space-between;
+  gap: 2px;
+  font-size: 13px;
   margin-left: 4px;
   width: 80%;
 }
@@ -106,14 +123,11 @@
 
   width: 240px;
   height: 425px;
-
-  /* margin: 0 auto; */
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   font-family: "Maven Pro", sans-serif;
   overflow: hidden;
   border-radius: 6px;
   text-align: left;
-  /* border-radius: 5px; */
   cursor: pointer;
 }
 
@@ -144,8 +158,6 @@
     rotateY(0deg) rotateZ(0deg) skew(0deg);
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
-
-  /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2) ; */
 }
 
 .product_aside_content_figures h4,
@@ -168,10 +180,6 @@
   justify-content: space-between;
 }
 
-/* .product_category_name, .productPrice{
-  padding: 4px;
-} */
-
 .productPrice {
   display: flex;
   font-size: 13px;
@@ -179,19 +187,12 @@
   padding: 4px;
 }
 
-.product_price del {
-  color: red;
+.del {
+  color: var(--compliment);
+  margin-left: 8px;
 }
 
-/* .productPrice h4{
-  margin-bottom: 8px;
-} */
-
 .product_rating_figures {
-  /* position: absolute; */
-  /* z-index: 2; */
-  /* top: 50%; */
-  /* background-color: var(--primary); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -368,10 +369,7 @@
 
 .price_container {
   width: 40vw;
-  /* height: 350px; */
   padding: 1rem 2rem 2rem 2rem;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
-  /* border: 1px solid red; */
 }
 
 /* .price_container:hover {
@@ -387,4 +385,65 @@
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
+}
+
+/******************* responsive media queries *********************/
+@media screen and (min-width: 768px) {
+  .product_filter_main_container {
+    height: 87vh;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    accent-color: var(--primary);
+    scroll-behavior: smooth;
+    margin: auto;
+    padding: 1rem 0.5rem;
+  }
+  .product_main_content {
+    width: 100%;
+    padding-left: 2rem;
+    margin-top: 1px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .product_container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    position: relative;
+  }
+
+  .filter_icon svg {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .product_filter_main_container {
+    height: 87vh;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    accent-color: var(--primary);
+    scroll-behavior: smooth;
+    margin: auto;
+    padding: 1rem 0.5rem;
+  }
+  .product_main_content {
+    width: 100%;
+    padding-left: 2rem;
+    margin-top: 1px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .product_container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    position: relative;
+  }
+  .filter_icon svg {
+    display: none;
+  }
 }
