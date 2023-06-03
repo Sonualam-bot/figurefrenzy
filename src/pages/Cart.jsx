@@ -10,6 +10,7 @@ import { useNavigate } from "react-router";
 import { ProductCard } from "./productpage/ProductCard";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
+import { Header } from "../header/Header";
 
 
 export const Cart = () => {
@@ -46,7 +47,10 @@ export const Cart = () => {
 
     return (
         <>
-            <h1 style={{ margin: "0 auto" }} >My Cart ({cartItems.length}) </h1>
+            <header className="App-header">
+                <Header page="product" />
+            </header>
+            <h1 style={{ margin: "0 auto", width: "800px" }} >My Cart ({cartItems.length}) </h1>
 
 
             {cartItems?.length === 0 ? "Cart is Empty" :

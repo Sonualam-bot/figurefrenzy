@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../header/Header";
 
 
 export const Signup = () => {
@@ -19,6 +20,9 @@ export const Signup = () => {
 
     return (
         <>
+            <header className="App-header">
+                <Header />
+            </header>
             <div className="login-container" >
                 <div className="login-card">
                     <h2>Sign up</h2>

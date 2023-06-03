@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 // import { CartContext } from "../../context/CartContext";
 import { useLocation } from "react-router-dom"
+import { Header } from "../../header/Header";
 
 export const Login = () => {
     const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin } = useContext(AuthContext);
@@ -22,6 +23,9 @@ export const Login = () => {
 
     return (
         <>
+            <header className="App-header">
+                <Header />
+            </header>
             <div className="login-container" >
 
 
