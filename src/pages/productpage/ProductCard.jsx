@@ -59,11 +59,11 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                     <div className="product_rating_category">
                         <p>{category}</p>
                         <p className="product_rating_figures">
-                            <p>
+                            <span>
                                 {" "}
                                 <AiOutlineStar className="product_rating_icon" />
-                            </p>{" "}
-                            <p>{rating}</p>{" "}
+                            </span>{" "}
+                            <span>{rating}</span>{" "}
                         </p>
                     </div>
 
