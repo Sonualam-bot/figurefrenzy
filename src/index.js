@@ -12,6 +12,7 @@ import { CategoryProvider } from "./pages/homepage/CategoryContext";
 import { IndividualProvider } from "./pages/individualPage/IndividualContext";
 import { CartContextProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
+import { AddressProvider } from "./context/AddressContext";
 
 // Call make Server
 makeServer();
@@ -19,19 +20,21 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthContextProvider>
-        <ProductProvider>
-          <CartContextProvider>
-            <WishlistProvider>
-              <CategoryProvider>
-                <IndividualProvider>
-                  <App />
-                </IndividualProvider>
-              </CategoryProvider>
-            </WishlistProvider>
-          </CartContextProvider>
-        </ProductProvider>
-      </AuthContextProvider>
+      <AddressProvider>
+        <AuthContextProvider>
+          <ProductProvider>
+            <CartContextProvider>
+              <WishlistProvider>
+                <CategoryProvider>
+                  <IndividualProvider>
+                    <App />
+                  </IndividualProvider>
+                </CategoryProvider>
+              </WishlistProvider>
+            </CartContextProvider>
+          </ProductProvider>
+        </AuthContextProvider>
+      </AddressProvider>
 
     </BrowserRouter>
 

@@ -23,6 +23,9 @@ export const ProductProvider = ({ children }) => {
     const [homepageData, setHomepageData] = useState([]);
     // const [selectedItemId, setSelectedItemId] = useState('')
 
+
+
+
     const showHomepageData = async () => {
         try {
             const response = await axios.get(`/api/products`)
@@ -76,7 +79,7 @@ export const ProductProvider = ({ children }) => {
         }
 
         // console.log("searched name", state.searchItem.toLowerCase())
-        return figure.name.toLowerCase().startsWith(state.searchItem.toLowerCase())
+        return figure.name.toLowerCase().includes(state.searchItem.toLowerCase())
     })
 
     // const filterBySelectedCategory =   (selectedCategory) => {
@@ -104,6 +107,8 @@ export const ProductProvider = ({ children }) => {
         filterBySelectedCategory,
         filterProductsBySelectedRating,
         searchedProducts,
+
+
 
 
 

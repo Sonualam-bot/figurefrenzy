@@ -1,15 +1,8 @@
-/* :root {
-  --primary: hsl(258, 100%, 75%);
-  --secondary: #333136;
-  --tertiary: #acdaf2;
-  --white: #eff8ff;
-  --red: red;
-} */
 :root {
   --primary: #005f59;
   --secondary: #d9d7d7;
   --tertiary: grey;
-  --white: #eff8ff;
+  --white: #ffffff;
   --red: red;
 }
 
