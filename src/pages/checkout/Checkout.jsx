@@ -2,12 +2,16 @@ import { useContext, useState } from "react"
 import { Address } from "../profile/Address"
 import { CartContext } from "../../context/CartContext"
 
+import { toast } from "react-toastify"
+
 import logo from "./logo.jpg"
+import { useNavigate } from "react-router"
+import { Header } from "../../header/Header"
 
 export const Checkout = () => {
     const { cartItems, totalPrice, totalDiscount, deliveryCharge, finalPrice } = useContext(CartContext)
 
-    const [selectedAddress, setSelectedAddress] = useState(null)
+    const navigate = useNavigate()
 
 
     const loadScript = (src) => {
@@ -48,8 +52,12 @@ export const Checkout = () => {
 
 
             handler: function (response) {
-                alert(response.razorpay_payment_id)
-                alert("Payment is successfull")
+                // alert(response.razorpay_payment_id)
+                const paymentId = response.razorpay_payment_id
+                // alert("Payment is successfull")
+                toast.success("Payment is successfull")
+                navigate('/profile/history', { state: { paymentId } })
+                localStorage.setItem("paymentId", paymentId)
             },
 
             prefill: {
@@ -60,20 +68,24 @@ export const Checkout = () => {
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
 
+
+        // navigate('/profile/history', { state: { paymentId } })
     }
 
-    const handleSelectedAddress = (e) => {
-        setSelectedAddress(e.target.value)
-    }
+
 
 
     return (
         <>
+            <header>
+                <Header />
+            </header>
             <div className="checkout_container" >
                 <div className="checkout_address" >
                     <h3>Address Details</h3>
-                    <Address checkout setSelectedAddress={setSelectedAddress} />
+                    <Address checkout />
                 </div>
+
                 <div className="checkout_price" >
                     <h3>Price Details</h3>
                     <hr />
@@ -95,7 +107,7 @@ export const Checkout = () => {
                         <h3>&#x20B9; {Math.round(finalPrice)} </h3>
                     </div>
                     <hr />
-                    <button className="remove_button" onClick={() => displayRazorpay(finalPrice)} disabled={!selectedAddress} >Order Now</button>
+                    <button className="remove_button" onClick={() => displayRazorpay(finalPrice)}  >Order Now</button>
                 </div>
             </div>
         </>

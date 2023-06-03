@@ -1,9 +1,11 @@
 .checkout_container {
-  display: grid;
-  grid-template-columns: repeat(2, 250px);
-  margin: 50px auto;
-  align-items: center;
-  justify-content: space-evenly;
-  grid-gap: 2rem;
-  width: 65%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.checkout_price {
+  width: 350px;
+  padding-top: 1rem;
 }
