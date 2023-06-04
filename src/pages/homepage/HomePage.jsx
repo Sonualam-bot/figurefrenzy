@@ -13,6 +13,7 @@ import { categoryContext } from "./CategoryContext";
 import { NavLink } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
 import { Header } from "../../header/Header";
+import { HomePageSlider } from "./HomePageSlider";
 
 export const HomePage = () => {
     const { category, selectedCategory } = useContext(categoryContext);
@@ -27,18 +28,13 @@ export const HomePage = () => {
             <div className="body-div" >
                 {/* <HomePageSlider /> */}
 
-                {/* hero section container */}
+
                 <div className="hero_section">
-
                     <img src="https://cdn.shopify.com/s/files/1/0550/2337/0490/files/my-capricorn-friend-slider-home_0_1512x529.jpg?v=1638376375" alt="hero" />
-
-                    {/* hero section title content */}
                     <div className="hero_section_content" >
                         <h1>Buy your favourite character action figures here</h1>
-
-                        {/* <p>The most complete action figures More than 1000  collectible action figure ready to collect</p> */}
                     </div>
-                    {/* </div> */}
+                    {/* <HomePageSlider /> */}
                 </div>
 
 
