@@ -361,6 +361,7 @@
 
 .cart_price_details {
   display: flex;
+  flex-direction: column;
   gap: 5rem;
   justify-content: space-between;
   margin: 2rem 4rem;
@@ -380,7 +381,7 @@
 }
 
 .price_container {
-  width: 40vw;
+  width: 100vw;
   padding: 1rem 2rem 2rem 2rem;
 }
 
@@ -395,9 +396,14 @@
   margin: 1rem 0;
 }
 
+.price_details1 {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 7rem; */
+}
+
 .cart_page_name {
-  margin-left: 340px;
-  /* width: 800px; */
+  margin-left: 160px;
   margin-top: 1rem;
 }
 
@@ -437,6 +443,41 @@
   .filter_icon svg {
     display: none;
   }
+
+  .cart_price_details {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: space-between;
+    margin: 2rem 4rem;
+    align-items: center;
+  }
+
+  .price_container {
+    width: 40vw;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+  .price_container p {
+    margin: 0.5rem 0;
+  }
+
+  .price_details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .price_details1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .cart_page_name {
+    margin-left: 340px;
+    margin-top: 1rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   .product_filter_main_container {
@@ -465,5 +506,40 @@
   }
   .filter_icon svg {
     display: none;
+  }
+
+  .cart_price_details {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: space-between;
+    margin: 2rem 4rem;
+    align-items: center;
+  }
+
+  .price_container {
+    width: 40vw;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+  .price_container p {
+    margin: 0.5rem 0;
+  }
+
+  .price_details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .price_details1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .cart_page_name {
+    margin-left: 340px;
+    margin-top: 1rem;
   }
 }

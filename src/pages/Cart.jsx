@@ -24,7 +24,7 @@ export const Cart = () => {
 
     const itemName = cartItems?.map(({ name, qty, price }) => {
         return (
-            < div style={{ display: "flex", justifyContent: "space-between", gap: "15rem" }} >
+            < div className="price_details1"  >
                 <p> {name} ({qty}) </p>
                 <p> &#x20B9; {Math.round(price * qty)} </p>
             </div >
@@ -43,7 +43,7 @@ export const Cart = () => {
 
 
             <div >
-                {cartItems?.length === 0 ? <p style={{ marginLeft: "340px", marginTop: "2rem" }} >Cart is Empty</p> :
+                {cartItems?.length === 0 ? <p className="cart_page_name" >Cart is Empty</p> :
 
                     <div className="cart_price_details" >
 
@@ -58,29 +58,25 @@ export const Cart = () => {
                             })}
                         </div>
                         <div className="price_container" >
-                            {/* <div className="price_container_inner"> */}
+
                             <h1 style={{ marginTop: "0px", textAlign: "center" }} >Cart Price Details</h1>
                             <hr />
 
-                            <div className="price_details">
+                            <div >
                                 <p> {itemName}  </p>
-                                {/* <h3>&#x20B9; {Math.round(totalPrice)} </h3> */}
+
                             </div>
                             <hr />
-                            {/* <div className="price_details">
-                            <p>Delivery Charge</p>
-                            <h3>&#x20B9; {deliveryCharge}  </h3>
-                        </div>
-                        <hr /> */}
+
                             <div className="price_details">
                                 <p>Total Amount</p>
                                 <h3>&#x20B9; {Math.round(totalPrice)} </h3>
                             </div>
                             <hr />
 
-                            {/* <p>You saved &#x20B9; {Math.round(savedAmount)} on this order</p> */}
+
                             <button className="remove_button" onClick={() => navigate("/checkout")}> Checkout </button>
-                            {/* </div> */}
+
 
 
 
