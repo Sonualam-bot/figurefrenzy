@@ -9,6 +9,7 @@ import "./pages/individualPage/IndividualPage.css"
 import "./pages/login/Form.css"
 import "./pages/profile/Profile.css"
 import "./pages/checkout/checkout.css"
+import "././loaders/spinner.css"
 
 import 'react-slideshow-image/dist/styles.css'
 

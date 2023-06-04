@@ -22,22 +22,11 @@ export const Cart = () => {
     const navigate = useNavigate()
 
 
-
-    const itemOriginalPrice = cartItems?.reduce((acc, curr) => (acc + curr.originalPrice) * curr.qty, 0);
-
-
-
-
-
-    // const savedAmount = itemOriginalPrice - totalPrice
-
-
-
     const itemName = cartItems?.map(({ name, qty, price }) => {
         return (
             < div style={{ display: "flex", justifyContent: "space-between", gap: "15rem" }} >
                 <p> {name} ({qty}) </p>
-                <p> &#x20B9; {price * qty} </p>
+                <p> &#x20B9; {Math.round(price * qty)} </p>
             </div >
 
 
@@ -54,7 +43,7 @@ export const Cart = () => {
 
 
             <div >
-                {cartItems?.length === 0 ? "Cart is Empty" :
+                {cartItems?.length === 0 ? <p style={{ marginLeft: "340px", marginTop: "2rem" }} >Cart is Empty</p> :
 
                     <div className="cart_price_details" >
 
@@ -90,7 +79,7 @@ export const Cart = () => {
                             <hr />
 
                             {/* <p>You saved &#x20B9; {Math.round(savedAmount)} on this order</p> */}
-                            <button className="remove_button" onClick={() => navigate("/checkout")}> Checkout Page </button>
+                            <button className="remove_button" onClick={() => navigate("/checkout")}> Checkout </button>
                             {/* </div> */}
 
 
