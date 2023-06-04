@@ -59,7 +59,7 @@ export const Header = ({ page }) => {
                     <div className="hamburger"  > <GiHamburgerMenu onClick={toggleMenu} /> </div>
 
 
-                    <div className={`nav_aside ${isMenuOpen ? "show" : ""}`}    >
+                    <div className={`nav_aside ${isMenuOpen ? "show nav_display " : ""}`}    >
                         <NavLink to="/" className="nav_links" ><AiOutlineHome /></NavLink>
                         <NavLink to="/product" className="nav_links" >  <AiOutlineShopping />  </NavLink>
                         <NavLink to="/cart" className="nav_links nav_quantity " >

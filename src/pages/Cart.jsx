@@ -37,7 +37,7 @@ export const Cart = () => {
     return (
         <>
             <header className="App-header">
-                <Header page="product" />
+                <Header />
             </header>
             <h1 className="cart_page_name" > My Cart ({cartItems.length}) </h1>
 

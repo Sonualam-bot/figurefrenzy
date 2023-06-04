@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
 import { categoryContext } from "../homepage/CategoryContext";
+import { Header } from "../../header/Header";
 
 
 
@@ -34,6 +35,12 @@ export const FilterCard = () => {
                 <hr />
                 <p>Showing {filteredProducts?.length} of {homepageData?.length} products</p>
                 <hr />
+
+                <div>
+                    <input className="hero_section_content_input_again" type="text" value={state.searchItem} placeholder="Search for an action figure" onChange={(e) => dispatch({ type: "SEARCH_ITEM", payload: e.target.value })} />
+                </div>
+                <hr className="below_inputBox_hr" />
+
 
                 <h2 className='product_price_title  filters_heading' >Price</h2>
                 <div className='product_slider_value' >

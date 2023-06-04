@@ -13,7 +13,7 @@ export const Profile = () => {
     return (
         <>
             <header >
-                <Header page="product" />
+                <Header />
             </header>
             <div className="profile_navigator" >
                 <NavLink className={toggleActive} to="/profile/details" > Profile </NavLink>

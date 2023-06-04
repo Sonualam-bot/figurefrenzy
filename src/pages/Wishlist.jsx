@@ -13,7 +13,7 @@ export const Wishlist = () => {
     return (
         <>
             <header >
-                <Header page="product" />
+                <Header />
             </header>
             <div className="product_aside_content" >
                 {wishlistItems.length === 0 ? <h2>Your wishlist is empty.</h2> : wishlistItems?.map((data) => {
