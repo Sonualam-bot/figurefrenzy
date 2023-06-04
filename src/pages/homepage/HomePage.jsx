@@ -13,7 +13,6 @@ import { categoryContext } from "./CategoryContext";
 import { NavLink } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
 import { Header } from "../../header/Header";
-// import { HomePageSlider } from "./HomePageSlider";
 
 export const HomePage = () => {
     const { category, selectedCategory } = useContext(categoryContext);

@@ -11,7 +11,6 @@ import "./pages/profile/Profile.css"
 import "./pages/checkout/checkout.css"
 import "././loaders/spinner.css"
 
-import 'react-slideshow-image/dist/styles.css'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
