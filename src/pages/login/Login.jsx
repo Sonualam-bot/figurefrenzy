@@ -6,6 +6,7 @@ import { Header } from "../../header/Header";
 
 import { VscEyeClosed } from "react-icons/vsc"
 import { VscEye } from "react-icons/vsc"
+import { toast } from "react-toastify";
 
 export const Login = () => {
     const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin } = useContext(AuthContext);
@@ -20,6 +21,15 @@ export const Login = () => {
         setShowPassword(!showPassword);
     }
 
+    const handleLogInFormSubmit = (e) => {
+        e.preventDefault();
+        if (loginInput.email.trim() === "" || loginInput.password.trim() === "") {
+            toast.error("Enter login Details")
+        } else {
+            loginHandler(e)
+        }
+    }
+
     return (
         <>
             <header className="App-header">
@@ -27,9 +37,11 @@ export const Login = () => {
             </header>
             <div className="login-container">
                 <div className="login-card">
-                    <h2>Sign in</h2>
-                    <form onSubmit={loginHandler}>
+                    <h2> Login</h2>
+                    <form onSubmit={handleLogInFormSubmit}>
                         <div className="form_data">
+
+
                             <label htmlFor="email">Email</label>
                             <input
                                 type="email"

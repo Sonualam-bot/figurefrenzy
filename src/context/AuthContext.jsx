@@ -24,7 +24,8 @@ export const AuthContextProvider = ({ children }) => {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+        confirmPassword: ""
 
     })
     // const [signup, setSignup] = useState(false)
@@ -90,8 +91,8 @@ export const AuthContextProvider = ({ children }) => {
         setIsLoggedIn(false)
         setLoginInput(
             {
-                email: "adarshbalika@gmail.com",
-                password: "adarshbalika",
+                email: "handsomeHunk@gmail.com",
+                password: "adayinparadise",
             }
         )
         setIsLoggedIn(true)

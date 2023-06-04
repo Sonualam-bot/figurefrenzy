@@ -14,6 +14,8 @@ export const Checkout = () => {
     const navigate = useNavigate()
 
 
+
+
     const loadScript = (src) => {
         return new Promise((resolve) => {
             const script = document.createElement("script")
@@ -35,6 +37,8 @@ export const Checkout = () => {
 
 
     const displayRazorpay = async (amount) => {
+
+
         const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
 
         if (!res) {
@@ -52,12 +56,12 @@ export const Checkout = () => {
 
 
             handler: function (response) {
-                // alert(response.razorpay_payment_id)
+
                 const paymentId = response.razorpay_payment_id
-                // alert("Payment is successfull")
+
                 toast.success("Payment is successfull")
-                navigate('/profile/history', { state: { paymentId } })
-                localStorage.setItem("paymentId", paymentId)
+                navigate('/profile/history', localStorage.setItem("paymentId", paymentId))
+
             },
 
             prefill: {
@@ -107,7 +111,7 @@ export const Checkout = () => {
                         <h3>&#x20B9; {Math.round(finalPrice)} </h3>
                     </div>
                     <hr />
-                    <button className="remove_button" onClick={() => displayRazorpay(finalPrice)}  >Order Now</button>
+                    <button className="remove_button" onClick={() => displayRazorpay(Math.round(finalPrice))}  >Order Now</button>
                 </div>
             </div>
         </>
