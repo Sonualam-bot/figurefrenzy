@@ -14,7 +14,8 @@
   top: 50%;
   -webkit-transform-origin: top left;
   transform-origin: top left;
-  width: 20px;
+  width: 50px;
+  font-weight: 800;
 }
 .blades div:nth-child(1) {
   -webkit-transform: rotate(72deg) translateY(5px);
