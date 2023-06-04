@@ -20,8 +20,7 @@ export const AddressProvider = ({ children }) => {
     const [selectedAddress, setSelectedAddress] = useState(0);
 
     const addressForOrder = addresses[selectedAddress]
-    // localStorage.setItem(addresses[selectedAddress])
-    // console.log("this is address for order", addressForOrder)
+
 
     const handleAddressInput = (e) => {
         setAddress({ ...address, [e.target.name]: e.target.value });

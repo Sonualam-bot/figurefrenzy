@@ -7,11 +7,13 @@ import { toast } from "react-toastify"
 import logo from "./logo.jpg"
 import { useNavigate } from "react-router"
 import { Header } from "../../header/Header"
+import { AddressContext } from "../../context/AddressContext"
 
 export const Checkout = () => {
     const { cartItems, totalPrice, totalDiscount, deliveryCharge, finalPrice } = useContext(CartContext)
-
+    const { addresses } = useContext(AddressContext)
     const navigate = useNavigate()
+
 
 
 
@@ -77,6 +79,16 @@ export const Checkout = () => {
     }
 
 
+    const handleUserAddress = () => {
+        if (addresses.length === 0) {
+            toast.error("Please add an address first")
+            return
+        }
+
+        displayRazorpay(Math.round(finalPrice))
+    }
+
+
 
 
     return (
@@ -111,7 +123,7 @@ export const Checkout = () => {
                         <h3>&#x20B9; {Math.round(finalPrice)} </h3>
                     </div>
                     <hr />
-                    <button className="remove_button" onClick={() => displayRazorpay(Math.round(finalPrice))}  >Order Now</button>
+                    <button className="remove_button" onClick={handleUserAddress}  >Order Now</button>
                 </div>
             </div>
         </>
