@@ -5,8 +5,9 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 ---
 
 ## Preview
-![Homepage](assets/homepage.png)
-![ProductPage](assets/productpage.png)
+![Homepage](./assets/homepage.png)
+![ProductPage](./assets/productpage.png)
+
 
 
 ## Tech Stack
