@@ -10,7 +10,7 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 
 
 ## Tech Stack
-***
+
 - **FrontEnd :** ***React.js, HTML, CSS***
 - **BackEnd :**  ***MockBee***
 - **Payment Integration :** ***Razorpay***
@@ -20,7 +20,7 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 ***
 
 ## Features
-***
+
 - Authentication
   - Login
   - Logout
