@@ -62,6 +62,9 @@ export const HomePage = () => {
 
                 {/* footer section */}
                 <div className="footer_section" >
+                    {/* <div>
+                        <p>Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts and collectors. It offers a wide range of anime merchandise, with a special focus on figurines. The website aims to provide a convenient and enjoyable shopping experience for anime fans who are passionate about collecting and displaying their favorite characters.</p>
+                    </div> */}
                     <div className="footer_section_content" >
                         <h1> <AiFillGithub /> </h1>
                         <h1> <AiFillTwitterCircle /> </h1>

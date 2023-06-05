@@ -65,7 +65,7 @@
 }
 
 .nav_aside {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
@@ -195,9 +195,10 @@
 
 .hero_categories {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   margin: 0 2rem 2rem;
 }
 
@@ -206,8 +207,8 @@
 }
 
 .hero_categories_card img {
-  width: 115px;
-  height: 115px;
+  width: 145px;
+  height: 145px;
   border-radius: 999px;
   object-fit: cover;
 }
@@ -236,17 +237,23 @@
 
 /********** Footer Section *************/
 .footer_section {
-  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
   color: var(--white);
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+  background-color: var(--primary);
 }
 .footer_section_content {
   display: flex;
   flex-direction: row;
-  /* align-items: space-between; */
   justify-content: center;
   align-items: center;
-  /* margin: 1px; */
+  /* position: absolute;
+
+  z-index: 999;
+  width: 100%;
+  background-color: var(--primary); */
 }
 
 /* Responsive typography using media queries */
@@ -329,6 +336,16 @@
     background-color: transparent;
     text-align: center;
   }
+  /* 
+  .footer_section {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+  } */
 }
 
 @media screen and (min-width: 1024px) {
@@ -391,4 +408,13 @@
     background-color: transparent;
     text-align: center;
   }
+  /* .footer_section {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+  } */
 }
