@@ -17,7 +17,7 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 - **Deployement :** ***Vercel***
 - **Other Libraries :** ***React Router v6, Axios, JSON web token, React Context API, useReducer,React Icons, React Toastify, etc.***
 
-***
+
 
 ## Features
 
