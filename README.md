@@ -5,19 +5,17 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 ---
 
 ## Preview
-![Homepage](assets/homepage.png)
-![ProductPage](assets/productpage.png)
 
+![Homepage](./assets/homepage.png)
+![ProductPage](./assets/productpage.png)
 
 ## Tech Stack
 
-- **FrontEnd :** ***React.js, HTML, CSS***
-- **BackEnd :**  ***MockBee***
-- **Payment Integration :** ***Razorpay***
-- **Deployement :** ***Vercel***
-- **Other Libraries :** ***React Router v6, Axios, JSON web token, React Context API, useReducer,React Icons, React Toastify, etc.***
-
-
+- **FrontEnd :** **_React.js, HTML, CSS_**
+- **BackEnd :** **_MockBee_**
+- **Payment Integration :** **_Razorpay_**
+- **Deployement :** **_Vercel_**
+- **Other Libraries :** **_React Router v6, Axios, JSON web token, React Context API, useReducer,React Icons, React Toastify, etc._**
 
 ## Features
 
@@ -33,13 +31,13 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
   - Rating
   - sort by price
 - Cart Management
-   - Add To Cart
-   - Remove From Cart 
+  - Add To Cart
+  - Remove From Cart
 - Wishlist Management
-   - Add to wishlist
-   - Remove from wishlist
-- Search By 
-    - Product Name
+  - Add to wishlist
+  - Remove from wishlist
+- Search By
+  - Product Name
 - Single Product Page
 - Address Management
 - Loading & Alerts
@@ -50,7 +48,6 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 - Apply Coupons
 - Payment Intergration
 - Responsive
-
 
 ## Run Locally
 
@@ -67,11 +64,13 @@ Go to project directory
 ```
 
 Install dependencies
+
 ```bash
   npn install
 ```
 
 Start the Server
+
 ```bash
   npm start
 ```
