@@ -5,10 +5,15 @@ Figure Frenzy is an anime e-commerce website that caters to anime enthusiasts an
 ---
 
 ## Preview
-![Homepage](./assets/homepage.png)
-![ProductPage](./assets/productpage.png)
 
+### HomePage
+![Homepage](https://github.com/Sonualam-bot/figurefrenzy/blob/master/src/assets/homepage.png)
 
+### Product Page
+![ProductPage](https://github.com/Sonualam-bot/figurefrenzy/blob/master/src/assets/productpage.png)
+
+### Site link Here
+![Go TO Site](https://figurefrenzy.vercel.app/)
 
 ## Tech Stack
 
