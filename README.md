@@ -29,7 +29,6 @@ https://www.loom.com/share/6c3bf4deedca41c4985b2eb59e6a5823
 - Product Listing Page
 - Filter Products By
   - Category
-  - Discount
   - Price
   - Rating
   - sort by price
