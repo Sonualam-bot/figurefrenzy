@@ -9,8 +9,9 @@ https://www.loom.com/share/6c3bf4deedca41c4985b2eb59e6a5823
 
 ## Preview
 
-![Homepage](./assets/homepage.png)
-![ProductPage](./assets/productpage.png)
+![Homepage](https://github.dev/Sonualam-bot/figurefrenzy/blob/master/assets/homepage.png)
+![ProductPage](https://github.dev/Sonualam-bot/figurefrenzy/blob/master/assets/homepage.png)
+
 
 ## Tech Stack
 
