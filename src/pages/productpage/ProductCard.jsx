@@ -107,22 +107,29 @@ export const ProductCard = ({ items, handleCart, handleWishlist, page }) => {
                 )}
                 {page !== "cart" && (
 
-                    <button className="add_button" onClick={() => {
-                        if (isItemInCart) {
-                            navigate("/cart")
-                        } else {
-                            fetchUserCart(items, userToken);
-                            // setAddedToCart(true)
-                            toast.success(" Added To Cart ")
+                    userToken ? (
+                        <button className="add_button" onClick={() => {
+                            if (isItemInCart) {
+                                navigate("/cart")
+                            } else {
+                                fetchUserCart(items, userToken);
+                                // setAddedToCart(true)
+                                toast.success(" Added To Cart ")
+
+                            }
+
 
                         }
+                        }>
+                            {" "}
+                            <span>{isItemInCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
+                        </button>
+                    ) : (
+                        <button className="add_button" onClick={() => navigate("/login")} >
+                            <span>Add To Cart</span>
+                        </button>
+                    )
 
-
-                    }
-                    }>
-                        {" "}
-                        <span>{isItemInCart ? "Go To Cart" : "Add to Cart"}</span>{" "}
-                    </button>
                 )}
 
                 {page === "cart" && (

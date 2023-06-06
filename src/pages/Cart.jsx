@@ -17,7 +17,7 @@ export const Cart = () => {
     // const { cart, addToWishlist } = useContext(ProductContext)
     const { cartItems, totalPrice } = useContext(CartContext)
 
-    const { isLoggedIn } = useContext(AuthContext)
+
 
     const navigate = useNavigate()
 
