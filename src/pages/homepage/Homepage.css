@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-/* .App {
-  background: rgb(31, 30, 30);
-  background: linear-gradient(
-    0deg,
-    rgba(31, 30, 30, 1) 36%,
-    rgba(44, 130, 201, 1) 100%
-  );
-} */
-
 /******************* Navbar start **************************/
 
 .nav_section {
@@ -23,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2rem;
+  margin: 0 0.3rem;
   height: 10vh;
   z-index: 999;
 }
@@ -65,7 +56,7 @@
 }
 
 .nav_aside {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
@@ -78,20 +69,26 @@
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
 }
 
 .nav_aside svg {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .show {
+  display: flex;
   right: 0;
+  opacity: 1;
+  visibility: visible;
 }
-
+/* 
 .nav_display {
   display: flex;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .hamburger {
   color: var(--primary);
@@ -102,10 +99,6 @@
   text-decoration: none;
   color: var(--primary);
 }
-
-/* .nav_quantity {
-  position: relative;
-} */
 
 .cart_quantity,
 .wish_quantity {
@@ -278,6 +271,8 @@
     align-items: center;
     background-color: transparent;
     box-shadow: none;
+    opacity: 1;
+    visibility: visible;
   }
 
   .hamburger {
@@ -353,7 +348,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 2rem;
+    margin: 0 0.7rem;
     height: 10vh;
   }
 
@@ -375,6 +370,8 @@
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
+    align-items: center;
+    /* height: 350px; */
     margin: 0 2rem 2rem;
   }
 
@@ -408,13 +405,7 @@
     background-color: transparent;
     text-align: center;
   }
-  /* .footer_section {
-    background-color: var(--primary);
-    color: var(--white);
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    bottom: 0;
-    z-index: 999;
-    width: 100%;
-  } */
+  .spinner_homepage {
+    height: 350px;
+  }
 }

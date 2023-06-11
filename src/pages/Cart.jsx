@@ -1,20 +1,15 @@
 
 import { useContext } from "react"
-import { ProductContext } from "../context/ProductContext"
-
-import { AiOutlineStar } from "react-icons/ai";
-import { IoIosHeartEmpty } from "react-icons/io";
-
 import { useNavigate } from "react-router";
 
 import { ProductCard } from "./productpage/ProductCard";
 import { CartContext } from "../context/CartContext";
-import { AuthContext } from "../context/AuthContext";
 import { Header } from "../header/Header";
+
+import cart from "../assets/cart.png"
 
 
 export const Cart = () => {
-    // const { cart, addToWishlist } = useContext(ProductContext)
     const { cartItems, totalPrice } = useContext(CartContext)
 
 
@@ -39,11 +34,11 @@ export const Cart = () => {
             <header className="App-header">
                 <Header />
             </header>
-            <h1 className="cart_page_name" > My Cart ({cartItems.length}) </h1>
+            {/* <h1 className="cart_page_name" > My Cart ({cartItems.length}) </h1> */}
 
 
             <div >
-                {cartItems?.length === 0 ? <p className="cart_page_name" >Cart is Empty</p> :
+                {cartItems?.length === 0 ? <p className="cart_page_name">  <img src={cart} alt="cart" />  </p> :
 
                     <div className="cart_price_details" >
 

@@ -42,10 +42,9 @@
 
 .user_details_section {
   text-align: left;
-  width: 360px;
-  height: 200px;
+  width: 80vw;
+  padding-left: 1rem;
   padding-top: 2rem;
-  padding-left: 4rem;
   line-height: 3.5rem;
   border: 1px solid var(--primary);
   margin: 0 auto;
@@ -78,7 +77,7 @@
   margin: 1rem auto;
   /* text-align: center; */
   border: 1px solid var(--primary);
-  width: 360px;
+  width: 295px;
   padding: 1.5rem;
 }
 
@@ -188,7 +187,7 @@
   border: 1px solid var(--primary);
   text-align: center;
   line-height: 2rem;
-  width: 480px;
+  width: 295px;
 }
 
 .show_addresss_buttons {
@@ -230,7 +229,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 360px;
+  width: 280px;
   padding: 10px;
 }
 
@@ -249,7 +248,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   padding: 20px;
-  width: 360px;
+  width: 80vw;
 }
 
 .nav_inactive {
@@ -259,7 +258,7 @@
   color: var(--white);
   padding: 20px;
   font-weight: 500;
-  width: 360px;
+  width: 80vw;
 }
 
 /******************** order details *******************************/
@@ -370,5 +369,12 @@
     margin: 0 auto;
     border: 1px solid #bfdbfe;
     width: 500px;
+  }
+  .show_address {
+    margin: 1rem auto;
+    border: 1px solid var(--primary);
+    text-align: center;
+    line-height: 2rem;
+    width: 480px;
   }
 }

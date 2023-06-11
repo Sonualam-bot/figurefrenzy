@@ -16,8 +16,6 @@ export const CategoryProvider = ({ children }) => {
         try {
             setIsLoading(true)
             const { data } = await axios.get(`/api/categories`)
-
-            // console.log("this is response", data.categories)
             setCategory(data.categories)
             setIsLoading(false)
 
@@ -35,9 +33,6 @@ export const CategoryProvider = ({ children }) => {
         try {
             setIsLoading(true)
             const { data } = await axios.get(`/api/categories/${categoryId}`);
-
-            // const { category } = await response.json();
-            // console.log(category)
             setSelectedCategory(data.category)
             setIsLoading(false)
 

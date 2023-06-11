@@ -1,7 +1,7 @@
 
 import { useContext } from "react"
 import { ProductContext } from "../context/ProductContext"
-
+import wishlist from "../assets/wishlist.png"
 
 import { ProductCard } from "./productpage/ProductCard";
 import { WishlistContext } from "../context/WishlistContext";
@@ -16,7 +16,7 @@ export const Wishlist = () => {
                 <Header />
             </header>
             <div className="product_aside_content" >
-                {wishlistItems.length === 0 ? <h2>Your wishlist is empty.</h2> : wishlistItems?.map((data) => {
+                {wishlistItems.length === 0 ? <div className="wishlist_img" > <img src={wishlist} alt="wishlist" />  </div> : wishlistItems?.map((data) => {
                     return (
                         <ProductCard items={data} page="wishlist" />
                     )

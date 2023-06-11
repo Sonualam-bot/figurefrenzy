@@ -1,11 +1,28 @@
 .checkout_container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 3rem;
 }
 
 .checkout_price {
-  width: 350px;
-  padding-top: 1rem;
+  width: 80%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.checkout_address h3 {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .checkout_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem;
+    padding: 2rem;
+  }
 }

@@ -47,6 +47,7 @@ export const ProductPage = () => {
                         : (
                             <div className="spinner" >
                                 <Spinner />
+                                {/* <img src="https://gifdb.com/images/high/cute-anime-loading-bar-vzzmqnf84i9zk2ra.webp" alt="gif" /> */}
                             </div>
 
                         )}

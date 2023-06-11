@@ -15,7 +15,7 @@ import { ProductContext } from "../../context/ProductContext";
 import { Header } from "../../header/Header";
 
 export const HomePage = () => {
-    const { category, selectedCategory } = useContext(categoryContext);
+    const { category } = useContext(categoryContext);
     const { dispatch } = useContext(ProductContext)
 
 
@@ -41,18 +41,16 @@ export const HomePage = () => {
                 <div className="hero_category_title" >Categories to Choose From</div>
 
                 <div className="hero_categories" >
-                    {category.length === 0 ? <div className="spinner" >
+                    {category.length < 1 ? <div className="spinner_homepage" >
                         <Spinner />
                     </div> : category?.map(({ _id, type, title, description, image_url }) => {
                         return (
 
                             <NavLink to="/product" className="hero_nav_link" onClick={() => dispatch({ type: type })}>
                                 <li className="hero_categories_card" key={_id} value={title}  >
-                                    {/* {console.log(type)} */}
                                     <img src={image_url} alt="chitrrr" />
                                     <div className="hero_text" >
                                         <h3> {title} </h3>
-                                        {/* <p> {description} </p> */}
                                     </div>
                                 </li>
                             </NavLink>
