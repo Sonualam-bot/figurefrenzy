@@ -5,7 +5,7 @@ import { AddressContext } from "../../context/AddressContext";
 import { CartContext } from "../../context/CartContext";
 
 export const History = () => {
-    const location = useLocation();
+
     // const { paymentId } = location.state || {}; // Destructure paymentId from location.state
     const { addresses, addressForOrder } = useContext(AddressContext)
     const { finalPrice, cartItems } = useContext(CartContext)
@@ -45,7 +45,7 @@ export const History = () => {
                                 return (
                                     <div className="order_details_div" >
                                         <div className="order_img_div" >
-                                            <img src={el.image_url} />
+                                            <img src={el.image_url} alt="elemnt" />
                                         </div>
 
                                         <div className="order_summary" >

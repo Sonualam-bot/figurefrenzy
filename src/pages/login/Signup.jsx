@@ -1,13 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 import { Header } from "../../header/Header";
 import { toast } from "react-toastify";
 
 import { VscEyeClosed } from "react-icons/vsc"
 import { VscEye } from "react-icons/vsc"
-import { GiButterToast } from "react-icons/gi";
 
 
 

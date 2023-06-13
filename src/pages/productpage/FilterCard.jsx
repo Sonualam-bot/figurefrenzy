@@ -2,13 +2,12 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
 import { categoryContext } from "../homepage/CategoryContext";
-import { Header } from "../../header/Header";
 
 
 
 
 export const FilterCard = () => {
-    const { state, dispatch, homepageData, searchedProducts } = useContext(ProductContext);
+    const { state, dispatch, homepageData } = useContext(ProductContext);
 
     const { filteredProducts } = useContext(categoryContext)
 

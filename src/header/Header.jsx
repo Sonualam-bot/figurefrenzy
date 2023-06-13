@@ -19,7 +19,7 @@ export const Header = ({ page }) => {
     const { state, dispatch } = useContext(ProductContext)
     const { cartItems } = useContext(CartContext)
     const { wishlistItems } = useContext(WishlistContext)
-    const { isLoggedIn, loginHandler, logoutHandler } = useContext(AuthContext)
+    const { isLoggedIn } = useContext(AuthContext)
 
     const [isMenuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => {
@@ -27,8 +27,6 @@ export const Header = ({ page }) => {
     };
 
     const userToken = localStorage.getItem("token");
-
-    const navigate = useNavigate()
 
     return (
         <>

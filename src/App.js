@@ -12,7 +12,7 @@ import "./pages/checkout/checkout.css"
 import "././loaders/spinner.css"
 
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -21,7 +21,6 @@ import { HomePage } from "./pages/homepage/HomePage";
 import { ProductPage } from './pages/productpage/ProductPage';
 import { Cart } from "./pages/Cart"
 import { Wishlist } from "./pages/Wishlist"
-import { Header } from "./header/Header";
 import { Individual } from "./pages/individualPage/Individual";
 import { Login } from "./pages/login/Login";
 import { Signup } from "./pages/login/Signup";

@@ -13,8 +13,6 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    const location = useLocation()
-
     const navigate = useNavigate()
     const userToken = localStorage.getItem("token");
 
@@ -28,7 +26,6 @@ export const AuthContextProvider = ({ children }) => {
         confirmPassword: ""
 
     })
-    // const [signup, setSignup] = useState(false)
 
 
 

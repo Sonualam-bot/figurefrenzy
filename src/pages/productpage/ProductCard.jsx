@@ -6,9 +6,9 @@ import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css'
 
 
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { IndividualContext } from "../individualPage/IndividualContext";
-import { CartContext, incrementUserCartQuantity } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { WishlistContext } from "../../context/WishlistContext";
 import { AuthContext } from "../../context/AuthContext";
 

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { stateArr } from "./stateArr";
 
 import { Profile } from "./Profile";
-import { NavLink } from "react-router-dom";
+
 
 import { AddressContext } from "../../context/AddressContext";
 

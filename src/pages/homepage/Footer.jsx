@@ -39,17 +39,17 @@ export const Footer = () => {
                         <h4>Get In Touch</h4>
                         <ul>
                             <li>
-                                <a href="https://github.com/Sonualam-bot/figurefrenzy" target="_blank" >
+                                <a href="https://github.com/Sonualam-bot/figurefrenzy" target="_blank" rel="noreferrer" >
                                     <AiFillGithub />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/mdsonualam/" target="_blank" >
+                                <a href="https://www.linkedin.com/in/mdsonualam/" target="_blank" rel="noreferrer" >
                                     <AiFillLinkedin />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/muhammadsonu15" target="_blank">
+                                <a href="https://twitter.com/muhammadsonu15" target="_blank" rel="noreferrer">
                                     <AiFillTwitterCircle />
                                 </a>
                             </li>

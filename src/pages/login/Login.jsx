@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
-import { useLocation } from "react-router-dom"
 import { Header } from "../../header/Header";
 
 import { VscEyeClosed } from "react-icons/vsc"
@@ -9,7 +8,7 @@ import { VscEye } from "react-icons/vsc"
 import { toast } from "react-toastify";
 
 export const Login = () => {
-    const { loginInput, setLoginInput, loginHandler, isLoggedIn, setIsLoggedIn, logoutHandler, guestLogin } = useContext(AuthContext);
+    const { loginInput, setLoginInput, loginHandler, guestLogin } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleLoginInput = (e) => {

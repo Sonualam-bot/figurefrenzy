@@ -1,9 +1,6 @@
-import heroSection from "../../pages/../images/heroSection3.png";
+
 import { useContext } from "react";
 
-import { AiFillGithub } from "react-icons/ai"
-import { AiFillTwitterCircle } from "react-icons/ai"
-import { AiFillInstagram } from "react-icons/ai"
 
 import { Spinner } from "../../loaders/Spinner";
 

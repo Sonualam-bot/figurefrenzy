@@ -1,7 +1,5 @@
-import { Details } from "./Details"
-import { Address } from "./Address"
+
 import { NavLink } from "react-router-dom"
-import { useState } from "react"
 import { Header } from "../../header/Header"
 
 export const Profile = () => {

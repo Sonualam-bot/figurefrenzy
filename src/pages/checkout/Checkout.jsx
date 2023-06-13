@@ -1,10 +1,10 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Address } from "../profile/Address"
 import { CartContext } from "../../context/CartContext"
 
 import { toast } from "react-toastify"
 
-import logo from "./logo.jpg"
+
 import { useNavigate } from "react-router"
 import { Header } from "../../header/Header"
 import { AddressContext } from "../../context/AddressContext"

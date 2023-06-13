@@ -46,7 +46,7 @@ export const Cart = () => {
                         <div className="cart_content" >
 
                             {cartItems?.map((data) => {
-                                {/* const { _id, name, details, price, originalPrice, category, instock, discount, type, rating, image_url } = data; */ }
+
                                 return (
                                     <ProductCard items={data} page="cart" />
                                 )

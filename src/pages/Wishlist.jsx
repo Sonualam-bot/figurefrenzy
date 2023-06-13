@@ -1,6 +1,5 @@
 
 import { useContext } from "react"
-import { ProductContext } from "../context/ProductContext"
 import wishlist from "../assets/wishlist.png"
 
 import { ProductCard } from "./productpage/ProductCard";

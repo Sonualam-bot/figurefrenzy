@@ -11,8 +11,8 @@ import { Header } from "../../header/Header";
 import { VscFilter } from 'react-icons/vsc'
 
 export const ProductPage = () => {
-    const { state, homepageData, searchedProducts, addToCart, addToWishlist } = useContext(ProductContext)
-    const { filteredProducts, isLoading } = useContext(categoryContext)
+    const { searchedProducts, addToCart, addToWishlist } = useContext(ProductContext)
+    const { isLoading } = useContext(categoryContext)
 
 
     const [isFilterOpen, SetIsFilterOpen] = useState(false);

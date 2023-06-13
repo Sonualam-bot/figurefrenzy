@@ -1,5 +1,4 @@
-import { useContext, useState, useEffect } from "react";
-import { ProductContext } from "../../context/ProductContext";
+import { useContext } from "react";
 import { Header } from "../../header/Header";
 
 import { AiFillHeart } from "react-icons/ai";
