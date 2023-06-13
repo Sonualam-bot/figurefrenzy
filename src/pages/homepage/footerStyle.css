@@ -1,7 +1,7 @@
 /* Footer styles */
 
 footer {
-  /* background-color: #fff; */
+  background-color: #fff;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px 10px 0 0;
 }
@@ -10,7 +10,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 5rem;
 }
 
 .footer-links {
@@ -38,18 +37,19 @@ footer {
 .footer-links ul li,
 .footer-social ul li {
   margin-bottom: 5px;
+  color: var(--white);
 }
 
 .footer-links ul li a,
 .footer-social ul li a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--white);
 }
 
 .footer-contact p {
   margin: 0;
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--secondary);
 }
 
 .footer-credit {
@@ -66,7 +66,7 @@ footer {
 }
 
 .footer-container h4 {
-  color: var(--primary-color);
+  color: var(--white);
 }
 
 /* Example social media icons using Font Awesome */
@@ -74,7 +74,7 @@ footer {
   text-decoration: none;
   font-size: 2rem;
   margin-right: 10px;
-  color: var(--primary-color);
+  /* color: var(--primary); */
 }
 .footer-social ul {
   display: flex;
@@ -87,7 +87,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 3rem;
+    padding: 0 1rem 0 1rem;
+    background-color: var(--primary);
   }
 
   .footer-links {
