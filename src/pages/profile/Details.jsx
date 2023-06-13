@@ -13,6 +13,7 @@ export const Details = () => {
         <>
             <Profile />
             <div className="user_details_section">
+                <img src="https://imagedelivery.net/9sCnq8t6WEGNay0RAQNdvQ/UUID-cl90hbwgh7664149tqyk1bw2xgi/public" alt="john" width="120px" height="120px" />
                 <p>Name: {signupInput?.firstName || users[0].firstName + " " + users[0].lastName} </p>
                 <p>Email: {signupInput?.email || loginInput.email} </p>
                 <button onClick={logoutHandler} >Logout</button>

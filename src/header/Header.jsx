@@ -35,17 +35,14 @@ export const Header = ({ page }) => {
             <div className="nav_section" >
                 <div className="nav_container">
                     <div className="nav_header">
-                        <img src={logo} alt="logo" />
+                        <NavLink to="/" >  <img src={logo} alt="logo" /></NavLink>
                         <h1> <span className="figure_F" to="/" >F</span>
-                            {/* <span className="frenzy" >Frenzy</span>  */}
                         </h1>
                         <div className="half_figure_name" >
                             <h1><span className="figure_igure" to="/" >igure</span>
-                                {/* <span className="frenzy" >Frenzy</span>  */}
 
                             </h1>
                             <h1> <span className="figure_renzy" to="/" >renzy</span>
-                                {/* <span className="frenzy" >Frenzy</span>  */}
                             </h1>
                         </div>
 

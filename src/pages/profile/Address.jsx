@@ -34,54 +34,55 @@ export const Address = ({ checkout }) => {
                 <div className="form_container" >
                     {showForm ?
                         <form className="address_form">
-                            <div className="address_some_input">
-                                <div className="two_address_field" >
-                                    <div>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="name"
-                                            value={address.name}
-                                            onChange={handleAddressInput}
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-
-                                        <input
-                                            type="tel"
-                                            name="mobile"
-                                            pattern="[0-9]{10}"
-                                            placeholder="mobile no."
-                                            value={address.mobile}
-                                            onChange={handleAddressInput}
-                                            required
-                                        />
-                                    </div>
+                            {/* <div className="address_some_input"> */}
+                            <div className="two_address_field" >
+                                <div>
+                                    {/* <label htmlFor="name" >Name</label> */}
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="name"
+                                        value={address.name}
+                                        onChange={handleAddressInput}
+                                        required
+                                    />
                                 </div>
-                                <div className="two_address_field">
-                                    <div>
-                                        <input
-                                            type="text"
-                                            name="pincode"
-                                            placeholder="pincode"
-                                            value={address.pincode}
-                                            onChange={handleAddressInput}
-                                            required
-                                        />
-                                    </div>
+                                <div>
+                                    {/* <label htmlFor="mobile" >Phone</label> */}
+                                    <input
+                                        type="tel"
+                                        name="mobile"
+                                        pattern="[0-9]{10}"
+                                        placeholder="mobile no."
+                                        value={address.mobile}
+                                        onChange={handleAddressInput}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="two_address_field">
+                                <div>
+                                    {/* <label htmlFor="pincode" >Pincode</label> */}
+                                    <input
+                                        type="text"
+                                        name="pincode"
+                                        placeholder="pincode"
+                                        value={address.pincode}
+                                        onChange={handleAddressInput}
+                                        required
+                                    />
+                                </div>
 
-                                    <div>
-
-                                        <input
-                                            type="text"
-                                            name="city"
-                                            placeholder="city"
-                                            value={address.city}
-                                            onChange={handleAddressInput}
-                                            required
-                                        />
-                                    </div>
+                                <div>
+                                    {/* <label htmlFor="city" >City</label> */}
+                                    <input
+                                        type="text"
+                                        name="city"
+                                        placeholder="city"
+                                        value={address.city}
+                                        onChange={handleAddressInput}
+                                        required
+                                    />
                                 </div>
                             </div>
                             <div className="textarea">
@@ -95,13 +96,15 @@ export const Address = ({ checkout }) => {
                                     required
                                 />
                             </div>
+
                             <div className="two_address_field">
                                 <div>
+                                    {/* <label htmlFor="alternate-mobile" >Alternate Mobile</label> */}
                                     <input
                                         className="address_alternate_mobile"
                                         type="tel"
                                         name="alternateMobile"
-                                        placeholder="alternate ph(optional)"
+                                        placeholder="alternate number(optional)"
                                         value={address.alternateMobile}
                                         onChange={handleAddressInput}
                                         pattern="[0-9]{10}"
@@ -109,6 +112,7 @@ export const Address = ({ checkout }) => {
                                     />
                                 </div>
                                 <div>
+                                    {/* <label htmlFor="state" >State</label> */}
                                     <select
                                         className="address_choose_state"
                                         name="state"
@@ -123,31 +127,43 @@ export const Address = ({ checkout }) => {
                                 </div>
 
                             </div>
+
+
+                            {/* </div> */}
+
+
                             <div className="address_buttons">
-                                <button type="button" onClick={handleAddAddress}>Add</button>
-                                <button type="button" onClick={handleReset}>Reset</button>
-                                <button type="button" onClick={handleRandom}>Random</button>
-                                <button type="button" onClick={() => setShowForm(!showForm)}>Cancel</button>
+                                <div className="address_two_btns_first" >
+                                    <button type="button" onClick={handleAddAddress}>Add</button>
+                                    <button type="button" onClick={handleReset}>Reset</button>
+                                </div>
+
+                                <div className="address_two_btns_second">
+                                    <button type="button" onClick={handleRandom}>Random</button>
+                                    <button type="button" onClick={() => setShowForm(!showForm)}>Cancel</button>
+                                </div>
+
+
                             </div>
-                        </form> : <button className="showform_button" onClick={() => setShowForm(!showForm)}  >Add Address</button>}
+                        </form> : <button className="showform_button" onClick={() => setShowForm(!showForm)}>Add Address</button>}
                 </div>
 
                 <div className="address_filled"  >
                     {addresses.map((addr, index) => (
-                        <div key={index} className="show_address" >
+                        <div key={index} className="show_address" onClick={() => handleAddressSelect(index)} >
                             <input
                                 type="radio"
                                 name="selectedAddress"
                                 checked={index === selectedAddress}
-                                onChange={() => handleAddressSelect(index)}
+
                             />
-                            <p> Name : {addr.name}</p>
-                            <p>Mobile No : {addr.mobile}</p>
-                            <p>Pincode : {addr.pincode} </p>
-                            <p>City : {addr.city} </p>
-                            <p>Address : {addr.address} </p>
-                            <p>ALternate Mobile : {addr.alternateMobile} </p>
-                            <p>State : {addr.state} </p>
+                            <p> <span> Name </span>: {addr.name}</p>
+                            <p> <span>Mobile No </span>: {addr.mobile}</p>
+                            <p><span>Pincode </span>: {addr.pincode} </p>
+                            <p><span>City </span>: {addr.city} </p>
+                            <p><span>Address</span> : {addr.address} </p>
+                            <p><span>ALternate Mobile</span> : {addr.alternateMobile} </p>
+                            <p><span>State </span>: {addr.state} </p>
                             {/* Display other address details */}
 
                             <div className="show_addresss_buttons" >
