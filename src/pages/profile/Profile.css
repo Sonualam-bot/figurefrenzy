@@ -202,7 +202,7 @@
   text-align: left;
   line-height: 2rem;
   border-radius: 5px;
-  width: 480px;
+  width: 60vw;
   padding: 1.2rem;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
 }
@@ -434,7 +434,7 @@
     text-align: left;
     line-height: 2rem;
     border-radius: 5px;
-    width: 350px;
+    width: 50vw;
     padding: 1.2rem;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
   }
