@@ -30,9 +30,9 @@ export const ProductProvider = ({ children }) => {
         try {
             const response = await axios.get(`/api/products`)
             // const data = await response.json()
-            console.log("data and status", response)
+
             if (response.status === 200) {
-                // console.log(data.products.products)
+
                 setHomepageData(response.data.products)
             }
         } catch (e) {
@@ -41,7 +41,7 @@ export const ProductProvider = ({ children }) => {
     }
 
     const filterPriceByRangeInput = homepageData?.filter((figure) => {
-        console.log("state.filterPriceByRange", state.filterPriceByRange)
+
         return Math.floor(figure.price) <= state.filterPriceByRange
     })
 
@@ -63,7 +63,7 @@ export const ProductProvider = ({ children }) => {
         }
         return (
             (state.category.hero && figure.hero) || (state.category.villain && figure.villain) || (state.category.antiHero && figure.antiHero)
-            // figure
+
         )
 
     })

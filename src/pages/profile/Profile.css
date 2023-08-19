@@ -71,14 +71,28 @@
 
 /************** address page css ***************/
 
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 9999; Ensure the modal appears above other content */
+}
+
 .form_container {
   display: flex;
   justify-content: center;
   margin: 1rem auto;
-  border-radius: 10px;
   width: 60vw;
   padding: 1.5rem;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .address_form {
@@ -198,12 +212,10 @@
 }
 
 .show_address {
-  margin: 1rem auto;
   text-align: left;
-  line-height: 2rem;
   border-radius: 5px;
-  width: 60vw;
-  padding: 1.2rem;
+  width: 350px;
+  padding: 0.7rem;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
 }
 .show_address > p > span {
@@ -382,7 +394,7 @@
     justify-content: center;
     margin: 1rem auto;
     /* border: 1px solid var(--primary); */
-    width: 50vw;
+    width: 35vw;
     padding: 1.5rem;
   }
 
@@ -393,6 +405,14 @@
     align-items: center;
     width: 50vw;
   }
+  .address_filled {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55vw;
+    margin: 0 auto;
+    gap: 0.7rem;
+  }
+
   .two_address_field {
     display: flex;
     flex-direction: column;
@@ -429,14 +449,25 @@
     border: 1px solid #bfdbfe;
     width: 500px;
   }
+
+  .address_filled {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55vw;
+    margin: 0 auto;
+    gap: 0.7rem;
+  }
+
   .show_address {
-    margin: 2rem auto;
     text-align: left;
-    line-height: 2rem;
     border-radius: 5px;
-    width: 50vw;
-    padding: 1.2rem;
+    width: 250px;
+    padding: 0.7rem;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  }
+  .show_address > p {
+    margin: 0;
+    padding: 0;
   }
   .show_address > p > span {
     font-weight: bold;

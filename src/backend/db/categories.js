@@ -22,7 +22,7 @@ export const categories = [
     villain: true,
     description:
       "A villain is defined as an evil or wicked character that enacts evil action and/or harms others.",
-    image_url: "https://www.favorgk.com/cdn/shop/products/001_30a105ce-d7e2-4d86-897e-2dab11d7dee8_3120x.jpg?v=1619204798",
+    image_url: "https://i.pinimg.com/originals/d7/47/39/d747391d084c5a3fea7748c9aa4f6af8.png",
   },
   {
     _id: 3,

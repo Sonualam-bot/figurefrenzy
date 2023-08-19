@@ -1,7 +1,7 @@
 import { createContext, useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { useLocation } from "react-router";
+
 
 import { toast } from "react-toastify";
 
@@ -39,7 +39,7 @@ export const AuthContextProvider = ({ children }) => {
 
                 localStorage.setItem("token", JSON.stringify(response.data.encodedToken))
                 localStorage.setItem("isLoggedIn", JSON.stringify(true));
-                // alert("Login Successfull")
+
                 navigate("/product")
             }
             setIsLoggedIn(true)
@@ -58,26 +58,17 @@ export const AuthContextProvider = ({ children }) => {
         e.preventDefault()
 
         try {
-            console.log("signup handler called")
+
             const response = await axios.post(`/api/auth/signup`, signupInput)
             if (response.status === 201) {
 
                 localStorage.setItem("token", response.data.encodedToken)
             }
-            console.log(response)
-            console.log(response.data.encodedToken)
 
 
             toast.success("You have successfully Signed up")
 
             navigate("/login")
-
-            // setSignupInput({
-            //     firstName: "",
-            //     lastName: "",
-            //     email: "",
-            //     password: ""
-            // })
 
         } catch (e) {
             console.log(e)

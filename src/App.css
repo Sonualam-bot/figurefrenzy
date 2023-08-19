@@ -23,3 +23,7 @@
   /* /* width: 0.2rem; * */
   border-radius: 2rem;
 }
+
+/* body {
+ filter: drop-shadow(20px 10px 100px var(--primary));
+} */

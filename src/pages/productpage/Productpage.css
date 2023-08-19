@@ -161,6 +161,7 @@
   transform: translate3d(0px, 0px, 0px) scale3d(1.2, 1.2, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg);
   transform-style: preserve-3d;
+  border-radius: 5px 5px 0 0;
 }
 
 .product_aside_content_figures img {
@@ -474,7 +475,7 @@
   .cart_price_details {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 2.7rem;
     justify-content: space-between;
     margin: 2rem 4rem;
     align-items: center;
@@ -549,7 +550,7 @@
   .cart_price_details {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 3rem;
     justify-content: space-between;
     margin: 2rem 4rem;
     align-items: center;

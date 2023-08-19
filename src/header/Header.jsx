@@ -46,6 +46,11 @@ export const Header = ({ page }) => {
 
                     </div>
                     {/* <div className="hero_section_content" > */}
+                    {/* <marquee attribute_name="attribute_value" className="marque">
+                        <span>One Stop destination for your favourite action figures * </span>
+                        <span> Cash on Delivery available on orders above ₹999  *</span>
+                        <span> Free Delivery To all orders above Rs 999  *</span>
+                    </marquee> */}
 
                     {/* <div className="search_button" > */}
                     {page === "product" && (<input className="hero_section_content_input" type="text" value={state.searchItem} placeholder="Search for an action figure" onChange={(e) => dispatch({ type: "SEARCH_ITEM", payload: e.target.value })} />)}
@@ -79,7 +84,7 @@ export const Header = ({ page }) => {
                     </div>
 
                 </div>
-            </div>
+            </div >
         </>
     )
 }

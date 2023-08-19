@@ -157,14 +157,12 @@ export const Address = ({ checkout }) => {
                                 checked={index === selectedAddress}
 
                             />
-                            <p> <span> Name </span>: {addr.name}</p>
+                            <p> <span> {addr.name} </span> </p>
+                            <span>{addr.city}</span>,
+                            <span>{addr.address} </span>,<span>{addr.state} </span>,<span>{addr.pincode} </span>
+
                             <p> <span>Mobile No </span>: {addr.mobile}</p>
-                            <p><span>Pincode </span>: {addr.pincode} </p>
-                            <p><span>City </span>: {addr.city} </p>
-                            <p><span>Address</span> : {addr.address} </p>
-                            <p><span>ALternate Mobile</span> : {addr.alternateMobile} </p>
-                            <p><span>State </span>: {addr.state} </p>
-                            {/* Display other address details */}
+
 
                             <div className="show_addresss_buttons" >
                                 <button type="button" onClick={() => handleEditAddress(index)}>

@@ -50,7 +50,6 @@ export const CategoryProvider = ({ children }) => {
         }
         return product.type === selectedCategory.type;
     });
-    console.log("filteredProducts", filteredProducts)
 
 
 

@@ -302,7 +302,7 @@ export const products = [
     hero: true,
     type: "hero",
     rating: 4.6,
-    image_url: "https://www.favorgk.com/cdn/shop/products/501_fb4ca793-5cf4-4497-821d-d40e7f9aa3f2_530x@2x.jpg?v=1637425748"
+    image_url: "https://img.staticdj.com/b4b91b3d7508d47e5f39f3968b8bd7e7_750x.jpeg"
   },
   {
     _id: "21",
@@ -375,7 +375,7 @@ export const products = [
     villain: true,
     type: "villain",
     rating: 4.9,
-    image_url: "https://www.favorgk.com/cdn/shop/products/502_c5fd20fb-1120-4ccb-81ce-2208a10015f5_1024x1024@2x.jpg?v=1656063808"
+    image_url: "https://favorgk.com/wp-content/uploads/2023/04/301_e401708259ba43a78f35c07c1bf7a31c.jpg"
   },
   {
     _id: "26",
@@ -417,7 +417,7 @@ export const products = [
     hero: true,
     type: 'hero',
     rating: 4.7,
-    image_url: "https://cdn.shopify.com/s/files/1/0380/6380/0459/products/pre-order-one-punch-man-saitama-17-scale-figureopm-01-10ax-385325.jpg?v=1657281174"
+    image_url: "https://www.figurise.com/media/catalog/product/cache/89806700f2f2fe9ae1d5c7ebaf942715/1/-/1-7-saitama-01.jpg"
   },
   {
     _id: "29",
