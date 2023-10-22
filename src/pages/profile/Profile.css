@@ -71,188 +71,135 @@
 
 /************** address page css ***************/
 
-.modal_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* z-index: 9999; Ensure the modal appears above other content */
+/* Address Form Styles */
+.address_form_container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1001;
 }
 
-.form_container {
-  display: flex;
-  justify-content: center;
-  margin: 1rem auto;
-  width: 60vw;
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+
 
 .address_form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
+  gap: 15px;
 }
 
-.showform_button {
-  font-size: 1.5rem;
+.address_form_buttons{
+  display: flex;
+  gap: .2rem;
+  width: 80%;
+  justify-content: space-between;
+  }
+
+
+.address_form_buttons button:nth-child(4){
+  background-color: var(--red);
+}
+.address_form_buttons button:nth-child(1){
   background-color: var(--primary);
-  color: var(--white);
-  margin: 1.2rem;
-  padding: 5px;
-  outline: none;
-  border: none;
+}
+.address_form_buttons button:nth-child(3){
+  background-color: yellowgreen;
 }
 
-.address_some_input input {
-  padding: 0.5rem 0rem 0.5rem 0.5rem;
-  margin-bottom: 1rem;
+
+
+/* Close Button Styles */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.close-button:hover{
+  font-weight: 800;
+  font-size: 34px;
+  transition: .3s ease-in-out;
+}
+
+/* Form Input Styles */
+.input-field {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+
+.modal-overlay {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(2px); 
   border-radius: 10px;
-  width: 100;
-  outline: none;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  
 }
 
-.address_alternate_state {
-  display: flex;
-  justify-content: center;
-  /* gap: 1rem; */
+
+
+.address_form_container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%; 
+  max-width: 620px; 
+  text-align: center;
+  position: absolute;
 }
 
-.two_address_field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60vw;
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
 }
 
-.two_address_field input {
-  padding: 0.5rem 0rem 0.5rem 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+
+.address_form input[type="text"],
+.address_form input[type="tel"],
+.address_form select,
+.address_form textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  outline: none;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  width: 45vw;
+  font-size: 16px;
 }
 
-.address_choose_state {
-  padding: 0.5rem;
-  border-radius: 5px;
-  outline: none;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  width: 45vw;
-  color: grey;
-}
-
-.textarea textarea {
-  width: 45vw;
-  padding: 0.5rem 0rem 0.5rem 0.5rem;
-  margin-bottom: 1rem;
-  outline: none;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  height: 50px;
-}
-
-.address_buttons {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: space-evenly;
-  gap: 10px;
-  align-items: center;
-  margin: 1rem 0 0 0;
-  width: 60vw;
-}
-
-.address_two_btns_first,
-.address_two_btns_second {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-  gap: 10px;
-}
-
-.address_two_btns_first button,
-.address_two_btns_second button {
-  font-size: 1rem;
-  padding: 0.3rem;
-  text-transform: uppercase;
-  outline: none;
+.address_form button {
+  background: #007bff;
+  color: #fff;
   border: none;
-  width: 20vw;
-}
-
-.address_two_btns_first button:nth-child(1) {
-  background-color: var(--primary);
-  color: var(--white);
-}
-
-.address_two_btns_second button:nth-child(2) {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.address_two_btns_first button:nth-child(2):hover {
-  background-color: var(--primary);
-  color: var(--white);
-}
-
-.address_two_btns_second button:nth-child(1):hover {
-  background-color: var(--primary);
-  color: var(--white);
-}
-
-.show_address {
-  text-align: left;
   border-radius: 5px;
-  width: 350px;
-  padding: 0.7rem;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
-}
-.show_address > p > span {
-  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.show_addresss_buttons {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
 
-.show_addresss_buttons button {
-  font-size: 1.3rem;
-  width: 100px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  background-color: var(--white);
-}
-.show_addresss_buttons button:nth-child(1):hover {
-  font-size: 1.3rem;
-  width: 90px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  background-color: var(--primary);
-  color: var(--white);
-}
-.show_addresss_buttons button:nth-child(2):hover {
-  font-size: 1.3rem;
-  width: 90px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  background-color: var(--red);
-  color: var(--white);
-}
+
+
+/****************************** adderss pages ends header ****************************************/
 
 /* profile navbar */
 .profile_navigator {
@@ -403,14 +350,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50vw;
   }
   .address_filled {
     display: flex;
     flex-wrap: wrap;
     width: 55vw;
+    height: 220px;
     margin: 0 auto;
+    padding: 0.4rem;
     gap: 0.7rem;
+    overflow: scroll;
   }
 
   .two_address_field {
@@ -450,18 +399,19 @@
     width: 500px;
   }
 
-  .address_filled {
+  /* .address_filled {
     display: flex;
     flex-wrap: wrap;
     width: 55vw;
     margin: 0 auto;
     gap: 0.7rem;
-  }
+  } */
 
   .show_address {
     text-align: left;
     border-radius: 5px;
     width: 250px;
+    height: 180px;
     padding: 0.7rem;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
   }
@@ -475,5 +425,9 @@
 
   .show_address input {
     accent-color: var(--primary);
+  }
+  .show_address:hover {
+    background-color:#047857;
+    color: #fff;
   }
 }
